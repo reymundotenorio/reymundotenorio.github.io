@@ -355,6 +355,14 @@ export const timelineItems: Record<Lang, TimelineItem[]> = {
       signal: 'Product'
     },
     {
+      company: 'Editorial',
+      role: 'Web Applications Developer',
+      period: '2020 - 2021',
+      summary:
+        'Developed and maintained web applications with custom WordPress themes, plugins, and APIs, using HTML, CSS, Sass, PHP, JavaScript, jQuery, Node.js, Docker, MySQL, MongoDB, Amazon Aurora, and AWS to move traditional sites toward scalable PWAs.',
+      signal: 'PWAs'
+    },
+    {
       company: 'Freelancer',
       role: 'Software Developer',
       period: '2016 - 2022',
@@ -383,6 +391,14 @@ export const timelineItems: Record<Lang, TimelineItem[]> = {
       period: '2022 - Presente',
       summary: 'Product engineering en flujos modernos frontend y full-stack para productos data-rich.',
       signal: 'Producto'
+    },
+    {
+      company: 'Editorial',
+      role: 'Web Applications Developer',
+      period: '2020 - 2021',
+      summary:
+        'Desarrollo y mantenimiento de aplicaciones web con temas, plugins y APIs custom para WordPress, usando HTML, CSS, Sass, PHP, JavaScript, jQuery, Node.js, Docker, MySQL, MongoDB, Amazon Aurora y AWS para transformar sitios tradicionales en PWAs escalables.',
+      signal: 'PWAs'
     },
     {
       company: 'Freelancer',
