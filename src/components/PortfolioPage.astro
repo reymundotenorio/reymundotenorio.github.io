@@ -1,0 +1,241 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { content, logoArchive, navItems, siteMeta, stack, type Lang } from '../data/site';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = content[lang];
+const nav = navItems[lang];
+const pagePath = Astro.url.pathname === '/' ? '/' : `/${lang}/`;
+const switchLang: Lang = lang === 'en' ? 'es' : 'en';
+const switchHref = `/${switchLang}/`;
+
+const icons = {
+  arrow:
+    '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>',
+  mail:
+    '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z" /><path d="m4 7 8 6 8-6" /></svg>',
+  linkedin:
+    '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10v9" /><path d="M6 6.5v.01" /><path d="M10 19v-9" /><path d="M10 14c0-2.3 1.4-4 3.6-4 2.1 0 3.4 1.4 3.4 4v5" /></svg>',
+  github:
+    '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c-5 0-9 4-9 9 0 3.9 2.5 7.2 6 8.5.5.1.7-.2.7-.5v-1.7c-2.4.5-2.9-1-2.9-1-.4-1-.9-1.3-.9-1.3-.8-.5.1-.5.1-.5.8.1 1.3.9 1.3.9.7 1.3 2 1 2.4.8.1-.6.3-1 .6-1.2-2-.2-4-1-4-4.4 0-1 .3-1.8.9-2.4-.1-.2-.4-1.2.1-2.4 0 0 .7-.2 2.5.9.7-.2 1.5-.3 2.3-.3.8 0 1.6.1 2.3.3 1.7-1.1 2.5-.9 2.5-.9.5 1.2.2 2.2.1 2.4.6.6.9 1.4.9 2.4 0 3.4-2.1 4.2-4 4.4.4.3.7.9.7 1.8V20c0 .3.2.6.7.5 3.5-1.3 6-4.6 6-8.5 0-5-4-9-9-9Z" /></svg>'
+};
+---
+
+<BaseLayout lang={lang} title={t.seoTitle} description={t.seoDescription}>
+  <header class="site-header" data-header>
+    <a class="brand" href={pagePath} aria-label="Reymundo Tenorio">
+      <span>RT</span>
+      <i></i>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary navigation">
+      {nav.map((item) => <a href={`${pagePath}${item.href}`}>{item.label}</a>)}
+    </nav>
+
+    <a class="language-switch" href={switchHref} hreflang={switchLang} aria-label={`Switch to ${switchLang}`}>
+      {t.languageLabel}
+    </a>
+  </header>
+
+  <main>
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy-block">
+        <h1 id="hero-title" class="reveal">{t.hero.name}</h1>
+        <p class="hero-role reveal">{t.hero.role}</p>
+        <p class="hero-copy reveal">{t.hero.copy}</p>
+
+        <div class="hero-actions reveal">
+          <a class="button button-primary" href={`${pagePath}#work`}>
+            <span>{t.hero.primaryCta}</span>
+            <span class="button-icon" set:html={icons.arrow} />
+          </a>
+          <a class="button button-ghost" href={`${pagePath}#contact`}>
+            <span>{t.hero.secondaryCta}</span>
+            <span class="button-icon" set:html={icons.arrow} />
+          </a>
+        </div>
+
+        <ul class="hero-meta reveal" aria-label="Profile summary">
+          {t.hero.meta.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <canvas id="atlas-canvas"></canvas>
+        <img
+          class="portrait"
+          src={siteMeta.portrait}
+          srcset={siteMeta.portraitSrcSet}
+          sizes="(max-width: 640px) 600px, (max-width: 920px) 760px, 820px"
+          alt=""
+          width="1536"
+          height="1024"
+          decoding="async"
+          fetchpriority="high"
+        />
+        <div class="marker marker-one">
+          <strong>{t.hero.markers[0].title}</strong>
+          <span>{t.hero.markers[0].detail}</span>
+        </div>
+        <div class="marker marker-two">
+          <strong>{t.hero.markers[1].title}</strong>
+          <span>{t.hero.markers[1].detail}</span>
+        </div>
+        <div class="marker marker-three">
+          <strong>{t.hero.markers[2].title}</strong>
+          <span>{t.hero.markers[2].detail}</span>
+        </div>
+      </div>
+
+      <div class="hero-rail reveal" aria-label={t.hero.railLabel}>
+        <span class="rail-title">{t.hero.railLabel}</span>
+        <div class="rail-line">
+          {t.hero.rail.map((item) => (
+            <span class="rail-stop">
+              <b>{item.label}</b>
+              <small>{item.years}</small>
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light work-section" id="work" aria-labelledby="work-title">
+      <div class="section-shell">
+        <div class="section-heading reveal">
+          <span>{t.work.number}</span>
+          <h2 id="work-title">{t.work.title}</h2>
+          <p>{t.work.intro}</p>
+        </div>
+
+        <div class="work-layout">
+          <div class="work-table" aria-label={t.work.title}>
+            {t.work.items.map((item) => {
+              const Tag = item.url ? 'a' : 'article';
+              const attrs = item.url ? { href: item.url, target: '_blank', rel: 'noopener noreferrer' } : {};
+              return (
+                <Tag class="work-row reveal" {...attrs}>
+                  <span class="work-kind">{item.kind}</span>
+                  <strong>{item.name}</strong>
+                  <span>{item.year}</span>
+                  <p>{item.detail}</p>
+                  <span class="row-arrow" set:html={icons.arrow} />
+                </Tag>
+              );
+            })}
+          </div>
+
+          <aside class="archive-panel reveal" aria-labelledby="archive-title">
+            <p class="archive-kicker">{t.work.archiveLabel}</p>
+            <h3 id="archive-title">{t.work.logoNote}</h3>
+            <div class="logo-grid">
+              {logoArchive.map((logo) => (
+                <a href={logo.url} target="_blank" rel="noopener noreferrer" aria-label={logo.name}>
+                  <img src={`/images/logos/${logo.image}`} alt={logo.name} loading="lazy" decoding="async" />
+                </a>
+              ))}
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="experience" aria-labelledby="experience-title">
+      <div class="section-shell">
+        <div class="section-heading reveal">
+          <span>{t.experience.number}</span>
+          <h2 id="experience-title">{t.experience.title}</h2>
+          <p>{t.experience.intro}</p>
+        </div>
+
+        <div class="experience-timeline">
+          {t.experience.items.map((item) => (
+            <article class="experience-card reveal">
+              <span>{item.period}</span>
+              <h3>{item.company}</h3>
+              <strong>{item.role}</strong>
+              <p>{item.detail}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-stack" id="stack" aria-labelledby="stack-title">
+      <div class="section-shell">
+        <div class="section-heading reveal">
+          <span>{t.stack.number}</span>
+          <h2 id="stack-title">{t.stack.title}</h2>
+          <p>{t.stack.intro}</p>
+        </div>
+
+        <div class="stack-grid">
+          {stack.map((item) => (
+            <span class="stack-chip reveal">
+              <i>{item.slice(0, 2).toUpperCase()}</i>
+              {item}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light principles-section" aria-labelledby="principles-title">
+      <div class="section-shell">
+        <div class="section-heading reveal">
+          <span>{t.principles.number}</span>
+          <h2 id="principles-title">{t.principles.title}</h2>
+        </div>
+
+        <div class="principles">
+          {t.principles.items.map((item) => (
+            <article class="principle reveal">
+              <h3>{item.title}</h3>
+              <p>{item.detail}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="section-shell">
+        <div class="section-heading reveal">
+          <span>{t.contact.number}</span>
+          <h2 id="contact-title">{t.contact.title}</h2>
+          <p>{t.contact.intro}</p>
+        </div>
+
+        <div class="contact-grid reveal">
+          <a href={`mailto:${siteMeta.email}`}>
+            <span class="contact-icon" set:html={icons.mail} />
+            <small>{t.contact.emailLabel}</small>
+            <strong>{siteMeta.email}</strong>
+            <span class="row-arrow" set:html={icons.arrow} />
+          </a>
+          <a href={siteMeta.linkedin} target="_blank" rel="noopener noreferrer">
+            <span class="contact-icon" set:html={icons.linkedin} />
+            <small>{t.contact.linkedinLabel}</small>
+            <strong>linkedin.com/in/reymundotenorio</strong>
+            <span class="row-arrow" set:html={icons.arrow} />
+          </a>
+          <a href={siteMeta.github} target="_blank" rel="noopener noreferrer">
+            <span class="contact-icon" set:html={icons.github} />
+            <small>{t.contact.githubLabel}</small>
+            <strong>github.com/reymundotenorio</strong>
+            <span class="row-arrow" set:html={icons.arrow} />
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 Reymundo Tenorio</span>
+    <span>{t.footer}</span>
+  </footer>
+</BaseLayout>
