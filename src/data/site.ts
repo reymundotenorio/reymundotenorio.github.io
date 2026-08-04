@@ -37,13 +37,15 @@ export interface TimelineItem {
   signal: string;
 }
 
-export const siteMeta = {
+export const siteMeta: {
+  email: string;
+  linkedin: string;
+  github: string;
+  ogImage?: string;
+} = {
   email: 'reymundotenorio@gmail.com',
   linkedin: 'https://www.linkedin.com/in/reymundotenorio/',
-  github: 'https://github.com/reymundotenorio',
-  portrait: '/images/portraits/reymundo-editorial.webp',
-  portraitSrcSet: '/images/portraits/reymundo-editorial-960.webp 960w, /images/portraits/reymundo-editorial.webp 1536w',
-  ogImage: '/images/portraits/reymundo-editorial-og.jpg'
+  github: 'https://github.com/reymundotenorio'
 };
 
 export const navItems = {

@@ -52,3 +52,9 @@ Status: Approved visual source
 - Mobile uses touch-first mission list.
 - Autocomplete suggests capability context, but it must not imply live AI generation.
 - Motion must respect reduced-motion settings.
+
+## QA Evidence
+
+- 2026-08-04: `pnpm build` passes for `/`, `/en/`, and `/es/`.
+- 2026-08-04: Preview routes verified with HTTP 200 at `http://127.0.0.1:4324/`, `/en/`, and `/es/`.
+- 2026-08-04: Chrome headless screenshots reviewed for desktop 1440x1000 and mobile 390x844; hero remains no-image, mission mesh is visible, and mobile contact navigation is icon-only.

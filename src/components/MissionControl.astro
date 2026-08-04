@@ -87,6 +87,21 @@ const missionLinks = missions.filter((mission) => mission.id !== 'contact');
   </div>
 
   <div class="mission-control__map" aria-hidden="true">
+    <svg class="mesh-map" viewBox="0 0 700 700">
+      <path class="mesh-line" d="M42 408 C132 296 214 512 312 386 C412 256 512 398 656 234" />
+      <path class="mesh-line" d="M26 482 C162 362 226 430 342 342 C458 254 528 286 684 178" />
+      <path class="mesh-line" d="M66 554 C170 426 310 476 392 352 C476 226 560 248 672 126" />
+      <path class="mesh-line mesh-line--dim" d="M104 250 C214 318 286 190 384 274 C494 368 556 330 664 386" />
+      <path class="mesh-line mesh-line--dim" d="M82 342 C210 216 316 254 420 194 C500 150 590 164 684 94" />
+      <path class="mesh-line mesh-line--amber" d="M46 448 C176 392 260 548 386 448 C494 360 558 484 676 424" />
+      <path class="mesh-line mesh-line--amber" d="M118 604 C242 548 318 604 428 528 C536 454 604 548 688 504" />
+      <circle class="mesh-dot mesh-dot--red" cx="158" cy="392" r="4" />
+      <circle class="mesh-dot" cx="256" cy="478" r="3" />
+      <circle class="mesh-dot" cx="354" cy="350" r="3" />
+      <circle class="mesh-dot mesh-dot--red" cx="476" cy="270" r="4" />
+      <circle class="mesh-dot" cx="566" cy="404" r="3" />
+      <circle class="mesh-dot mesh-dot--red" cx="626" cy="188" r="4" />
+    </svg>
     <span class="signal-core"></span>
     <span class="signal-orbit signal-orbit--one"></span>
     <span class="signal-orbit signal-orbit--two"></span>

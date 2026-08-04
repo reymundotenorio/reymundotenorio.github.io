@@ -119,16 +119,24 @@ svg {
   inset: 0;
   width: 100%;
   height: 100%;
-  z-index: -2;
-  opacity: 0.9;
+  z-index: 0;
+  opacity: 0.78;
 }
 
 .mission-control__field {
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: 1;
   pointer-events: none;
   opacity: 0.8;
+}
+
+.mission-control__nav,
+.mission-control__copy,
+.mission-control__nodes,
+.mission-console {
+  position: relative;
+  z-index: 3;
 }
 
 .field-grid {
@@ -182,11 +190,12 @@ svg {
 .field-coordinates {
   position: absolute;
   left: 76px;
-  top: 212px;
+  top: 184px;
   color: var(--color-muted);
   font-family: var(--font-mono);
   font-size: 12px;
-  line-height: 1.6;
+  line-height: 1.45;
+  opacity: 0.78;
 }
 
 .mission-control__nav {
@@ -333,6 +342,7 @@ svg {
   vertical-align: -8px;
   background: var(--color-cyan);
   box-shadow: 0 0 18px rgba(91, 220, 255, 0.8);
+  animation: cursorPulse 880ms steps(1) infinite;
 }
 
 .mission-control__role {
@@ -421,8 +431,45 @@ svg {
   max-width: 690px;
   min-width: 520px;
   aspect-ratio: 1;
-  z-index: -1;
+  z-index: 2;
   pointer-events: none;
+}
+
+.mesh-map {
+  position: absolute;
+  inset: -10% -8% -4% -14%;
+  width: 118%;
+  height: 112%;
+  color: var(--color-cyan);
+  opacity: 0.74;
+  filter: drop-shadow(0 0 16px rgba(91, 220, 255, 0.2));
+}
+
+.mesh-line {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.2;
+  stroke-opacity: 0.55;
+}
+
+.mesh-line--dim {
+  stroke-opacity: 0.24;
+}
+
+.mesh-line--amber {
+  color: var(--color-amber);
+  stroke-opacity: 0.28;
+}
+
+.mesh-dot {
+  fill: var(--color-cyan);
+  stroke: none;
+  filter: drop-shadow(0 0 8px rgba(91, 220, 255, 0.82));
+}
+
+.mesh-dot--red {
+  fill: var(--color-red);
+  filter: drop-shadow(0 0 9px rgba(255, 77, 85, 0.9));
 }
 
 .signal-core,
@@ -617,6 +664,19 @@ svg {
   margin-left: 4px;
   vertical-align: -2px;
   background: var(--color-muted);
+  animation: cursorPulse 880ms steps(1) infinite;
+}
+
+@keyframes cursorPulse {
+  0%,
+  46% {
+    opacity: 1;
+  }
+
+  47%,
+  100% {
+    opacity: 0;
+  }
 }
 
 .mission-panels {
@@ -1060,7 +1120,7 @@ svg {
   }
 
   .mission-control__nav {
-    grid-template-columns: 64px 1fr auto;
+    grid-template-columns: 56px 1fr 116px;
     gap: 12px;
     font-size: 12px;
   }
@@ -1070,12 +1130,28 @@ svg {
   }
 
   .mission-control__contact {
-    min-width: 116px;
+    grid-column: 3;
+    grid-row: 1;
+    min-width: 42px;
+    width: 42px;
     min-height: 40px;
-    gap: 10px;
+    gap: 0;
+    padding: 0;
+    justify-self: end;
+  }
+
+  .mission-control__contact span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
   }
 
   .mission-control__lang {
+    grid-column: 2;
+    grid-row: 1;
     justify-self: center;
   }
 
@@ -1100,9 +1176,11 @@ svg {
   }
 
   .mission-control__role {
+    max-width: 340px;
     min-height: 54px;
     font-size: 18px;
     line-height: 1.45;
+    overflow-wrap: anywhere;
   }
 
   .mission-control__suggestion {

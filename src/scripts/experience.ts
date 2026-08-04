@@ -91,39 +91,11 @@ function initAutocomplete(root: HTMLElement): Cleanup {
     return () => undefined;
   }
 
-  const fullName = title.dataset.typewrite ?? title.textContent?.trim() ?? '';
-  const fullRole = role.dataset.autocomplete ?? role.textContent?.trim() ?? '';
-  const cursor = title.querySelector('i') ?? document.createElement('i');
-  const titleNode = document.createTextNode('');
-  const roleNode = document.createTextNode('');
-  const timeouts: number[] = [];
-
-  title.replaceChildren(titleNode, cursor);
-  role.replaceChildren(roleNode);
-
-  const schedule = (callback: () => void, delay: number) => {
-    const timeout = window.setTimeout(callback, delay);
-    timeouts.push(timeout);
-  };
-
-  Array.from(fullName).forEach((char, index) => {
-    schedule(() => {
-      titleNode.textContent += char;
-    }, 34 * index);
-  });
-
-  const roleOffset = fullName.length * 34 + 160;
-  Array.from(fullRole).forEach((char, index) => {
-    schedule(() => {
-      roleNode.textContent += char;
-    }, roleOffset + 18 * index);
-  });
-
-  schedule(() => {
+  const timeout = window.setTimeout(() => {
     root.classList.add('is-typing-complete');
-  }, roleOffset + fullRole.length * 18 + 180);
+  }, 1100);
 
-  return () => timeouts.forEach((timeout) => window.clearTimeout(timeout));
+  return () => window.clearTimeout(timeout);
 }
 
 async function initScrollMotion(root: HTMLElement): Promise<Cleanup> {
