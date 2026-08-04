@@ -1,0 +1,32 @@
+---
+import type { Mission } from '../data/site';
+
+interface Props {
+  mission: Mission;
+  active?: boolean;
+}
+
+const { mission, active = false } = Astro.props;
+---
+
+<article
+  class:list={['mission-panel', active && 'is-active']}
+  id={`panel-${mission.id}`}
+  data-mission-panel
+  data-mission-id={mission.id}
+>
+  <div class="mission-panel__meta">
+    <span>{mission.label}</span>
+    <span>{mission.stat}</span>
+  </div>
+  <div class="mission-panel__body">
+    <h2>{mission.title}</h2>
+    <p>{mission.summary}</p>
+  </div>
+  <ul class="mission-panel__proof">
+    {mission.proof.map((item) => <li>{item}</li>)}
+  </ul>
+  <div class="mission-panel__stack" aria-label={`${mission.title} stack`}>
+    {mission.stack.map((item) => <span>{item}</span>)}
+  </div>
+</article>

@@ -1,0 +1,40 @@
+---
+import type { Lang } from '../data/site';
+import { siteMeta } from '../data/site';
+
+interface Props {
+  lang: Lang;
+  contact: {
+    title: string;
+    intro: string;
+    emailLabel: string;
+    linkedinLabel: string;
+    githubLabel: string;
+  };
+}
+
+const { contact } = Astro.props;
+---
+
+<section class="contact-dock" id="contact" aria-labelledby="contact-title">
+  <div class="contact-dock__copy">
+    <span>// contact</span>
+    <h2 id="contact-title">{contact.title}</h2>
+    <p>{contact.intro}</p>
+  </div>
+
+  <div class="contact-dock__links">
+    <a href={`mailto:${siteMeta.email}`}>
+      <small>{contact.emailLabel}</small>
+      <strong>{siteMeta.email}</strong>
+    </a>
+    <a href={siteMeta.linkedin} target="_blank" rel="noreferrer">
+      <small>{contact.linkedinLabel}</small>
+      <strong>linkedin.com/in/reymundotenorio</strong>
+    </a>
+    <a href={siteMeta.github} target="_blank" rel="noreferrer">
+      <small>{contact.githubLabel}</small>
+      <strong>github.com/reymundotenorio</strong>
+    </a>
+  </div>
+</section>

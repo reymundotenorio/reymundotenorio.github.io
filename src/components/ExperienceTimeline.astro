@@ -1,0 +1,31 @@
+---
+import type { TimelineItem } from '../data/site';
+
+interface Props {
+  items: TimelineItem[];
+  title: string;
+  intro: string;
+}
+
+const { items, title, intro } = Astro.props;
+---
+
+<section class="experience-timeline" id="experience" aria-labelledby="experience-title">
+  <div class="section-heading">
+    <span>// experience</span>
+    <h2 id="experience-title">{title}</h2>
+    <p>{intro}</p>
+  </div>
+
+  <div class="timeline-rail">
+    {items.map((item) => (
+      <article class="timeline-item">
+        <span>{item.period}</span>
+        <h3>{item.company}</h3>
+        <strong>{item.role}</strong>
+        <p>{item.summary}</p>
+        <small>{item.signal}</small>
+      </article>
+    ))}
+  </div>
+</section>
