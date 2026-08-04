@@ -136,7 +136,7 @@ async function initScrollMotion(root: HTMLElement): Promise<Cleanup> {
       ease: 'power3.out'
     });
 
-    gsap.utils.toArray<HTMLElement>('.mission-panel, .work-archive, .experience-timeline, .contact-dock').forEach((section) => {
+    gsap.utils.toArray<HTMLElement>('.mission-panel, .experience-timeline, .profile-signals, .work-archive, .contact-dock').forEach((section) => {
       gsap.from(section, {
         autoAlpha: 0,
         y: 42,

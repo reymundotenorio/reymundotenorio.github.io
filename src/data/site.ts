@@ -1,6 +1,6 @@
 export type Lang = 'en' | 'es';
 export type MissionId = 'leadership' | 'product' | 'career-sites' | 'automation' | 'frontend' | 'contact';
-export type ArchiveFilterId = 'all' | 'career-sites' | 'product-systems' | 'automation' | 'web';
+export type ArchiveFilterId = 'all' | 'linkedin-projects' | 'product-systems' | 'web' | 'editorial';
 
 export interface Mission {
   id: MissionId;
@@ -20,13 +20,21 @@ export interface ArchiveFilter {
 export interface ArchiveItem {
   name: string;
   category: Exclude<ArchiveFilterId, 'all'>;
-  image?: string;
   url?: string;
   year: string;
+  source: {
+    en: string;
+    es: string;
+  };
   summary: {
     en: string;
     es: string;
   };
+  details: {
+    en: string[];
+    es: string[];
+  };
+  stack: string[];
 }
 
 export interface TimelineItem {
@@ -35,6 +43,35 @@ export interface TimelineItem {
   period: string;
   summary: string;
   signal: string;
+}
+
+export interface SkillGroup {
+  title: string;
+  items: string[];
+}
+
+export interface ProfileFact {
+  title: string;
+  meta: string;
+  detail?: string;
+}
+
+export interface ProfileSignalContent {
+  eyebrow: string;
+  title: string;
+  intro: string;
+  skillsTitle: string;
+  certificationsTitle: string;
+  awardsTitle: string;
+  educationTitle: string;
+  coursesTitle: string;
+  languagesTitle: string;
+  skillGroups: SkillGroup[];
+  certifications: ProfileFact[];
+  awards: ProfileFact[];
+  education: ProfileFact[];
+  courses: ProfileFact[];
+  languages: ProfileFact[];
 }
 
 export const siteMeta: {
@@ -51,14 +88,16 @@ export const siteMeta: {
 export const navItems = {
   en: [
     { label: 'Missions', href: '#missions' },
-    { label: 'Work', href: '#work' },
     { label: 'Experience', href: '#experience' },
+    { label: 'Projects', href: '#work' },
+    { label: 'Signals', href: '#signals' },
     { label: 'Contact', href: '#contact' }
   ],
   es: [
     { label: 'Misiones', href: '#missions' },
-    { label: 'Trabajo', href: '#work' },
     { label: 'Experiencia', href: '#experience' },
+    { label: 'Proyectos', href: '#work' },
+    { label: 'Senales', href: '#signals' },
     { label: 'Contacto', href: '#contact' }
   ]
 };
@@ -213,128 +252,132 @@ export const missions: Record<Lang, Mission[]> = {
 export const archiveFilters: Record<Lang, ArchiveFilter[]> = {
   en: [
     { id: 'all', label: 'All' },
-    { id: 'career-sites', label: 'Career sites' },
+    { id: 'linkedin-projects', label: 'LinkedIn projects' },
     { id: 'product-systems', label: 'Product systems' },
-    { id: 'automation', label: 'Automation' },
-    { id: 'web', label: 'Web' }
+    { id: 'web', label: 'Web' },
+    { id: 'editorial', label: 'Editorial' }
   ],
   es: [
     { id: 'all', label: 'Todo' },
-    { id: 'career-sites', label: 'Career sites' },
+    { id: 'linkedin-projects', label: 'Proyectos LinkedIn' },
     { id: 'product-systems', label: 'Sistemas de producto' },
-    { id: 'automation', label: 'Automatizacion' },
-    { id: 'web', label: 'Web' }
+    { id: 'web', label: 'Web' },
+    { id: 'editorial', label: 'Editorial' }
   ]
 };
 
 export const archiveItems: ArchiveItem[] = [
   {
-    name: 'CareerBuilder Careers',
-    category: 'career-sites',
-    image: 'CareerBuilder-Careers.png',
-    url: 'https://www.careerbuildercareers.com/',
-    year: '2018 - 2020',
+    name: 'UNI Faculty of Sciences and Systems',
+    category: 'linkedin-projects',
+    url: 'http://www.fcys.uni.edu.ni/',
+    year: 'Dec 2016 - Present',
+    source: {
+      en: 'LinkedIn project',
+      es: 'Proyecto LinkedIn'
+    },
     summary: {
-      en: 'Branded career-site ecosystem and responsive hiring experiences.',
-      es: 'Ecosistema de career sites y experiencias responsive de reclutamiento.'
-    }
+      en: 'Member of the development team for the Faculty of Sciences and Systems website at Universidad Nacional de Ingenieria.',
+      es: 'Miembro del equipo de desarrollo del sitio web de la Facultad de Ciencias y Sistemas de la Universidad Nacional de Ingenieria.'
+    },
+    details: {
+      en: ['Associated with Universidad Nacional de Ingenieria.', 'Built with WordPress as content manager.', 'Institutional web presence for an academic faculty.'],
+      es: ['Asociado con Universidad Nacional de Ingenieria.', 'Desarrollado con WordPress como gestor de contenido.', 'Presencia web institucional para una facultad academica.']
+    },
+    stack: ['WordPress', 'PHP', 'HTML', 'CSS']
   },
   {
-    name: 'Royal Caribbean',
-    category: 'career-sites',
-    image: 'Royal-Caribbean-Cruises-Ltd.png',
-    url: 'https://jobs.rclcareers.com/',
-    year: '2019',
+    name: 'Sistema TPF-Supervisor',
+    category: 'linkedin-projects',
+    year: 'May 2016 - Present',
+    source: {
+      en: 'LinkedIn project',
+      es: 'Proyecto LinkedIn'
+    },
     summary: {
-      en: 'Career platform for a global hospitality and cruise brand.',
-      es: 'Plataforma de reclutamiento para una marca global de hospitality y cruises.'
-    }
+      en: 'Desktop system for TPF operations in Granada, covering places, schedules, shifts, staff, overtime, absences, role creation, and payroll calculations.',
+      es: 'Sistema de escritorio para operaciones TPF en Granada: lugares, horarios, turnos, personal, horas extras, ausencias, roles y calculo de planillas.'
+    },
+    details: {
+      en: ['Built in Java with MySQL as database manager.', 'Supports staff scheduling, absences, role generation, timesheet calculations, and reporting.', 'A practical operations system rather than a brochure project.'],
+      es: ['Desarrollado en Java con MySQL como gestor de base de datos.', 'Soporta horarios, ausencias, generacion de roles, calculos de planilla y reportes.', 'Sistema operativo practico, no un proyecto de brochure.']
+    },
+    stack: ['Java', 'MySQL', 'JasperReports', 'Desktop']
   },
   {
-    name: 'KeyBank',
-    category: 'career-sites',
-    image: 'KeyBank.png',
-    url: 'https://careers.key.com/',
-    year: '2019',
+    name: 'Editorial PWA systems',
+    category: 'editorial',
+    year: 'May 2020 - May 2021',
+    source: {
+      en: 'Editorial role, added from verified experience',
+      es: 'Rol Editorial, agregado desde experiencia verificada'
+    },
     summary: {
-      en: 'Employer-brand career experience with responsive CMS delivery.',
-      es: 'Experiencia de employer brand con entrega responsive y CMS.'
-    }
+      en: 'Development and maintenance of web applications through custom WordPress themes, plugins, APIs, AWS infrastructure, and PWA transformation.',
+      es: 'Desarrollo y mantenimiento de aplicaciones web con temas WordPress custom, plugins, APIs, infraestructura AWS y transformacion a PWAs.'
+    },
+    details: {
+      en: ['Used HTML, CSS, Sass, PHP, JavaScript, jQuery, Node.js, Docker, MySQL, MongoDB, Amazon Aurora, and AWS.', 'Focused on scalable deployments and enhanced performance/user experience.', 'Included because the LinkedIn Projects section does not list this work separately.'],
+      es: ['Uso de HTML, CSS, Sass, PHP, JavaScript, jQuery, Node.js, Docker, MySQL, MongoDB, Amazon Aurora y AWS.', 'Enfoque en despliegues escalables y mejoras de performance/UX.', 'Incluido porque la seccion Projects de LinkedIn no lista este trabajo por separado.']
+    },
+    stack: ['WordPress', 'AWS', 'Docker', 'Amazon Aurora', 'PWA']
   },
   {
-    name: 'Securitas Canada',
-    category: 'career-sites',
-    image: 'Securitas-Canada.png',
-    url: 'https://www.securitasjobs.ca/',
-    year: '2019',
-    summary: {
-      en: 'Localized hiring site for security operations across Canada.',
-      es: 'Sitio localizado de reclutamiento para operaciones de seguridad en Canada.'
-    }
-  },
-  {
-    name: 'Dele Peso a sus Pesos',
+    name: 'Dele Peso a sus Pesos financial tools',
     category: 'product-systems',
-    image: 'Dele-Peso-a-sus-Pesos.png',
     url: 'https://www.delepesoasuspesos.com/',
     year: '2016 - 2022',
+    source: {
+      en: 'LinkedIn experience',
+      es: 'Experiencia LinkedIn'
+    },
     summary: {
-      en: 'Financial education tools and calculators integrated into WordPress.',
-      es: 'Herramientas de educacion financiera y calculadoras integradas en WordPress.'
-    }
+      en: 'Suite of financial tools for severance pay, debt level, alimony, net salary, and retirement age, integrated into WordPress.',
+      es: 'Suite de herramientas financieras para liquidacion, deuda, pension alimenticia, salario neto y edad de retiro, integrada en WordPress.'
+    },
+    details: {
+      en: ['Built with HTML, Sass, and jQuery.', 'Turned financial education into calculators users could operate directly.', 'Maintained as part of freelance product work.'],
+      es: ['Construido con HTML, Sass y jQuery.', 'Convirtio educacion financiera en calculadoras operables por usuarios.', 'Mantenido como parte del trabajo freelance de producto.']
+    },
+    stack: ['WordPress', 'HTML', 'Sass', 'jQuery']
   },
   {
-    name: 'Better and Nice Produce Corp.',
+    name: 'Better and Nice Produce Corp. operations',
     category: 'product-systems',
-    image: 'BANP.png',
     url: 'https://banp.herokuapp.com/',
     year: '2016 - 2022',
+    source: {
+      en: 'LinkedIn experience',
+      es: 'Experiencia LinkedIn'
+    },
     summary: {
-      en: 'Commerce and operations system with payments, messaging, and cloud services.',
-      es: 'Sistema comercial y operativo con pagos, mensajeria y servicios cloud.'
-    }
+      en: 'Commercial and ecommerce operations system for a Miami produce business, with real-time features, payments, messaging, and cloud infrastructure.',
+      es: 'Sistema comercial y ecommerce para una empresa de produce en Miami, con tiempo real, pagos, mensajeria e infraestructura cloud.'
+    },
+    details: {
+      en: ['Built with Ruby on Rails, jQuery, Sass, Haml, Bootstrap, and MySQL.', 'Integrated Pusher, AWS S3/RDS, PayPal, Stripe, Twilio, and SendGrid.', 'Covered business operations, not only the public site.'],
+      es: ['Construido con Ruby on Rails, jQuery, Sass, Haml, Bootstrap y MySQL.', 'Integracion con Pusher, AWS S3/RDS, PayPal, Stripe, Twilio y SendGrid.', 'Cubria operaciones del negocio, no solo el sitio publico.']
+    },
+    stack: ['Ruby on Rails', 'MySQL', 'AWS', 'Stripe', 'Twilio']
   },
   {
-    name: 'TPF Supervisor System',
-    category: 'product-systems',
-    image: 'TPF-Supervisor-System.png',
-    year: '2016',
-    summary: {
-      en: 'Java desktop system for schedules, shifts, absences, timesheets, and reports.',
-      es: 'Sistema desktop en Java para horarios, turnos, ausencias, timesheets y reportes.'
-    }
-  },
-  {
-    name: 'License keys generator',
-    category: 'automation',
-    image: 'License-generator.png',
-    year: '2016',
-    summary: {
-      en: 'C# utility for machine-bound license generation and key storage.',
-      es: 'Utilidad en C# para generar licencias ligadas a maquina y guardar llaves.'
-    }
-  },
-  {
-    name: 'UNI Faculty of Sciences and Systems',
+    name: 'Career site production archive',
     category: 'web',
-    image: 'UNI.png',
-    url: 'http://www.fcys.uni.edu.ni/',
-    year: '2016',
+    url: 'https://www.careerbuildercareers.com/',
+    year: '2017 - 2020',
+    source: {
+      en: 'LinkedIn experience',
+      es: 'Experiencia LinkedIn'
+    },
     summary: {
-      en: 'Institutional WordPress site for the Faculty of Sciences and Systems.',
-      es: 'Sitio institucional WordPress para la Facultad de Ciencias y Sistemas.'
-    }
-  },
-  {
-    name: 'Nicaragua Tattoos',
-    category: 'web',
-    image: 'Nicaragua-Tattoos.png',
-    url: 'http://www.nicaraguatattoos.com/',
-    year: '2016',
-    summary: {
-      en: 'Brand website with custom WordPress theme and responsive presentation.',
-      es: 'Sitio de marca con tema WordPress custom y presentacion responsive.'
-    }
+      en: 'Responsive hiring sites and WordPress/PencilBlue builds produced across Accedo Technologies and Accedo Digital.',
+      es: 'Sitios responsive de reclutamiento y builds WordPress/PencilBlue producidos en Accedo Technologies y Accedo Digital.'
+    },
+    details: {
+      en: ['Developed websites with HTML, Sass, Bootstrap, PencilBlue CMS, Photoshop, and Illustrator.', 'Built custom WordPress themes from Adobe XD UI/UX designs.', 'Recognized as Top Web Designer of the Year 2017 at Accedo Technologies.'],
+      es: ['Desarrollo con HTML, Sass, Bootstrap, PencilBlue CMS, Photoshop e Illustrator.', 'Temas WordPress custom desde disenos UI/UX en Adobe XD.', 'Reconocido como Top Web Designer of the Year 2017 en Accedo Technologies.']
+    },
+    stack: ['HTML', 'Sass', 'Bootstrap', 'WordPress', 'PencilBlue']
   }
 ];
 
@@ -343,21 +386,22 @@ export const timelineItems: Record<Lang, TimelineItem[]> = {
     {
       company: 'Nicasource',
       role: 'Engineering Manager / Engineering Team Lead / Software Engineer',
-      period: '2021 - Present',
-      summary: 'Leading engineers, mentoring, improving delivery systems, and building production web and mobile applications.',
+      period: 'May 2021 - Present',
+      summary:
+        'Engineering Manager since Jul 2025, Engineering Team Lead from Jul 2022 to Jul 2025, and Software Engineer since May 2021. Built web and mobile applications with React, TypeScript, Redux, Firebase, REST APIs, Node.js, MySQL, PostgreSQL, and React Native while leading delivery and mentoring engineers.',
       signal: 'Leadership'
     },
     {
       company: 'Scalar',
       role: 'Software Engineer',
-      period: '2022 - Present',
-      summary: 'Product engineering across modern frontend and full-stack workflows for data-rich software products.',
+      period: 'Aug 2022 - Present',
+      summary: 'Remote product engineering across modern frontend and full-stack workflows, with React, Tailwind CSS, TypeScript, Python, Django, Next.js, Storybook, and Cypress in data-rich software products.',
       signal: 'Product'
     },
     {
       company: 'Editorial',
-      role: 'Web Applications Developer',
-      period: '2020 - 2021',
+      role: 'Senior Web Developer',
+      period: 'May 2020 - May 2021',
       summary:
         'Developed and maintained web applications with custom WordPress themes, plugins, and APIs, using HTML, CSS, Sass, PHP, JavaScript, jQuery, Node.js, Docker, MySQL, MongoDB, Amazon Aurora, and AWS to move traditional sites toward scalable PWAs.',
       signal: 'PWAs'
@@ -365,37 +409,48 @@ export const timelineItems: Record<Lang, TimelineItem[]> = {
     {
       company: 'Freelancer',
       role: 'Software Developer',
-      period: '2016 - 2022',
-      summary: 'Custom websites, financial tools, ecommerce operations, desktop systems, and API integrations for varied clients.',
+      period: 'Mar 2016 - Mar 2022',
+      summary:
+        'Built WordPress sites, financial tools, ecommerce operations systems, C# licensing utilities, Java desktop scheduling/payroll software, API integrations, and business systems for clients in Nicaragua and abroad.',
       signal: 'Systems'
     },
     {
       company: 'Accedo Technologies',
       role: 'Senior Development Trainer / Web Designer',
-      period: '2017 - 2020',
-      summary: 'Training development teams, improving technical skills, and building responsive websites from UI/UX designs.',
+      period: 'Mar 2017 - May 2020',
+      summary:
+        'Evaluated and trained development teams, introduced web development technologies, and produced responsive websites with HTML, Sass, Bootstrap, PencilBlue CMS, Photoshop, and Illustrator. Recognized as Top Web Designer of the Year 2017.',
       signal: 'Mentoring'
+    },
+    {
+      company: 'Accedo Digital Inc.',
+      role: 'Web Developer',
+      period: 'Sep 2018 - May 2020',
+      summary:
+        'Designed and developed responsive websites, custom WordPress themes from Adobe XD designs, and internal tools with Python, Node.js, and PHP to support operations and workflow efficiency.',
+      signal: 'Web'
     }
   ],
   es: [
     {
       company: 'Nicasource',
       role: 'Engineering Manager / Engineering Team Lead / Software Engineer',
-      period: '2021 - Presente',
-      summary: 'Liderazgo de ingenieros, mentoring, mejora de sistemas de delivery y construccion de apps web/mobile en produccion.',
+      period: 'May 2021 - Presente',
+      summary:
+        'Engineering Manager desde Jul 2025, Engineering Team Lead de Jul 2022 a Jul 2025 y Software Engineer desde May 2021. Construccion de apps web/mobile con React, TypeScript, Redux, Firebase, REST APIs, Node.js, MySQL, PostgreSQL y React Native, junto con liderazgo de delivery y mentoring.',
       signal: 'Liderazgo'
     },
     {
       company: 'Scalar',
       role: 'Software Engineer',
-      period: '2022 - Presente',
-      summary: 'Product engineering en flujos modernos frontend y full-stack para productos data-rich.',
+      period: 'Aug 2022 - Presente',
+      summary: 'Product engineering remoto en flujos frontend y full-stack con React, Tailwind CSS, TypeScript, Python, Django, Next.js, Storybook y Cypress para productos data-rich.',
       signal: 'Producto'
     },
     {
       company: 'Editorial',
-      role: 'Web Applications Developer',
-      period: '2020 - 2021',
+      role: 'Senior Web Developer',
+      period: 'May 2020 - May 2021',
       summary:
         'Desarrollo y mantenimiento de aplicaciones web con temas, plugins y APIs custom para WordPress, usando HTML, CSS, Sass, PHP, JavaScript, jQuery, Node.js, Docker, MySQL, MongoDB, Amazon Aurora y AWS para transformar sitios tradicionales en PWAs escalables.',
       signal: 'PWAs'
@@ -403,18 +458,139 @@ export const timelineItems: Record<Lang, TimelineItem[]> = {
     {
       company: 'Freelancer',
       role: 'Software Developer',
-      period: '2016 - 2022',
-      summary: 'Websites custom, herramientas financieras, operaciones ecommerce, sistemas desktop e integraciones API.',
+      period: 'Mar 2016 - Mar 2022',
+      summary:
+        'Construccion de sitios WordPress, herramientas financieras, sistemas ecommerce/operativos, utilidades de licencia en C#, software desktop Java para horarios/planillas, integraciones API y sistemas de negocio.',
       signal: 'Sistemas'
     },
     {
       company: 'Accedo Technologies',
       role: 'Senior Development Trainer / Web Designer',
-      period: '2017 - 2020',
-      summary: 'Entrenamiento tecnico de equipos y construccion de sitios responsive desde disenos UI/UX.',
+      period: 'Mar 2017 - May 2020',
+      summary:
+        'Evaluacion y entrenamiento de equipos, introduccion de tecnologias web y produccion de sitios responsive con HTML, Sass, Bootstrap, PencilBlue CMS, Photoshop e Illustrator. Reconocido como Top Web Designer of the Year 2017.',
       signal: 'Mentoring'
+    },
+    {
+      company: 'Accedo Digital Inc.',
+      role: 'Web Developer',
+      period: 'Sep 2018 - May 2020',
+      summary:
+        'Diseno y desarrollo de sitios responsive, temas WordPress custom desde disenos Adobe XD y herramientas internas con Python, Node.js y PHP para operaciones y eficiencia de workflows.',
+      signal: 'Web'
     }
   ]
+};
+
+const skillGroups: SkillGroup[] = [
+  {
+    title: 'Leadership / product',
+    items: ['Engineering Management', 'Engineering Leadership', 'Technology Leadership', 'Leading Development Teams', 'Software Design', 'Software Industry', 'Web Engineering', 'Code Review', 'Scrum']
+  },
+  {
+    title: 'Frontend / app',
+    items: ['React.js', 'TypeScript', 'JavaScript', 'React Native', 'Next.js', 'Tailwind CSS', 'Material-UI', 'Storybook', 'Cypress.io', 'Sass', 'HTML5', 'CSS', 'Bootstrap', 'jQuery']
+  },
+  {
+    title: 'Backend / systems',
+    items: ['Node.js', 'Python', 'Django', 'PHP', 'Ruby on Rails', 'Java', 'C#', 'Kotlin', 'Swift', 'WordPress', 'MySQL', 'MongoDB', 'Microsoft SQL Server', 'AWS', 'Docker']
+  },
+  {
+    title: 'Tools / craft',
+    items: ['OpenAI API', 'Git', 'Linux', 'PSD to HTML', 'Adobe Photoshop', 'Firebase', 'PostgreSQL', 'REST APIs', 'Redux', 'Redux-Thunk']
+  }
+];
+
+const certifications: ProfileFact[] = [
+  { title: 'Curso de OpenAI API', meta: 'Platzi · Issued Jun 2026', detail: 'Credential ID visible on LinkedIn' },
+  { title: 'Dale Carnegie Course: Effective Communications and Human Relations', meta: 'Dale Carnegie Nicaragua · Issued Jun 2024', detail: 'Certificate of Achievement' },
+  { title: 'Make a Website', meta: 'Codecademy', detail: 'Credential available' },
+  { title: 'Introduction to JavaScript', meta: 'Codecademy', detail: 'Credential available' },
+  { title: 'Learn Sass', meta: 'Codecademy', detail: 'Credential available' },
+  { title: 'Rails for Zombies 2', meta: 'Code School', detail: 'Credential available' },
+  { title: 'Deploy a Website', meta: 'Codecademy', detail: 'Credential available' },
+  { title: 'Try Ruby', meta: 'Code School', detail: 'Credential available' },
+  { title: 'Learn Git', meta: 'Codecademy', detail: 'Credential available' },
+  { title: 'Ruby on Rails: Authentication', meta: 'Codecademy', detail: 'Credential available' },
+  { title: 'Learn Ruby on Rails', meta: 'Codecademy', detail: 'Credential available' },
+  { title: 'Learn Ruby', meta: 'Codecademy', detail: 'Credential available' },
+  { title: 'Rails for Zombies Redux', meta: 'Code School', detail: 'Credential available' }
+];
+
+const awards: ProfileFact[] = [
+  { title: 'Taller de Introduccion a React JS', meta: 'Comunidad Drupal Nicaragua · Jun 2019', detail: 'Participant in React JS introductory workshop' },
+  { title: 'Top performance 2017', meta: 'Accedo Technologies · Dec 2017', detail: 'Recognition for top performance as web designer' },
+  { title: 'Designer at the Science and Technology Fair 2016', meta: 'Universidad Nacional de Ingenieria · Sep 2016', detail: 'BiComfort project in manufacturing systems category' },
+  { title: 'Participant of the First Exhibition of Projects and Course Tasks 2016', meta: 'Universidad Nacional de Ingenieria · Jun 2016', detail: 'Aggregate Planning desktop application' },
+  { title: 'Participant of the WordPress Workshop, Design and Development', meta: 'Universidad Nacional de Ingenieria / Mozilla Nicaragua · Apr 2016' },
+  { title: 'Designer at the Science and Technology Fair 2015', meta: 'Universidad Nacional de Ingenieria · Dec 2015', detail: 'Marketing project for furniture advertising improvement' },
+  { title: 'Designer at the Science and Technology Fair 2015', meta: 'Universidad Nacional de Ingenieria · Dec 2015', detail: 'InfoNica website project' },
+  { title: 'Participant of the Web Application Development Workshop with Ruby on Rails', meta: 'Universidad Nacional de Ingenieria · Oct 2015' },
+  { title: 'WordPress Workshop Participant', meta: 'TechCreative · Oct 2015' },
+  { title: 'Designer at XV Expociencia and Technology', meta: 'CNU / CONICYT · Nov 2014', detail: 'Inventory and billing system for Josefina pharmacy' },
+  { title: 'Designer at the Science and Technology Fair 2014', meta: 'Universidad Nacional de Ingenieria · Nov 2014', detail: 'Integrales application in basic sciences category' },
+  { title: 'First place at the 2014 Science and Technology Fair', meta: 'Universidad Nacional de Ingenieria · Nov 2014', detail: 'Pharmaceutical inventory and billing system' },
+  { title: 'First place at the 2014 Science and Technology Fair', meta: 'Universidad Nacional de Ingenieria · Nov 2014', detail: 'Nicaventura website project' },
+  { title: 'Participant in Hack Fest 2014', meta: 'Universidad Nacional de Ingenieria · Nov 2014' },
+  { title: 'Exhibitor at Expociencia and Territorial Technology - Managua 2014', meta: 'CONICYT / CNU / INACTEC / MINED · Sep 2014', detail: 'Inventory and billing system for Josefina pharmacy' },
+  { title: 'First place at the Science and Technology Fair 2013', meta: 'Universidad Nacional de Ingenieria · Nov 2013', detail: 'Inventory and billing system in graphic programming category' },
+  { title: 'Designer at the Science and Technology Fair 2011', meta: 'Universidad Nacional de Ingenieria · Nov 2011', detail: 'Financial status system in console programming category' }
+];
+
+const educationFacts: ProfileFact[] = [
+  { title: 'Universidad Nacional de Ingenieria', meta: 'Degree in Engineering, Systems Engineering · 2011 - 2017' }
+];
+
+const courseFacts: ProfileFact[] = [
+  { title: 'English language (VI Level)', meta: 'English Language Academy' },
+  { title: 'Technical in maintenance and repair of PC', meta: 'Universidad Nacional de Ingenieria' },
+  { title: 'Technical in maintenance and repair of computers', meta: 'Computers of Granada' },
+  { title: 'Training of entrepreneurs and creation of business plans', meta: 'Emprende Training Center' }
+];
+
+const languageFacts: ProfileFact[] = [
+  { title: 'Spanish', meta: 'Native or bilingual proficiency' },
+  { title: 'English', meta: 'Limited working proficiency' }
+];
+
+export const profileSignals: Record<Lang, ProfileSignalContent> = {
+  en: {
+    eyebrow: '// linkedin signal',
+    title: 'Skills, credentials, and recognition',
+    intro: 'A compact view of the profile sections LinkedIn exposes: 69 skills, 13 certifications, 17 honors and awards, courses, education, and languages.',
+    skillsTitle: 'Skills matrix',
+    certificationsTitle: 'Certifications',
+    awardsTitle: 'Honors and awards',
+    educationTitle: 'Education',
+    coursesTitle: 'Courses',
+    languagesTitle: 'Languages',
+    skillGroups,
+    certifications,
+    awards,
+    education: educationFacts,
+    courses: courseFacts,
+    languages: languageFacts
+  },
+  es: {
+    eyebrow: '// senal linkedin',
+    title: 'Skills, credenciales y reconocimientos',
+    intro: 'Vista compacta de las secciones verificadas en LinkedIn: 69 skills, 13 certificaciones, 17 premios/reconocimientos, cursos, educacion e idiomas.',
+    skillsTitle: 'Matriz de skills',
+    certificationsTitle: 'Certificaciones',
+    awardsTitle: 'Premios y reconocimientos',
+    educationTitle: 'Educacion',
+    coursesTitle: 'Cursos',
+    languagesTitle: 'Idiomas',
+    skillGroups,
+    certifications,
+    awards,
+    education: educationFacts,
+    courses: courseFacts,
+    languages: [
+      { title: 'Espanol', meta: 'Nativo o bilingue' },
+      { title: 'Ingles', meta: 'Competencia laboral limitada' }
+    ]
+  }
 };
 
 export const content = {
@@ -456,13 +632,13 @@ export const content = {
       accept: 'Accept mission'
     },
     work: {
-      number: '01',
-      title: 'Selected Work',
+      number: '03',
+      title: 'Projects',
       intro:
-        'A curated archive of shipped systems, career platforms, web builds, desktop tools, integrations, and automation.',
-      archiveLabel: 'Curated archive',
-      logoNote: 'Selected logos from historical builds',
-      viewCase: 'View case',
+        'LinkedIn-backed project dossiers first, with the Editorial PWA work added from verified experience because it is not listed as a LinkedIn project.',
+      archiveLabel: 'Project dossiers',
+      logoNote: 'Text-first project evidence',
+      viewCase: 'Open link',
       items: [
         {
           kind: 'Career platforms',
@@ -488,9 +664,9 @@ export const content = {
       ]
     },
     experience: {
-      number: '02',
+      number: '01',
       title: 'Experience',
-      intro: 'Teams, roles, and responsibilities from hands-on delivery to engineering leadership.',
+      intro: 'Roles, dates, responsibilities, and technical scope pulled from the current LinkedIn profile, with Editorial kept anonymized.',
       items: timelineItems.en.map((item) => ({
         company: item.company,
         role: item.role,
@@ -569,13 +745,13 @@ export const content = {
       accept: 'Aceptar mision'
     },
     work: {
-      number: '01',
-      title: 'Trabajo seleccionado',
+      number: '03',
+      title: 'Proyectos',
       intro:
-        'Un archivo curado de sistemas en produccion, career platforms, sitios web, herramientas desktop, integraciones y automatizacion.',
-      archiveLabel: 'Archivo curado',
-      logoNote: 'Logos seleccionados del historico',
-      viewCase: 'Ver caso',
+        'Dossiers de proyectos basados primero en LinkedIn, con Editorial agregado desde experiencia verificada porque no aparece como proyecto en LinkedIn.',
+      archiveLabel: 'Dossiers de proyecto',
+      logoNote: 'Evidencia textual de proyectos',
+      viewCase: 'Abrir enlace',
       items: [
         {
           kind: 'Career platforms',
@@ -601,9 +777,9 @@ export const content = {
       ]
     },
     experience: {
-      number: '02',
+      number: '01',
       title: 'Experiencia',
-      intro: 'Equipos, roles y responsabilidades desde ejecucion hands-on hasta liderazgo tecnico.',
+      intro: 'Roles, fechas, responsabilidades y alcance tecnico desde el perfil actual de LinkedIn, manteniendo Editorial anonimizado.',
       items: timelineItems.es.map((item) => ({
         company: item.company,
         role: item.role,

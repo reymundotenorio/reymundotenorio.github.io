@@ -28,6 +28,9 @@ const pagePath = lang === 'en' ? '/en/' : '/es/';
 const alternateHref = lang === 'en' ? '/es/' : '/en/';
 const alternateLabel = lang === 'en' ? 'ES' : 'EN';
 const missionLinks = missions.filter((mission) => mission.id !== 'contact');
+const navLinkLabels = lang === 'en'
+  ? { experience: 'Experience', projects: 'Projects' }
+  : { experience: 'Experiencia', projects: 'Proyectos' };
 ---
 
 <section class="mission-control" aria-labelledby="hero-title">
@@ -45,8 +48,8 @@ const missionLinks = missions.filter((mission) => mission.id !== 'contact');
       <i></i>
     </a>
     <nav class="mission-control__links" aria-label="Mission shortcuts">
-      <a href={`${pagePath}#work`}>Work</a>
-      <a href={`${pagePath}#experience`}>Experience</a>
+      <a href={`${pagePath}#experience`}>{navLinkLabels.experience}</a>
+      <a href={`${pagePath}#work`}>{navLinkLabels.projects}</a>
     </nav>
     <a class="mission-control__contact" href={`mailto:${siteMeta.email}`}>
       <span>{hero.secondaryCta}</span>

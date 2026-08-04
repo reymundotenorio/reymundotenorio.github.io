@@ -15,7 +15,7 @@ const { lang, filters, items, title, intro, viewCase } = Astro.props;
 
 <section class="work-archive" id="work" aria-labelledby="work-title">
   <div class="section-heading">
-    <span>// selected work</span>
+    <span>// projects</span>
     <h2 id="work-title">{title}</h2>
     <p>{intro}</p>
   </div>
@@ -35,23 +35,28 @@ const { lang, filters, items, title, intro, viewCase } = Astro.props;
 
   <div class="archive-grid">
     {items.map((item, index) => (
-      <a
+      <article
         class="archive-item"
-        href={item.url ?? '#contact'}
         data-archive-item
         data-category={item.category}
-        target={item.url ? '_blank' : undefined}
-        rel={item.url ? 'noreferrer' : undefined}
       >
         <span class="archive-item__index">{String(index + 1).padStart(2, '0')}</span>
-        <span class="archive-item__logo">
-          {item.image && <img src={`/images/logos/${item.image}`} alt="" loading="lazy" decoding="async" />}
-        </span>
+        <span class="archive-item__source">{item.source[lang]}</span>
         <span class="archive-item__year">{item.year}</span>
-        <strong>{item.name}</strong>
+        <h3>{item.name}</h3>
         <p>{item.summary[lang]}</p>
-        <span class="archive-item__cta">{viewCase}</span>
-      </a>
+        <ul>
+          {item.details[lang].map((detail) => <li>{detail}</li>)}
+        </ul>
+        <div class="archive-item__stack">
+          {item.stack.map((stackItem) => <span>{stackItem}</span>)}
+        </div>
+        {item.url && (
+          <a class="archive-item__cta" href={item.url} target="_blank" rel="noreferrer">
+            {viewCase}
+          </a>
+        )}
+      </article>
     ))}
   </div>
 </section>

@@ -1,11 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import type { Lang } from '../data/site';
-import { archiveFilters, archiveItems, content, missions, timelineItems } from '../data/site';
+import { archiveFilters, archiveItems, content, missions, profileSignals, timelineItems } from '../data/site';
 import ContactDock from './ContactDock.astro';
 import ExperienceTimeline from './ExperienceTimeline.astro';
 import MissionControl from './MissionControl.astro';
 import MissionPanel from './MissionPanel.astro';
+import ProfileSignals from './ProfileSignals.astro';
 import WorkArchive from './WorkArchive.astro';
 
 interface Props {
@@ -22,6 +23,8 @@ const page = content[lang];
     <section class="mission-panels" aria-label="Mission details">
       {missions[lang].map((mission, index) => <MissionPanel mission={mission} active={index === 0} />)}
     </section>
+    <ExperienceTimeline items={timelineItems[lang]} title={page.experience.title} intro={page.experience.intro} />
+    <ProfileSignals content={profileSignals[lang]} />
     <WorkArchive
       lang={lang}
       filters={archiveFilters[lang]}
@@ -30,7 +33,6 @@ const page = content[lang];
       intro={page.work.intro}
       viewCase={page.work.viewCase}
     />
-    <ExperienceTimeline items={timelineItems[lang]} title={page.experience.title} intro={page.experience.intro} />
     <ContactDock lang={lang} contact={page.contact} />
   </main>
 
