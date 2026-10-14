@@ -1,7 +1,7 @@
 import { additionalProjects, recentProjects } from './projects';
 
 export type Lang = 'en' | 'es';
-export type MissionId = 'leadership' | 'product' | 'career-sites' | 'automation' | 'frontend' | 'contact';
+export type MissionId = 'leadership' | 'product' | 'web-engineering' | 'automation' | 'frontend' | 'contact';
 export type ArchiveFilterId = 'all' | 'linkedin-projects' | 'product-systems' | 'developer-tools' | 'automation' | 'web' | 'editorial';
 
 export interface Mission {
@@ -112,13 +112,13 @@ export const missions: Record<Lang, Mission[]> = {
       stat: 'Full-stack'
     },
     {
-      id: 'career-sites',
+      id: 'web-engineering',
       label: 'M-03',
-      title: 'Career Sites',
-      summary: 'A broad archive of branded hiring sites and responsive web builds.',
-      proof: ['CareerBuilder Careers', 'Royal Caribbean', 'KeyBank', 'Securitas Canada'],
-      stack: ['HTML', 'Sass', 'WordPress'],
-      stat: '37 brands'
+      title: 'Web Engineering',
+      summary: 'Custom websites, CMS platforms, and web applications built around real business needs.',
+      proof: ['Custom websites and web applications', 'WordPress themes, plugins, and APIs', 'Responsive experiences and PWA delivery'],
+      stack: ['WordPress', 'PHP', 'JavaScript'],
+      stat: 'Web + CMS'
     },
     {
       id: 'automation',
@@ -168,13 +168,13 @@ export const missions: Record<Lang, Mission[]> = {
       stat: 'Full-stack'
     },
     {
-      id: 'career-sites',
+      id: 'web-engineering',
       label: 'M-03',
-      title: 'Career sites',
-      summary: 'Archivo amplio de sitios de reclutamiento, marcas y experiencias responsive.',
-      proof: ['CareerBuilder Careers', 'Royal Caribbean', 'KeyBank', 'Securitas Canada'],
-      stack: ['HTML', 'Sass', 'WordPress'],
-      stat: '37 marcas'
+      title: 'Ingeniería web',
+      summary: 'Sitios a medida, plataformas CMS y aplicaciones web para necesidades reales de negocio.',
+      proof: ['Sitios y aplicaciones web a medida', 'Temas, plugins y APIs para WordPress', 'Experiencias responsive y desarrollo de PWAs'],
+      stack: ['WordPress', 'PHP', 'JavaScript'],
+      stat: 'Web + CMS'
     },
     {
       id: 'automation',
