@@ -3,15 +3,22 @@
   "version": "2.0.0",
   "private": true,
   "type": "module",
+  "packageManager": "pnpm@11.25.0",
   "scripts": {
     "dev": "astro dev --host 127.0.0.1",
-    "build": "astro build",
-    "preview": "astro preview --host 127.0.0.1"
+    "check": "astro check",
+    "build": "astro check && astro build",
+    "preview": "astro preview --host 127.0.0.1",
+    "publish:static": "pnpm build && node scripts/publish-static.mjs"
   },
   "dependencies": {
-    "astro": "latest",
-    "gsap": "latest",
-    "three": "latest"
+    "astro": "7.1.6",
+    "gsap": "3.15.0",
+    "three": "0.185.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "@types/three": "0.185.4",
+    "typescript": "6.0.3"
+  }
 }
