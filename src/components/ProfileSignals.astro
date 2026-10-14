@@ -1,14 +1,18 @@
 ---
-import type { ProfileFact, ProfileSignalContent } from '../data/site';
+import { siteMeta, type Lang, type ProfileFact, type ProfileSignalContent } from '../data/site';
 
 interface Props {
+  lang: Lang;
   content: ProfileSignalContent;
 }
 
-const { content } = Astro.props;
+const { lang, content } = Astro.props;
+const featuredAwards = [1, 11, 12, 15];
+const featured = featuredAwards.map((index) => content.awards[index]);
+const otherAwards = content.awards.filter((_, index) => !featuredAwards.includes(index));
 
 function factMeta(fact: ProfileFact): string {
-  return fact.detail ? `${fact.meta} / ${fact.detail}` : fact.meta;
+  return fact.detail ? `${fact.meta} · ${fact.detail}` : fact.meta;
 }
 ---
 
@@ -43,13 +47,21 @@ function factMeta(fact: ProfileFact): string {
         <h3>{content.certificationsTitle}</h3>
       </div>
       <ol class="signal-list">
-        {content.certifications.map((fact) => (
-          <li>
+        {content.certifications.slice(0, 4).map((fact) => (
+          <li data-certification>
             <strong>{fact.title}</strong>
             <span>{factMeta(fact)}</span>
+            {fact.url && <a class="credential-link" data-credential-link href={fact.url} target="_blank" rel="noreferrer" aria-label={`${lang === 'en' ? 'View diploma' : 'Ver diploma'}: ${fact.title}`}>{lang === 'en' ? 'View diploma' : 'Ver diploma'}<span aria-hidden="true">↗</span></a>}
           </li>
         ))}
       </ol>
+      <details class="signal-disclosure">
+        <summary>{lang === 'en' ? 'All certifications' : 'Todas las certificaciones'}<span>{content.certifications.length}</span></summary>
+        <ol class="signal-list" start="5">
+          {content.certifications.slice(4).map((fact) => <li data-certification><strong>{fact.title}</strong><span>{factMeta(fact)}</span></li>)}
+        </ol>
+      </details>
+      <a class="credential-link" href={`${siteMeta.linkedin}details/certifications/`} target="_blank" rel="noreferrer">{lang === 'en' ? 'Latest credentials on LinkedIn' : 'Últimas credenciales en LinkedIn'}<span aria-hidden="true">↗</span></a>
     </article>
 
     <article class="signal-panel">
@@ -57,14 +69,20 @@ function factMeta(fact: ProfileFact): string {
         <span>03</span>
         <h3>{content.awardsTitle}</h3>
       </div>
-      <ol class="signal-list signal-list--compact">
-        {content.awards.map((fact) => (
+      <ol class="signal-list">
+        {featured.map((fact) => (
           <li>
             <strong>{fact.title}</strong>
             <span>{factMeta(fact)}</span>
           </li>
         ))}
       </ol>
+      <details class="signal-disclosure">
+        <summary>{lang === 'en' ? 'All recognition' : 'Todos los reconocimientos'}<span>{content.awards.length}</span></summary>
+        <ol class="signal-list" start="5">
+          {otherAwards.map((fact) => <li><strong>{fact.title}</strong><span>{factMeta(fact)}</span></li>)}
+        </ol>
+      </details>
     </article>
 
     <aside class="signal-sidebar">

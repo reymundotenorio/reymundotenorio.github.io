@@ -1,5 +1,7 @@
 ---
 import type { ArchiveFilter, ArchiveItem, Lang } from '../data/site';
+import CareerArchive from './CareerArchive.astro';
+import ProjectCard from './ProjectCard.astro';
 
 interface Props {
   lang: Lang;
@@ -11,52 +13,42 @@ interface Props {
 }
 
 const { lang, filters, items, title, intro, viewCase } = Astro.props;
+const featured = items.filter((item) => item.featured);
+const archive = items.filter((item) => !item.featured);
 ---
 
 <section class="work-archive" id="work" aria-labelledby="work-title">
   <div class="section-heading">
-    <span>// projects</span>
+    <span>02 / {lang === 'en' ? 'Selected work' : 'Trabajo seleccionado'}</span>
     <h2 id="work-title">{title}</h2>
     <p>{intro}</p>
   </div>
 
-  <div class="archive-filters" aria-label="Work filters">
+  <div class="archive-filters" role="group" aria-label={lang === 'en' ? 'Project filters' : 'Filtros de proyectos'}>
     {filters.map((filter) => (
       <button
         type="button"
         data-archive-filter
         data-filter={filter.id}
+        aria-pressed={filter.id === 'all' ? 'true' : 'false'}
         class:list={[filter.id === 'all' && 'is-active']}
       >
         {filter.label}
       </button>
     ))}
   </div>
+  <p class="sr-only" data-archive-status aria-live="polite" aria-atomic="true"></p>
 
-  <div class="archive-grid">
-    {items.map((item, index) => (
-      <article
-        class="archive-item"
-        data-archive-item
-        data-category={item.category}
-      >
-        <span class="archive-item__index">{String(index + 1).padStart(2, '0')}</span>
-        <span class="archive-item__source">{item.source[lang]}</span>
-        <span class="archive-item__year">{item.year}</span>
-        <h3>{item.name}</h3>
-        <p>{item.summary[lang]}</p>
-        <ul>
-          {item.details[lang].map((detail) => <li>{detail}</li>)}
-        </ul>
-        <div class="archive-item__stack">
-          {item.stack.map((stackItem) => <span>{stackItem}</span>)}
-        </div>
-        {item.url && (
-          <a class="archive-item__cta" href={item.url} target="_blank" rel="noreferrer">
-            {viewCase}
-          </a>
-        )}
-      </article>
-    ))}
+  <div class="archive-grid" data-archive-group>
+    {featured.map((item, index) => <ProjectCard item={item} index={index} lang={lang} viewCase={viewCase} />)}
   </div>
+
+  <details class="archive-more" data-archive-group data-archive-more>
+    <summary>{lang === 'en' ? 'Client work & early projects' : 'Clientes y primeros proyectos'}<span data-archive-count>{archive.length}</span></summary>
+    <div class="archive-grid">
+      {archive.map((item, index) => <ProjectCard item={item} index={index + featured.length} lang={lang} viewCase={viewCase} />)}
+    </div>
+  </details>
+
+  <CareerArchive lang={lang} />
 </section>

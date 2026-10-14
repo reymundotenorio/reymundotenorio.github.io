@@ -1,0 +1,35 @@
+---
+import { careerSites } from '../data/career-sites';
+import type { Lang } from '../data/site';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const featuredNames = new Set(['CareerBuilder Careers', 'Royal Caribbean Cruises Ltd.', 'Hilton', 'KeyBank', 'Spin Master', 'Securitas Canada', 'TruGreen', 'PODS', "Nando's", 'Butterball', 'Teleperformance Greece', 'ITW']);
+const featured = careerSites.filter((site) => featuredNames.has(site.name));
+const remaining = careerSites.filter((site) => !featuredNames.has(site.name));
+---
+
+<section class="career-archive" data-career-archive aria-labelledby="careers-title">
+  <div class="career-archive__heading">
+    <div>
+      <span class="career-archive__period">2017 - 2020 / Accedo Technologies + Accedo Digital</span>
+      <h3 id="careers-title">{lang === 'en' ? 'The career-site years' : 'Los años de career sites'}</h3>
+      <p>{lang === 'en'
+        ? 'Branded hiring websites built as part of the Accedo teams. Responsive layouts, custom themes, and CMS implementation across industries.'
+        : 'Sitios de reclutamiento desarrollados como parte de los equipos de Accedo. Layouts responsive, temas a medida e implementación de CMS para distintas industrias.'}</p>
+    </div>
+    <p class="career-archive__count"><strong>{careerSites.length}</strong><span>{lang === 'en' ? 'brands' : 'marcas'}</span></p>
+  </div>
+  <ul class="career-index">
+    {featured.map((site) => <li data-career-site><img src={`/images/logos/${site.image}`} alt="" width="48" height="36" loading="lazy" decoding="async" /><span>{site.name}</span></li>)}
+  </ul>
+  <details class="career-archive__more">
+    <summary>{lang === 'en' ? 'More brands from the archive' : 'Más marcas del archivo'}<span>+{remaining.length}</span></summary>
+    <ul class="career-index">
+      {remaining.map((site) => <li data-career-site><img src={`/images/logos/${site.image}`} alt="" width="48" height="36" loading="lazy" decoding="async" /><span>{site.name}</span></li>)}
+    </ul>
+  </details>
+  <p class="career-archive__note">{lang === 'en'
+    ? 'Historical development work. The original sites may have changed or been retired; these entries do not represent their current versions.'
+    : 'Trabajo de desarrollo histórico. Los sitios originales pueden haber cambiado o dejado de existir; estas entradas no representan sus versiones actuales.'}</p>
+</section>

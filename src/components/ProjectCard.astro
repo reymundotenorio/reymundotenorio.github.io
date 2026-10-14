@@ -1,0 +1,36 @@
+---
+import type { ArchiveItem, Lang } from '../data/site';
+
+interface Props {
+  item: ArchiveItem;
+  index: number;
+  lang: Lang;
+  viewCase: string;
+}
+
+const { item, index, lang, viewCase } = Astro.props;
+const linkLabel = item.linkKind === 'code' ? (lang === 'en' ? 'View code' : 'Ver código') : viewCase;
+const status = item.status === 'private'
+  ? (lang === 'en' ? 'Private project' : 'Proyecto privado')
+  : (lang === 'en' ? 'Historical project' : 'Proyecto histórico');
+---
+
+<article class="archive-item" data-archive-item data-category={item.category}>
+  <span class="archive-item__index">{String(index + 1).padStart(2, '0')}</span>
+  <span class="archive-item__source">{item.source[lang]}</span>
+  <span class="archive-item__year">{item.year}</span>
+  <h3>{lang === 'es' ? item.nameEs ?? item.name : item.name}</h3>
+  <p>{item.summary[lang]}</p>
+  <details class="archive-item__details">
+    <summary>{lang === 'en' ? 'Scope & implementation' : 'Alcance e implementación'}</summary>
+    <ul>{item.details[lang].map((detail) => <li>{detail}</li>)}</ul>
+  </details>
+  <div class="archive-item__stack">
+    {item.stack.map((stackItem) => <span>{stackItem}</span>)}
+  </div>
+  {item.url ? (
+    <a class="archive-item__cta" href={item.url} target="_blank" rel="noreferrer" aria-label={`${linkLabel}: ${item.name}`}>
+      {linkLabel}<span aria-hidden="true">↗</span>
+    </a>
+  ) : <span class="archive-item__archived">{status}</span>}
+</article>

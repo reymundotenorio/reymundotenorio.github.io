@@ -18,13 +18,18 @@ const page = content[lang];
 ---
 
 <BaseLayout lang={lang} title={page.seoTitle} description={page.seoDescription}>
-  <main class="portfolio" data-experience-root data-lang={lang}>
+  <noscript>
+    <style is:inline>
+      .mission-control__nodes, .archive-filters { display: none; }
+      .mission-panel { display: grid; }
+    </style>
+  </noscript>
+  <main class="portfolio" id="main-content" tabindex="-1" data-experience-root data-lang={lang}>
     <MissionControl lang={lang} hero={page.hero} labels={page.missions} missions={missions[lang]} />
-    <section class="mission-panels" aria-label="Mission details">
+    <section class="mission-panels" aria-label={lang === 'en' ? 'Mission details' : 'Detalles de misión'}>
       {missions[lang].map((mission, index) => <MissionPanel mission={mission} active={index === 0} />)}
     </section>
-    <ExperienceTimeline items={timelineItems[lang]} title={page.experience.title} intro={page.experience.intro} />
-    <ProfileSignals content={profileSignals[lang]} />
+    <ExperienceTimeline lang={lang} items={timelineItems[lang]} title={page.experience.title} intro={page.experience.intro} />
     <WorkArchive
       lang={lang}
       filters={archiveFilters[lang]}
@@ -33,11 +38,18 @@ const page = content[lang];
       intro={page.work.intro}
       viewCase={page.work.viewCase}
     />
+    <ProfileSignals lang={lang} content={profileSignals[lang]} />
     <ContactDock lang={lang} contact={page.contact} />
   </main>
 
+  <nav class="section-dock" aria-label={lang === 'en' ? 'Portfolio sections' : 'Secciones del portfolio'}>
+    <a href="#experience" data-section-link><span>01</span>{page.experience.title}</a>
+    <a href="#work" data-section-link><span>02</span>{page.work.title}</a>
+    <a href="#signals" data-section-link><span>03</span>{lang === 'en' ? 'Credentials' : 'Credenciales'}</a>
+  </nav>
+
   <footer class="site-footer">
-    <span>© 2026 Reymundo Tenorio</span>
+    <span>© {new Date().getFullYear()} Reymundo Tenorio</span>
     <span>{page.footer}</span>
   </footer>
 </BaseLayout>

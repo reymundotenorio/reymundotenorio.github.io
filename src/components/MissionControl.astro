@@ -1,6 +1,5 @@
 ---
 import type { Lang, Mission } from '../data/site';
-import { siteMeta } from '../data/site';
 
 interface Props {
   lang: Lang;
@@ -10,16 +9,13 @@ interface Props {
     summary: string;
     primaryCta: string;
     secondaryCta: string;
-    status: string;
     suggestion: string;
     consoleCommand: string;
-    consoleResult: string;
   };
   missions: Mission[];
   labels: {
     label: string;
     consoleTitle: string;
-    accept: string;
   };
 }
 
@@ -29,8 +25,8 @@ const alternateHref = lang === 'en' ? '/es/' : '/en/';
 const alternateLabel = lang === 'en' ? 'ES' : 'EN';
 const missionLinks = missions.filter((mission) => mission.id !== 'contact');
 const navLinkLabels = lang === 'en'
-  ? { experience: 'Experience', projects: 'Projects' }
-  : { experience: 'Experiencia', projects: 'Proyectos' };
+  ? { experience: 'Experience', projects: 'Projects', credentials: 'Credentials' }
+  : { experience: 'Experiencia', projects: 'Proyectos', credentials: 'Credenciales' };
 ---
 
 <section class="mission-control" aria-labelledby="hero-title">
@@ -39,25 +35,25 @@ const navLinkLabels = lang === 'en'
     <span class="field-grid"></span>
     <span class="field-cross field-cross--left"></span>
     <span class="field-cross field-cross--right"></span>
-    <span class="field-coordinates">11.9299 N<br />85.9560 W</span>
   </div>
 
-  <header class="mission-control__nav" aria-label="Primary navigation">
-    <a class="mission-control__brand" href={pagePath} aria-label="Reymundo Tenorio home">
+  <header class="mission-control__nav" aria-label={lang === 'en' ? 'Primary navigation' : 'Navegación principal'}>
+    <a class="mission-control__brand" href={pagePath} aria-label={lang === 'en' ? 'RT · Reymundo Tenorio home' : 'RT · Inicio de Reymundo Tenorio'}>
       <span>RT</span>
       <i></i>
     </a>
-    <nav class="mission-control__links" aria-label="Mission shortcuts">
+    <nav class="mission-control__links" aria-label={lang === 'en' ? 'Portfolio sections' : 'Secciones del portfolio'}>
       <a href={`${pagePath}#experience`}>{navLinkLabels.experience}</a>
       <a href={`${pagePath}#work`}>{navLinkLabels.projects}</a>
+      <a href={`${pagePath}#signals`}>{navLinkLabels.credentials}</a>
     </nav>
-    <a class="mission-control__contact" href={`mailto:${siteMeta.email}`}>
+    <a class="mission-control__contact" href="#contact">
       <span>{hero.secondaryCta}</span>
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M7 17 17 7M9 7h8v8" />
       </svg>
     </a>
-    <a class="mission-control__lang" href={alternateHref} hreflang={alternateLabel.toLowerCase()} aria-label={`Switch to ${alternateLabel}`}>
+    <a class="mission-control__lang" data-language-switch href={alternateHref} hreflang={alternateLabel.toLowerCase()} aria-label={lang === 'en' ? 'EN / ES · Cambiar a español' : 'ES / EN · Switch to English'}>
       <strong>{lang.toUpperCase()}</strong>
       <span>/</span>
       <span>{alternateLabel}</span>
@@ -69,13 +65,16 @@ const navLinkLabels = lang === 'en'
       <span></span>
       {labels.label}
     </p>
-    <h1 id="hero-title" data-typewrite={hero.name}>{hero.name}<i aria-hidden="true"></i></h1>
-    <p class="mission-control__role" data-autocomplete={hero.role}>{hero.role}</p>
-    <p class="mission-control__suggestion">{hero.suggestion}<kbd>Tab</kbd></p>
+    <h1 id="hero-title" data-typewrite={hero.name}>
+      <span class="sr-only">{hero.name}</span>
+      {hero.name.split(' ').map((word, index) => <span class="name-line" aria-hidden="true" style={`--letters: ${word.length}; --delay: ${index * 600}ms`}><span>{word}</span><i></i></span>)}
+    </h1>
+    <p class="mission-control__role" data-autocomplete={hero.role}><span>{hero.role}</span></p>
+    <p class="mission-control__suggestion"><span aria-hidden="true">↳</span> {hero.suggestion}</p>
     <p class="mission-control__summary">{hero.summary}</p>
     <div class="mission-control__actions">
-      <a href="#missions" class="button button--primary">
-        <span>{labels.accept}</span>
+      <a href="#experience" class="button button--primary">
+        <span>{hero.primaryCta}</span>
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="m6 12 4 4 8-8" />
         </svg>
@@ -163,8 +162,9 @@ const navLinkLabels = lang === 'en'
       <span>{labels.consoleTitle}</span>
       <i></i><i></i><i></i>
     </div>
-    <p>{hero.consoleCommand}</p>
-    <strong>{hero.consoleResult}</strong>
+    <p data-console-command>{hero.consoleCommand}</p>
+    <strong data-console-output aria-live="polite" aria-atomic="true">{hero.role}</strong>
     <p>rt@mission-control:~$ <span aria-hidden="true"></span></p>
   </aside>
+  <a class="hero-scroll" href="#experience"><span>{lang === 'en' ? 'Explore the timeline' : 'Explorar trayectoria'}</span><span aria-hidden="true">↓</span></a>
 </section>
