@@ -12,7 +12,7 @@
     "publish:static": "pnpm build && node scripts/publish-static.mjs"
   },
   "dependencies": {
-    "astro": "7.2.8",
+    "astro": "7.3.3",
     "gsap": "3.15.0",
     "three": "0.185.1"
   },
