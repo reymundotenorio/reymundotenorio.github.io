@@ -37,14 +37,19 @@ cross-checked against the original portfolio source archive.
 - 33 curated projects with bilingual cases: websites first, apps/platforms
   separately, and earlier work in a native disclosure. Six websites are featured.
 - 18 credentials include the October 2026 OpenClaw and Claude Code diplomas.
-- Media in `public/images/projects` is optimized from supplied Isning captures,
+- Media in `public/images/projects` is optimized from supplied archived captures,
   current public website captures (November 2026), or original brand artwork.
   Captures are labeled by source; current websites can contain later work.
 - Microtec is maintenance, Dele Peso a sus Pesos is financial-tool development,
-  and Claris is work through Nicasource. Column Five/Super Star are scoped
+  and Claris is website development. Column Five/Super Star are scoped
   contributions. Blackstone and AISA are excluded due to uncertain scope.
-- Pouch is the former Bahia Nica Portal. Private cases use high-level descriptions
-  and brand artwork, never reconstructed production screenshots or records.
+- Pouch is the former Bahia Nica Portal. Its original frontend components were
+  rendered locally with synthetic DEMO records, without connecting to a backend.
+  IVL uses archived public promotional screens, retaining their original watermarks.
+  Neither case exposes customer records or private source code.
+- Freelance project presentation omits intermediary names at the owner's request.
+  Development scope and supplied-design credit remain explicit. The anonymous
+  headless agency website case has no branded screenshot or external link.
 - The 37 career-site brands identify historical development work through Accedo,
   not current site implementations or direct employment by those brands.
 - Freelance project date ranges describe the engagement period where a more

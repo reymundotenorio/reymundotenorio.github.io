@@ -25,6 +25,8 @@
 .project-media:hover img { object-position: center; }
 .project-media--artwork { background: #e8ebed; }
 .project-media--artwork img { object-fit: contain; padding: 28px; }
+.project-media__screens { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; height: 100%; padding: 16px; background: #e4c0bc; }
+.project-media__screens img { object-fit: contain; object-position: center; }
 .project-media > span { position: absolute; right: 12px; bottom: 12px; padding: 6px 9px; color: #fff; background: #111e; font: 10px/1.4 var(--font-mono); }
 .project-media:focus-visible, .archive-item a:focus-visible { outline: 2px solid var(--color-cyan); outline-offset: 4px; }
 
@@ -47,7 +49,11 @@
 .case-role > span { color: var(--color-dim); font-size: 11px; }
 .case-external { display: inline-flex; align-items: center; gap: 20px; min-height: 48px; color: var(--color-cyan); font: 12px/1.5 var(--font-mono); text-decoration: none; border-bottom: 1px solid var(--color-cyan); }
 .case-access { color: var(--color-amber); font: 11px/1.6 var(--font-mono); margin: 0; }
-.case-media { margin: 0; }
+.case-captures { display: grid; gap: 28px; }
+.case-captures--mobile { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; }
+.case-captures--mobile .case-media img { max-height: none; }
+.case-captures--mobile figcaption { flex-wrap: wrap; gap: 8px; }
+.case-media { margin: 0; min-width: 0; }
 .case-media img { display: block; width: 100%; height: auto; max-height: 1000px; object-fit: contain; object-position: top; background: #101214; }
 .case-media--artwork > a { display: flex; justify-content: center; background: #e8ebed; }
 .case-media--artwork img { width: 100%; max-width: 580px; height: 350px; object-fit: contain; padding: 48px; background: none; }
@@ -82,6 +88,8 @@
   .case-context { font-size: 10px; }
   .case-intro__bottom { align-items: start; flex-direction: column; gap: 22px; }
   .case-media--artwork img { height: 260px; padding: 32px; }
+  .case-captures--mobile { grid-template-columns: minmax(0, 1fr); max-width: 390px; margin-inline: auto; }
+  .project-media__screens { padding: 10px; gap: 6px; }
   .case-media figcaption { flex-wrap: wrap; gap: 8px; font-size: 10px; }
   .case-scope { grid-template-columns: 1fr; gap: 40px; margin-top: 30px; padding-top: 30px; }
   .case-scope h2 { font-size: 20px; }

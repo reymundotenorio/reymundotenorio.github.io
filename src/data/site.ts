@@ -20,6 +20,15 @@ export interface ArchiveFilter {
   label: string;
 }
 
+export interface ProjectMedia {
+  src: string;
+  width: number;
+  height: number;
+  alt: { en: string; es: string };
+  caption?: { en: string; es: string };
+  type: 'current' | 'archived' | 'artwork' | 'demo' | 'store';
+}
+
 export interface ArchiveItem {
   slug: string;
   name: string;
@@ -33,13 +42,8 @@ export interface ArchiveItem {
   kind?: 'website' | 'application' | 'archive';
   role?: { en: string; es: string };
   credit?: { en: string; es: string };
-  preview?: {
-    src: string;
-    width: number;
-    height: number;
-    alt: { en: string; es: string };
-    type: 'current' | 'archived' | 'artwork';
-  };
+  preview?: ProjectMedia;
+  gallery?: ProjectMedia[];
   source: {
     en: string;
     es: string;

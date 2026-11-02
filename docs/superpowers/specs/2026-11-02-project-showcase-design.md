@@ -12,12 +12,12 @@ Visitors evaluating website work must see real examples and reach a project page
 - Apps, platforms and tools follow as a separate group. Describe IVL mobile, Pouch (formerly the Bahia Nica Portal) and Lighthouse using confirmed local implementation and the user's attribution.
 - Earlier work remains available. Career sites are a historical collection, not featured live websites.
 - Cases contain contribution, team/agency attribution, technology, access status and original artwork or public/archived captures when available. Never fabricate app screenshots, metrics, deployment dates or MyRoadmap features.
-- Blackstone and AISA are excluded because authorship/scope is uncertain. Microtec is maintenance, not original design. Dele Peso a sus Pesos is financial-tool development, not authorship of the entire website. Claris is work through Nicasource; Isning website designs retain agency credit.
+- Blackstone and AISA are excluded because authorship/scope is uncertain. Microtec is maintenance, not original design. Dele Peso a sus Pesos is financial-tool development, not authorship of the entire website. Claris is website development. The later application-capture update supersedes intermediary naming preferences while preserving supplied-design attribution.
 - Add OpenClaw and Claude Code (Platzi, October 2026) with verified diploma URLs. Preserve existing credentials, awards and privacy constraints.
 
 ## Implementation Choices
 
-Use the existing design system with actual project media, not generated design imagery. Keep project data typed and reusable across home, bilingual static case routes and sitemap. No new runtime dependency, iframe embeds or authenticated previews. Private cases expose only high-level descriptions and brand artwork, never records, credentials or internal links.
+Use the existing design system with actual project media, not generated design imagery. Keep project data typed and reusable across home, bilingual static case routes and sitemap. No new runtime dependency, iframe embeds or authenticated previews. Private cases expose high-level descriptions and safe media, never production records, credentials or internal links. Local synthetic-data captures and archived public promotional images are allowed by the application-capture update.
 
 ## Approaches
 

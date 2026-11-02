@@ -14,8 +14,8 @@
 
 - English default; Spanish equivalent; no personal city/email/phone or portrait.
 - No new dependencies, private source links, real customer records or fabricated screenshots.
-- Blackstone/AISA excluded; Microtec maintenance; Dele Peso financial tools; Claris through Nicasource.
-- Original agency credit and historical/current media labels must remain visible.
+- Blackstone/AISA excluded; Microtec maintenance; Dele Peso financial tools; Claris website development.
+- Development/design scope and historical/current media labels must remain visible. The later application-capture update supersedes intermediary naming preferences.
 
 ## Review Focus
 

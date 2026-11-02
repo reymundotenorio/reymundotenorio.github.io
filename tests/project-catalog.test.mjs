@@ -11,14 +11,42 @@ test('every project has a unique stable case URL', () => {
 
 test('confirmed work is included without uncertain client attribution', () => {
   const slugs = archiveItems.map((item) => item.slug);
-  for (const slug of ['enerwize', 'nicasource', 'claris-health', 'studio-ivl', 'pouch', 'lighthouse', 'microtec', 'myroadmap', 'isning-multimedia']) {
+  for (const slug of ['enerwize', 'nicasource', 'claris-health', 'studio-ivl', 'pouch', 'lighthouse', 'microtec', 'myroadmap', 'agency-platform']) {
     assert(slugs.includes(slug), slug);
   }
   assert(!JSON.stringify(archiveItems).match(/blackstone|aisa.?mill/i));
   assert.match(archiveItems.find((item) => item.slug === 'microtec').role.en, /maintenance/i);
-  assert.match(archiveItems.find((item) => item.slug === 'claris-health').source.en, /Nicasource/);
+  assert.match(archiveItems.find((item) => item.slug === 'claris-health').role.en, /Website development/);
   assert.match(archiveItems.find((item) => item.slug === 'pouch').summary.en, /Portal|Bah[ií]a/);
   assert.match(archiveItems.find((item) => item.slug === 'dele-peso-tools').role.en, /Financial tools/);
+});
+
+test('application captures show real interfaces with explicit safe provenance', () => {
+  const pouch = archiveItems.find((item) => item.slug === 'pouch');
+  const ivl = archiveItems.find((item) => item.slug === 'studio-ivl');
+  assert.equal(pouch.preview.type, 'demo');
+  assert.equal(pouch.gallery.length, 1);
+  assert.match(pouch.preview.caption.en, /synthetic/i);
+  assert.match(pouch.preview.caption.es, /ficticios/i);
+  assert.equal(ivl.preview.type, 'store');
+  assert.equal(ivl.gallery.length, 2);
+  assert.match(ivl.preview.caption.en, /promotional/i);
+  for (const item of [pouch, ivl]) for (const media of [item.preview, ...item.gallery]) {
+    assert(existsSync(new URL(`../public${media.src}`, import.meta.url)), media.src);
+    assert(media.alt.en && media.alt.es && media.caption.en && media.caption.es);
+  }
+});
+
+test('project presentation omits intermediaries without claiming original design', () => {
+  assert(!/isning/i.test(JSON.stringify(archiveItems)));
+  for (const slug of ['ariel-law', 'hartunian-law', 'caban-pools', 'fit-factory', 'sapetto-law']) {
+    const item = archiveItems.find((item) => item.slug === slug);
+    assert.match(item.source.en, /Freelance/);
+    assert.match(item.credit.en, /design supplied/i);
+  }
+  for (const item of archiveItems.filter((item) => item.slug !== 'nicasource')) {
+    assert(!/Nicasource/.test(JSON.stringify(item)), item.slug);
+  }
 });
 
 test('website selections have authentic local media and conservative links', () => {

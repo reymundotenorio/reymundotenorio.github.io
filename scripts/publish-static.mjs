@@ -6,6 +6,10 @@ const build = new URL('dist/', root);
 const assets = new URL('_astro/', root);
 const builtAssets = await readdir(new URL('_astro/', build));
 
+for (const directory of ['en/work/', 'es/work/', 'images/projects/']) {
+  await rm(new URL(directory, root), { recursive: true, force: true });
+}
+
 await mkdir(assets, { recursive: true });
 for (const filename of await readdir(assets)) {
   if (!builtAssets.includes(filename)) await rm(new URL(filename, assets));

@@ -3,6 +3,7 @@ import type { GetStaticPaths } from 'astro';
 import { archiveItems, type ArchiveItem, type Lang } from '../../../data/site';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { projectPath } from '../../../lib/project-paths';
+import { projectMediaLabel } from '../../../lib/project-media';
 
 export const getStaticPaths = (() => archiveItems.flatMap((item) =>
   (['en', 'es'] as const).map((lang) => ({ params: { lang, slug: item.slug }, props: { item, lang } }))
@@ -14,11 +15,7 @@ const english = lang === 'en';
 const name = !english && item.nameEs ? item.nameEs : item.name;
 const otherLang = english ? 'es' : 'en';
 const home = `/${lang}/`;
-const mediaLabel = item.preview?.type === 'current'
-  ? (english ? 'Public website capture · November 2026' : 'Captura del sitio público · noviembre 2026')
-  : item.preview?.type === 'artwork'
-    ? (english ? 'Original project artwork' : 'Arte original del proyecto')
-    : (english ? 'Archived project capture · Isning Multimedia' : 'Captura histórica del proyecto · Isning Multimedia');
+const captures = item.preview ? [item.preview, ...(item.gallery ?? [])] : [];
 const related = archiveItems.filter((other) => other.slug !== item.slug && (other.kind ?? 'archive') === (item.kind ?? 'archive')).slice(0, 3);
 ---
 
@@ -44,12 +41,14 @@ const related = archiveItems.filter((other) => other.slug !== item.slug && (othe
       </div>
     </section>
 
-    {item.preview && <figure class:list={['case-media', item.preview.type === 'artwork' && 'case-media--artwork']}>
-      <a href={item.preview.src} target="_blank" rel="noopener noreferrer" aria-label={english ? `Open full image: ${name}` : `Abrir imagen completa: ${name}`}>
-        <img src={item.preview.src} width={item.preview.width} height={item.preview.height} alt={item.preview.alt[lang]} fetchpriority="high" />
-      </a>
-      <figcaption>{mediaLabel}<a href={item.preview.src} target="_blank" rel="noopener noreferrer">{english ? 'Full image' : 'Imagen completa'}<span aria-hidden="true">↗</span></a></figcaption>
-    </figure>}
+    {captures.length > 0 && <div class:list={['case-captures', item.preview?.type === 'store' && 'case-captures--mobile']}>
+      {captures.map((media, index) => <figure class:list={['case-media', media.type === 'artwork' && 'case-media--artwork']}>
+        <a href={media.src} target="_blank" rel="noopener noreferrer" aria-label={english ? `Open full image: ${media.alt.en}` : `Abrir imagen completa: ${media.alt.es}`}>
+          <img src={media.src} width={media.width} height={media.height} alt={media.alt[lang]} loading={index === 0 ? 'eager' : 'lazy'} fetchpriority={index === 0 ? 'high' : 'auto'} />
+        </a>
+        <figcaption>{projectMediaLabel(media, lang, true)}<a href={media.src} target="_blank" rel="noopener noreferrer">{english ? 'Full image' : 'Imagen completa'}<span aria-hidden="true">↗</span></a></figcaption>
+      </figure>)}
+    </div>}
 
     <section class="case-scope" aria-labelledby="scope-title">
       <div>

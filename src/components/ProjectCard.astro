@@ -1,6 +1,7 @@
 ---
 import type { ArchiveItem, Lang } from '../data/site';
 import { projectPath } from '../lib/project-paths';
+import { projectMediaLabel } from '../lib/project-media';
 
 interface Props {
   item: ArchiveItem;
@@ -14,18 +15,14 @@ const linkLabel = item.linkKind === 'code' ? (lang === 'en' ? 'View code' : 'Ver
 const status = item.status === 'private'
   ? (lang === 'en' ? 'Private project' : 'Proyecto privado')
   : (lang === 'en' ? 'Historical project' : 'Proyecto histórico');
-const mediaLabel = item.preview?.type === 'current'
-  ? (lang === 'en' ? 'Current public site' : 'Sitio público actual')
-  : item.preview?.type === 'artwork'
-    ? (lang === 'en' ? 'Original project artwork' : 'Arte original del proyecto')
-    : (lang === 'en' ? 'Project archive' : 'Archivo del proyecto');
+const mobileScreens = item.preview?.type === 'store' ? [item.preview, ...(item.gallery ?? [])].slice(0, 3) : [];
 ---
 
 <article class:list={['archive-item', item.preview && 'archive-item--visual']} data-archive-item data-category={item.category} data-project={item.slug}>
   {item.preview && (
-    <a class:list={['project-media', item.preview.type === 'artwork' && 'project-media--artwork']} href={projectPath(item, lang)} aria-label={`${lang === 'en' ? 'View project' : 'Ver proyecto'}: ${item.name}`}>
-      <img src={item.preview.src} width={item.preview.width} height={item.preview.height} alt={item.preview.alt[lang]} loading="lazy" decoding="async" />
-      <span>{mediaLabel}</span>
+    <a class:list={['project-media', item.preview.type === 'artwork' && 'project-media--artwork', mobileScreens.length > 0 && 'project-media--mobile']} href={projectPath(item, lang)} aria-label={`${lang === 'en' ? 'View project' : 'Ver proyecto'}: ${item.name}`}>
+      {mobileScreens.length > 0 ? <div class="project-media__screens">{mobileScreens.map((media) => <img src={media.src} width={media.width} height={media.height} alt={media.alt[lang]} loading="lazy" decoding="async" />)}</div> : <img src={item.preview.src} width={item.preview.width} height={item.preview.height} alt={item.preview.alt[lang]} loading="lazy" decoding="async" />}
+      <span>{projectMediaLabel(item.preview, lang)}</span>
     </a>
   )}
   <div class="archive-item__body">
