@@ -40,8 +40,8 @@
 
 ### 3. Verification and release
 - [x] Review the complete diff inline; verify desktop/tablet/mobile screenshots, image loading, reduced motion, privacy and hero behavior.
-- [ ] Synchronize the tracked static build; commit source/content and generated output separately.
-- [ ] Publish the verified change, verify GitHub Pages and recheck public routes. Do not create a PR unnecessarily.
+- [x] Synchronize the tracked static build; commit source/content and generated output separately.
+- [x] Publish the verified change, verify GitHub Pages and recheck public routes. Do not create a PR unnecessarily.
 
 ## Execution Record
 
@@ -51,3 +51,4 @@
 - Browser verification: Chrome at 1440x960, 768x1024, 390x844 and 320x740; all eight filters and visible counts, every gallery image, canvas visibility, hero interaction, credentials and privacy. Selected public/private/historical cases were checked in both languages, with reduced motion and no-JS navigation. All 66 case URLs returned 200. Safari and physical devices were not tested.
 - Media review corrected a Nicasource loading-screen capture and replaced the broken Dele Peso tools landing with its working net-salary calculator page. Assets total approximately 1.3 MB, loaded lazily in the gallery.
 - Fresh dependency audit found 21 advisories in the prior lockfile. Updated Astro to 7.3.3 and resolved Vite, Undici, Zod and fast-uri within compatible major ranges; no new direct dependencies or overrides. The new audit reports zero advisories.
+- Release: `a55f36f` (showcase), `2cd26dc` (dependencies) and `6588ab7` (static snapshot), fast-forwarded to master and pushed. All 163 build files matched the root static snapshot. GitHub Pages run `41533925773` succeeded for `6588ab7`; the complete four-viewport browser suite and all 66 bilingual case URLs passed again against `https://reymundotenorio.github.io/`. GitHub reports zero open Dependabot alerts. No private repository or uncertain client engagement was published.
