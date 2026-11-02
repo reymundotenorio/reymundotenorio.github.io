@@ -12,24 +12,39 @@ Use Node.js 22.12+ and pnpm 11.25.0 (pinned in `package.json`).
 pnpm install --frozen-lockfile
 pnpm dev
 pnpm check
+pnpm test
 pnpm build
+pnpm test:static
 pnpm preview
 ```
 
-Routes: `/` and `/en/` in English, `/es/` in Spanish.
+Routes: `/` and `/en/` in English, `/es/` in Spanish. Every project has
+localized static cases at `/en/work/<slug>/` and `/es/work/<slug>/`.
 
 Profile and credential content lives in `src/data/site.ts`. Additional project
-records live in `src/data/projects.ts`, and the complete historical career-site
-index lives in `src/data/career-sites.ts`. Components are in `src/components`,
+records live in `src/data/projects.ts`, client work in `src/data/client-projects.ts`,
+and the complete historical career-site index lives in `src/data/career-sites.ts`.
+Components are in `src/components`,
 motion and interaction in `src/scripts/experience.ts`, and styling in
-`src/styles/global.css`.
+`src/styles/global.css` and `src/styles/projects.css`.
 
 ## Content Maintenance
 
-Last source review: October 14, 2026. LinkedIn project listings, freelance
+Last source review: November 2, 2026. LinkedIn project listings, freelance
 experience attachments, certifications, and selected GitHub repositories were
 cross-checked against the original portfolio source archive.
 
+- 33 curated projects with bilingual cases: websites first, apps/platforms
+  separately, and earlier work in a native disclosure. Six websites are featured.
+- 18 credentials include the October 2026 OpenClaw and Claude Code diplomas.
+- Media in `public/images/projects` is optimized from supplied Isning captures,
+  current public website captures (November 2026), or original brand artwork.
+  Captures are labeled by source; current websites can contain later work.
+- Microtec is maintenance, Dele Peso a sus Pesos is financial-tool development,
+  and Claris is work through Nicasource. Column Five/Super Star are scoped
+  contributions. Blackstone and AISA are excluded due to uncertain scope.
+- Pouch is the former Bahia Nica Portal. Private cases use high-level descriptions
+  and brand artwork, never reconstructed production screenshots or records.
 - The 37 career-site brands identify historical development work through Accedo,
   not current site implementations or direct employment by those brands.
 - Freelance project date ranges describe the engagement period where a more

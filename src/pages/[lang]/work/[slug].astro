@@ -1,0 +1,73 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { archiveItems, type ArchiveItem, type Lang } from '../../../data/site';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { projectPath } from '../../../lib/project-paths';
+
+export const getStaticPaths = (() => archiveItems.flatMap((item) =>
+  (['en', 'es'] as const).map((lang) => ({ params: { lang, slug: item.slug }, props: { item, lang } }))
+)) satisfies GetStaticPaths;
+
+interface Props { item: ArchiveItem; lang: Lang }
+const { item, lang } = Astro.props;
+const english = lang === 'en';
+const name = !english && item.nameEs ? item.nameEs : item.name;
+const otherLang = english ? 'es' : 'en';
+const home = `/${lang}/`;
+const mediaLabel = item.preview?.type === 'current'
+  ? (english ? 'Public website capture · November 2026' : 'Captura del sitio público · noviembre 2026')
+  : item.preview?.type === 'artwork'
+    ? (english ? 'Original project artwork' : 'Arte original del proyecto')
+    : (english ? 'Archived project capture · Isning Multimedia' : 'Captura histórica del proyecto · Isning Multimedia');
+const related = archiveItems.filter((other) => other.slug !== item.slug && (other.kind ?? 'archive') === (item.kind ?? 'archive')).slice(0, 3);
+---
+
+<BaseLayout lang={lang} title={`${name} · Reymundo Tenorio`} description={item.summary[lang]} project={{ name, slug: item.slug, image: item.preview?.src }}>
+  <header class="case-header">
+    <a class="case-wordmark" href={home} aria-label="Reymundo Tenorio">RT<span aria-hidden="true">.</span></a>
+    <a class="case-back" href={`${home}#work`}><span aria-hidden="true">←</span>{english ? 'All projects' : 'Todos los proyectos'}</a>
+    <nav aria-label={english ? 'Language' : 'Idioma'}>
+      <span aria-current="page">{lang.toUpperCase()}</span><span aria-hidden="true">/</span><a href={projectPath(item, otherLang)} data-case-language>{otherLang.toUpperCase()}</a>
+    </nav>
+  </header>
+
+  <main class="project-case" id="main-content" tabindex="-1" data-project-case={item.slug}>
+    <section class="case-intro">
+      <p class="case-context">{item.source[lang]}{item.year && <span> / {item.year}</span>}</p>
+      <h1>{name}</h1>
+      <p class="case-summary">{item.summary[lang]}</p>
+      <div class="case-intro__bottom">
+        {item.role && <p class="case-role"><span>{english ? 'My contribution' : 'Mi contribución'}</span>{item.role[lang]}</p>}
+        {item.url ? <a class="case-external" href={item.url} target="_blank" rel="noopener noreferrer">
+          {item.linkKind === 'code' ? (english ? 'View source' : 'Ver código') : (english ? 'Visit current website' : 'Visitar sitio actual')}<span aria-hidden="true">↗</span>
+        </a> : <p class="case-access">{item.status === 'private' ? (english ? 'Private application · public project case' : 'Aplicación privada · caso público') : (english ? 'Project archive' : 'Archivo del proyecto')}</p>}
+      </div>
+    </section>
+
+    {item.preview && <figure class:list={['case-media', item.preview.type === 'artwork' && 'case-media--artwork']}>
+      <a href={item.preview.src} target="_blank" rel="noopener noreferrer" aria-label={english ? `Open full image: ${name}` : `Abrir imagen completa: ${name}`}>
+        <img src={item.preview.src} width={item.preview.width} height={item.preview.height} alt={item.preview.alt[lang]} fetchpriority="high" />
+      </a>
+      <figcaption>{mediaLabel}<a href={item.preview.src} target="_blank" rel="noopener noreferrer">{english ? 'Full image' : 'Imagen completa'}<span aria-hidden="true">↗</span></a></figcaption>
+    </figure>}
+
+    <section class="case-scope" aria-labelledby="scope-title">
+      <div>
+        <h2 id="scope-title">{english ? 'Scope & implementation' : 'Alcance e implementación'}</h2>
+        <ul>{item.details[lang].map((detail) => <li>{detail}</li>)}</ul>
+      </div>
+      <aside>
+        {item.stack.length > 0 && <><h2>{english ? 'Built with' : 'Tecnologías'}</h2><ul class="case-stack">{item.stack.map((technology) => <li>{technology}</li>)}</ul></>}
+        {item.credit && <p class="case-credit">{item.credit[lang]}</p>}
+        {item.url && item.linkKind !== 'code' && <p class="case-credit">{english ? 'The current public website may include later changes by other contributors.' : 'El sitio público actual puede incluir cambios posteriores de otros colaboradores.'}</p>}
+      </aside>
+    </section>
+
+    {related.length > 0 && <section class="case-related" aria-labelledby="related-title">
+      <h2 id="related-title">{english ? 'More work' : 'Más proyectos'}</h2>
+      <div>{related.map((other) => <a href={projectPath(other, lang)}><span>{!english && other.nameEs ? other.nameEs : other.name}</span><span aria-hidden="true">↗</span></a>)}</div>
+    </section>}
+    <a class="case-return" href={`${home}#work`}><span aria-hidden="true">←</span>{english ? 'Back to all projects' : 'Volver a todos los proyectos'}</a>
+  </main>
+  <footer class="site-footer"><span>© {new Date().getFullYear()} Reymundo Tenorio</span><a href={`${home}#contact`}>{english ? 'Contact' : 'Contacto'}<span aria-hidden="true">↗</span></a></footer>
+</BaseLayout>

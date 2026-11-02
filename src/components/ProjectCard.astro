@@ -1,5 +1,6 @@
 ---
 import type { ArchiveItem, Lang } from '../data/site';
+import { projectPath } from '../lib/project-paths';
 
 interface Props {
   item: ArchiveItem;
@@ -13,24 +14,38 @@ const linkLabel = item.linkKind === 'code' ? (lang === 'en' ? 'View code' : 'Ver
 const status = item.status === 'private'
   ? (lang === 'en' ? 'Private project' : 'Proyecto privado')
   : (lang === 'en' ? 'Historical project' : 'Proyecto histórico');
+const mediaLabel = item.preview?.type === 'current'
+  ? (lang === 'en' ? 'Current public site' : 'Sitio público actual')
+  : item.preview?.type === 'artwork'
+    ? (lang === 'en' ? 'Original project artwork' : 'Arte original del proyecto')
+    : (lang === 'en' ? 'Project archive' : 'Archivo del proyecto');
 ---
 
-<article class="archive-item" data-archive-item data-category={item.category}>
+<article class:list={['archive-item', item.preview && 'archive-item--visual']} data-archive-item data-category={item.category} data-project={item.slug}>
+  {item.preview && (
+    <a class:list={['project-media', item.preview.type === 'artwork' && 'project-media--artwork']} href={projectPath(item, lang)} aria-label={`${lang === 'en' ? 'View project' : 'Ver proyecto'}: ${item.name}`}>
+      <img src={item.preview.src} width={item.preview.width} height={item.preview.height} alt={item.preview.alt[lang]} loading="lazy" decoding="async" />
+      <span>{mediaLabel}</span>
+    </a>
+  )}
+  <div class="archive-item__body">
+  <div class="project-meta">
   <span class="archive-item__index">{String(index + 1).padStart(2, '0')}</span>
   <span class="archive-item__source">{item.source[lang]}</span>
-  <span class="archive-item__year">{item.year}</span>
-  <h3>{lang === 'es' ? item.nameEs ?? item.name : item.name}</h3>
-  <p>{item.summary[lang]}</p>
-  <details class="archive-item__details">
-    <summary>{lang === 'en' ? 'Scope & implementation' : 'Alcance e implementación'}</summary>
-    <ul>{item.details[lang].map((detail) => <li>{detail}</li>)}</ul>
-  </details>
-  <div class="archive-item__stack">
-    {item.stack.map((stackItem) => <span>{stackItem}</span>)}
+  {item.year && <span class="archive-item__year">{item.year}</span>}
   </div>
+  <h3><a href={projectPath(item, lang)}>{lang === 'es' ? item.nameEs ?? item.name : item.name}</a></h3>
+  <p>{item.summary[lang]}</p>
+  {item.stack.length > 0 && <div class="archive-item__stack">
+    {item.stack.map((stackItem) => <span>{stackItem}</span>)}
+  </div>}
+  <div class="archive-item__actions">
+  <a class="archive-item__cta" href={projectPath(item, lang)}>{lang === 'en' ? 'View project' : 'Ver proyecto'}<span aria-hidden="true">↗</span></a>
   {item.url ? (
-    <a class="archive-item__cta" href={item.url} target="_blank" rel="noreferrer" aria-label={`${linkLabel}: ${item.name}`}>
+    <a class="archive-item__cta archive-item__cta--external" href={item.url} target="_blank" rel="noopener noreferrer" aria-label={`${linkLabel}: ${item.name}`}>
       {linkLabel}<span aria-hidden="true">↗</span>
     </a>
   ) : <span class="archive-item__archived">{status}</span>}
+  </div>
+  </div>
 </article>

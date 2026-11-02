@@ -1,8 +1,9 @@
-import { additionalProjects, recentProjects } from './projects';
+import { additionalProjects, recentProjects } from './projects.ts';
+import { clientProjects } from './client-projects.ts';
 
 export type Lang = 'en' | 'es';
 export type MissionId = 'leadership' | 'product' | 'web-engineering' | 'automation' | 'frontend' | 'contact';
-export type ArchiveFilterId = 'all' | 'linkedin-projects' | 'product-systems' | 'developer-tools' | 'automation' | 'web' | 'editorial';
+export type ArchiveFilterId = 'all' | 'linkedin-projects' | 'product-systems' | 'developer-tools' | 'automation' | 'web' | 'editorial' | 'mobile';
 
 export interface Mission {
   id: MissionId;
@@ -20,6 +21,7 @@ export interface ArchiveFilter {
 }
 
 export interface ArchiveItem {
+  slug: string;
   name: string;
   nameEs?: string;
   category: Exclude<ArchiveFilterId, 'all'>;
@@ -27,7 +29,17 @@ export interface ArchiveItem {
   linkKind?: 'code' | 'website';
   featured?: boolean;
   status?: 'private';
-  year: string;
+  year?: string;
+  kind?: 'website' | 'application' | 'archive';
+  role?: { en: string; es: string };
+  credit?: { en: string; es: string };
+  preview?: {
+    src: string;
+    width: number;
+    height: number;
+    alt: { en: string; es: string };
+    type: 'current' | 'archived' | 'artwork';
+  };
   source: {
     en: string;
     es: string;
@@ -209,27 +221,31 @@ export const missions: Record<Lang, Mission[]> = {
 export const archiveFilters: Record<Lang, ArchiveFilter[]> = {
   en: [
     { id: 'all', label: 'All' },
+    { id: 'web', label: 'Websites' },
+    { id: 'mobile', label: 'Mobile' },
     { id: 'linkedin-projects', label: 'Institutional & desktop' },
     { id: 'product-systems', label: 'Product systems' },
     { id: 'developer-tools', label: 'Developer tools' },
     { id: 'automation', label: 'Automation' },
-    { id: 'web', label: 'Web' },
     { id: 'editorial', label: 'Editorial' }
   ],
   es: [
     { id: 'all', label: 'Todo' },
+    { id: 'web', label: 'Websites' },
+    { id: 'mobile', label: 'Mobile' },
     { id: 'linkedin-projects', label: 'Institucional y escritorio' },
     { id: 'product-systems', label: 'Sistemas de producto' },
     { id: 'developer-tools', label: 'Dev tools' },
     { id: 'automation', label: 'Automatización' },
-    { id: 'web', label: 'Web' },
     { id: 'editorial', label: 'Editorial' }
   ]
 };
 
 export const archiveItems: ArchiveItem[] = [
+  ...clientProjects,
   ...recentProjects,
   {
+    slug: 'uni-sciences-systems',
     name: 'UNI · Sciences & Systems',
     nameEs: 'UNI · Ciencias y Sistemas',
     category: 'linkedin-projects',
@@ -249,6 +265,7 @@ export const archiveItems: ArchiveItem[] = [
     stack: ['WordPress', 'PHP', 'HTML', 'CSS']
   },
   {
+    slug: 'tpf-supervisor',
     name: 'Sistema TPF-Supervisor',
     category: 'linkedin-projects',
     featured: true,
@@ -268,6 +285,7 @@ export const archiveItems: ArchiveItem[] = [
     stack: ['Java', 'MySQL', 'JasperReports', 'Desktop']
   },
   {
+    slug: 'editorial-pwa',
     name: 'Editorial · Web to PWA',
     nameEs: 'Editorial · De web a PWA',
     category: 'editorial',
@@ -287,10 +305,16 @@ export const archiveItems: ArchiveItem[] = [
     stack: ['WordPress', 'AWS', 'Docker', 'Amazon Aurora', 'PWA']
   },
   {
+    slug: 'dele-peso-tools',
     name: 'Dele Peso a sus Pesos',
+    kind: 'website',
+    role: { en: 'Financial tools development', es: 'Desarrollo de herramientas financieras' },
+    preview: {
+      src: '/images/projects/dele-peso-tools.webp', width: 1440, height: 1080, type: 'current',
+      alt: { en: 'Current Dele Peso a sus Pesos financial tools page', es: 'Página actual de herramientas de Dele Peso a sus Pesos' }
+    },
     category: 'product-systems',
-    featured: true,
-    url: 'https://www.delepesoasuspesos.com/',
+    url: 'https://delepesoasuspesos.com/calcular-salario-neto/',
     year: '2016 - 2022',
     source: {
       en: 'Financial tools',
@@ -307,7 +331,9 @@ export const archiveItems: ArchiveItem[] = [
     stack: ['WordPress', 'HTML', 'Sass', 'jQuery']
   },
   {
+    slug: 'better-nice-produce',
     name: 'Better & Nice Produce',
+    kind: 'application',
     category: 'product-systems',
     featured: true,
     url: 'https://github.com/reymundotenorio/BANP',
@@ -328,6 +354,7 @@ export const archiveItems: ArchiveItem[] = [
     stack: ['Ruby on Rails', 'MySQL', 'AWS', 'Stripe', 'Twilio']
   },
   {
+    slug: 'career-site-collection',
     name: 'Career site collection',
     nameEs: 'Colección de career sites',
     category: 'web',
@@ -465,11 +492,13 @@ const skillGroups: SkillGroup[] = [
   },
   {
     title: 'Tools / craft',
-    items: ['OpenAI API', 'Cursor AI', 'Anthropic Claude', 'n8n', 'Playwright', 'GitHub Actions', 'Git', 'Linux', 'PSD to HTML', 'Adobe Photoshop', 'Firebase', 'PostgreSQL', 'REST APIs', 'Redux', 'Redux-Thunk']
+    items: ['OpenAI API', 'Cursor AI', 'Claude Code', 'OpenClaw', 'Anthropic Claude', 'n8n', 'Playwright', 'GitHub Actions', 'Git', 'Linux', 'PSD to HTML', 'Adobe Photoshop', 'Firebase', 'PostgreSQL', 'REST APIs', 'Redux', 'Redux-Thunk']
   }
 ];
 
 const certifications: ProfileFact[] = [
+  { title: 'Curso de OpenClaw', meta: 'Platzi · Oct 2026', url: 'https://platzi.com/p/reymundot/curso/12851-openclaw-2026/diploma/detalle/' },
+  { title: 'Curso de Claude Code', meta: 'Platzi · Oct 2026', url: 'https://platzi.com/p/reymundot/curso/12284-claude-code/diploma/detalle/' },
   { title: 'Curso de Cursor AI Code Editor', meta: 'Platzi · Oct 2026', url: 'https://platzi.com/p/reymundot/curso/12166-cursor-2025/diploma/detalle/' },
   { title: 'Curso de Claude AI', meta: 'Platzi · Oct 2026', url: 'https://platzi.com/p/reymundot/curso/12651-claude/diploma/detalle/' },
   { title: 'Curso de OpenAI API', meta: 'Platzi · Jun 2026', url: 'https://platzi.com/p/reymundot/curso/11458-openai-api/diploma/detalle/' },
@@ -619,7 +648,7 @@ export const content = {
     work: {
       title: 'Projects',
       intro:
-        'Products, developer tools, automation, and a decade of client work. Different problems, the same attention to how things work.',
+        'Websites, mobile apps and platforms. A closer look at the work, the contribution and the people behind it.',
       viewCase: 'Visit website'
     },
     experience: {
@@ -655,7 +684,7 @@ export const content = {
     work: {
       title: 'Proyectos',
       intro:
-        'Productos, herramientas de desarrollo, automatización y una década de trabajo con clientes. Distintos problemas, la misma atención a cómo funcionan las cosas.',
+        'Websites, apps móviles y plataformas. Una mirada al trabajo, mi contribución y los equipos detrás de cada proyecto.',
       viewCase: 'Visitar sitio'
     },
     experience: {

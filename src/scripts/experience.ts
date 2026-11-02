@@ -75,7 +75,7 @@ function initArchiveFilters(root: HTMLElement): Cleanup {
   const filters = queryAll<HTMLButtonElement>(root, '[data-archive-filter]');
   const items = queryAll<HTMLElement>(root, '[data-archive-item]');
   const groups = queryAll<HTMLElement>(root, '[data-archive-group]');
-  const more = root.querySelector<HTMLDetailsElement>('[data-archive-more]');
+  const disclosures = queryAll<HTMLDetailsElement>(root, '[data-archive-more]');
   const careers = root.querySelector<HTMLElement>('[data-career-archive]');
 
   const handlers = filters.map((filter) => {
@@ -93,12 +93,13 @@ function initArchiveFilters(root: HTMLElement): Cleanup {
       }
 
       for (const group of groups) {
-        group.hidden = !queryAll<HTMLElement>(group, '[data-archive-item]').some((item) => !item.hidden);
+        const visibleCount = queryAll<HTMLElement>(group, '[data-archive-item]').filter((item) => !item.hidden).length;
+        group.hidden = visibleCount === 0;
+        const count = group.querySelector<HTMLElement>('[data-archive-count]');
+        if (count) count.textContent = String(visibleCount);
       }
-      if (more && !more.hidden) {
-        more.open = true;
-        const count = more.querySelector<HTMLElement>('[data-archive-count]');
-        if (count) count.textContent = String(queryAll<HTMLElement>(more, '[data-archive-item]').filter((item) => !item.hidden).length);
+      for (const more of disclosures) {
+        if (!more.hidden) more.open = true;
       }
       if (careers) careers.hidden = activeFilter !== 'all' && activeFilter !== 'web';
 

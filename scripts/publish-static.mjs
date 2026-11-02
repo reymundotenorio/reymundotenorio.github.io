@@ -15,4 +15,5 @@ for (const filename of ['index.html', 'en', 'es', '_astro', 'fonts', 'favicon.sv
   await cp(new URL(filename, build), new URL(filename, root), { recursive: true });
 }
 await cp(new URL('images/social-card.png', build), new URL('images/social-card.png', root));
+await cp(new URL('images/projects/', build), new URL('images/projects/', root), { recursive: true });
 console.log(`Static portfolio synchronized to ${fileURLToPath(root)}`);

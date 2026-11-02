@@ -2,6 +2,8 @@ import type { ArchiveItem } from './site';
 
 export const recentProjects: ArchiveItem[] = [
   {
+    slug: 'duepulse',
+    kind: 'application',
     name: 'DuePulse',
     category: 'product-systems',
     featured: true,
@@ -19,6 +21,8 @@ export const recentProjects: ArchiveItem[] = [
     stack: ['Next.js', 'TypeScript', 'Supabase', 'OpenAI API', 'PWA']
   },
   {
+    slug: 'depsaber',
+    kind: 'application',
     name: 'DepSaber',
     category: 'developer-tools',
     featured: true,
@@ -37,6 +41,8 @@ export const recentProjects: ArchiveItem[] = [
     stack: ['Go', 'CLI', 'GitHub Actions', 'Vite', 'Supply-chain security']
   },
   {
+    slug: 'time-weaver',
+    kind: 'application',
     name: 'TimeWeaver',
     category: 'automation',
     featured: true,
@@ -57,6 +63,8 @@ export const recentProjects: ArchiveItem[] = [
 
 export const additionalProjects: ArchiveItem[] = [
   {
+    slug: 'steps-veterinary',
+    kind: 'website',
     name: 'Steps Veterinary Clinic',
     nameEs: 'Clínica Veterinaria Steps',
     category: 'web',
@@ -73,6 +81,7 @@ export const additionalProjects: ArchiveItem[] = [
     stack: ['WordPress', 'PHP', 'HTML', 'CSS']
   },
   {
+    slug: 'nicaragua-tattoos',
     name: 'Nicaragua Tattoos',
     category: 'web',
     year: '2016 - 2022',
@@ -88,6 +97,7 @@ export const additionalProjects: ArchiveItem[] = [
     stack: ['PHP', 'Sass', 'jQuery', 'YouTube API', 'Instagram API']
   },
   {
+    slug: 'license-key-generator',
     name: 'License key generator',
     nameEs: 'Generador de claves de licencia',
     category: 'linkedin-projects',
@@ -104,6 +114,7 @@ export const additionalProjects: ArchiveItem[] = [
     stack: ['C#', 'MySQL', 'Desktop']
   },
   {
+    slug: 'voces-del-sur',
     name: 'Reporte Sombra · Voces del Sur',
     category: 'web',
     year: '2021',
@@ -119,6 +130,7 @@ export const additionalProjects: ArchiveItem[] = [
     stack: ['JavaScript', 'Web']
   },
   {
+    slug: 'farmacia-josefina',
     name: 'Farmacia Josefina',
     category: 'linkedin-projects',
     url: 'https://github.com/reymundotenorio/FarmaciaJosefina',
@@ -136,6 +148,7 @@ export const additionalProjects: ArchiveItem[] = [
     stack: ['Java', 'Desktop']
   },
   {
+    slug: 'nicaventura',
     name: 'Nicaventura',
     category: 'web',
     url: 'https://github.com/reymundotenorio/Nicaventura',

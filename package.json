@@ -5,9 +5,11 @@
   "type": "module",
   "packageManager": "pnpm@11.25.0",
   "scripts": {
+    "test": "node --test tests/project-catalog.test.mjs",
+    "test:static": "node --test tests/static-output.test.mjs",
     "dev": "astro dev --host 127.0.0.1",
     "check": "astro check",
-    "build": "astro check && astro build",
+    "build": "node --test tests/project-catalog.test.mjs && astro check && astro build && node --test tests/static-output.test.mjs",
     "preview": "astro preview --host 127.0.0.1",
     "publish:static": "pnpm build && node scripts/publish-static.mjs"
   },

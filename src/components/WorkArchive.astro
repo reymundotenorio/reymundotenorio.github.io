@@ -13,8 +13,12 @@ interface Props {
 }
 
 const { lang, filters, items, title, intro, viewCase } = Astro.props;
-const featured = items.filter((item) => item.featured);
-const archive = items.filter((item) => !item.featured);
+const websites = items.filter((item) => item.kind === 'website');
+const featured = websites.filter((item) => item.featured);
+const moreWebsites = websites.filter((item) => !item.featured);
+const applications = items.filter((item) => item.kind === 'application');
+const archive = items.filter((item) => !['website', 'application'].includes(item.kind ?? 'archive'));
+const projectIndex = (item: ArchiveItem) => items.indexOf(item);
 ---
 
 <section class="work-archive" id="work" aria-labelledby="work-title">
@@ -39,14 +43,31 @@ const archive = items.filter((item) => !item.featured);
   </div>
   <p class="sr-only" data-archive-status aria-live="polite" aria-atomic="true"></p>
 
-  <div class="archive-grid" data-archive-group>
-    {featured.map((item, index) => <ProjectCard item={item} index={index} lang={lang} viewCase={viewCase} />)}
+  <div class="work-group" data-archive-group>
+  <h3 class="work-group__title">{lang === 'en' ? 'Selected websites' : 'Websites seleccionados'}<span data-archive-count>{featured.length}</span></h3>
+  <div class="archive-grid">
+    {featured.map((item) => <ProjectCard item={item} index={projectIndex(item)} lang={lang} viewCase={viewCase} />)}
+  </div>
   </div>
 
-  <details class="archive-more" data-archive-group data-archive-more>
-    <summary>{lang === 'en' ? 'Client work & early projects' : 'Clientes y primeros proyectos'}<span data-archive-count>{archive.length}</span></summary>
+  <details class="archive-more work-group" data-archive-group data-archive-more>
+    <summary>{lang === 'en' ? 'More websites & contributions' : 'Más websites y contribuciones'}<span data-archive-count>{moreWebsites.length}</span></summary>
     <div class="archive-grid">
-      {archive.map((item, index) => <ProjectCard item={item} index={index + featured.length} lang={lang} viewCase={viewCase} />)}
+      {moreWebsites.map((item) => <ProjectCard item={item} index={projectIndex(item)} lang={lang} viewCase={viewCase} />)}
+    </div>
+  </details>
+
+  <div class="work-group" data-archive-group>
+    <h3 class="work-group__title">{lang === 'en' ? 'Apps, platforms & tools' : 'Apps, plataformas y herramientas'}<span data-archive-count>{applications.length}</span></h3>
+    <div class="archive-grid">
+      {applications.map((item) => <ProjectCard item={item} index={projectIndex(item)} lang={lang} viewCase={viewCase} />)}
+    </div>
+  </div>
+
+  <details class="archive-more work-group" data-archive-group data-archive-more>
+    <summary>{lang === 'en' ? 'Earlier work & project archive' : 'Primeros proyectos y archivo'}<span data-archive-count>{archive.length}</span></summary>
+    <div class="archive-grid">
+      {archive.map((item) => <ProjectCard item={item} index={projectIndex(item)} lang={lang} viewCase={viewCase} />)}
     </div>
   </details>
 
