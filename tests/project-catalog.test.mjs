@@ -65,6 +65,22 @@ test('application captures keep their media types and concise demo disclosure', 
   }
 });
 
+test('DuePulse uses real public product screens while its application stays private', () => {
+  const duepulse = archiveItems.find((item) => item.slug === 'duepulse');
+  assert.equal(duepulse.status, 'private');
+  assert.equal(duepulse.url, undefined);
+  assert.equal(duepulse.preview.type, 'current');
+  assert.equal(duepulse.preview.src, '/images/projects/duepulse-home.webp');
+  assert.equal(duepulse.gallery.length, 1);
+  assert.equal(duepulse.gallery[0].type, 'current');
+  assert.equal(duepulse.gallery[0].src, '/images/projects/duepulse-product.webp');
+  assert(!/https?:\/\//.test(JSON.stringify(duepulse)));
+  for (const media of [duepulse.preview, ...duepulse.gallery]) {
+    assert(existsSync(new URL(`../public${media.src}`, import.meta.url)), media.src);
+    for (const lang of ['en', 'es']) assert(media.alt[lang] && media.caption[lang]);
+  }
+});
+
 test('media labels describe the project or screen instead of the capture process', () => {
   const ivl = archiveItems.find((item) => item.slug === 'studio-ivl');
   assert.equal(projectMediaLabel(ivl.preview, 'en'), 'Mobile app');

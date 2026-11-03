@@ -17,7 +17,18 @@ const projectVisuals: Record<string, Pick<ArchiveItem, 'preview' | 'gallery'>> =
   'willow-creek': { preview: frontend('willow-creek', 'Willow Creek Productions') },
   microtec: { preview: concept('microtec', { en: 'Website maintenance and modular updates', es: 'Mantenimiento web y actualizaciones modulares' }) },
   myroadmap: { preview: concept('myroadmap', { en: 'A product roadmap with connected milestones', es: 'Una ruta de producto con hitos conectados' }) },
-  duepulse: { preview: concept('duepulse', { en: 'Household bills, payment planning and due dates', es: 'Facturas del hogar, planificación de pagos y vencimientos' }) },
+  duepulse: {
+    preview: {
+      src: '/images/projects/duepulse-home.webp', width: 1440, height: 1000, type: 'current',
+      alt: { en: 'DuePulse product website in dark mode', es: 'Website de DuePulse en modo oscuro' },
+      caption: { en: 'Product website', es: 'Website del producto' }
+    },
+    gallery: [{
+      src: '/images/projects/duepulse-product.webp', width: 1380, height: 644, type: 'current',
+      alt: { en: 'DuePulse public overview of payment review and reminders', es: 'Presentación pública de DuePulse sobre revisión de pagos y avisos' },
+      caption: { en: 'Product overview', es: 'Vista del producto' }
+    }]
+  },
   depsaber: {
     preview: {
       src: '/images/projects/depsaber-console.webp', width: 1440, height: 1100, type: 'demo',

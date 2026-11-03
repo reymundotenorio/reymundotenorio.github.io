@@ -72,3 +72,14 @@ test('every generated case displays its local image and identifies conceptual ar
     if (item.preview.type === 'concept') assert(html.includes(projectMediaLabel(item.preview, lang, true)), item.slug);
   }
 });
+
+test('DuePulse publishes only local product screenshots without an application link', () => {
+  for (const lang of ['en', 'es']) {
+    const html = readFileSync(new URL(`../dist/${lang}/work/duepulse/index.html`, import.meta.url), 'utf8');
+    assert(html.includes('/images/projects/duepulse-home.webp'));
+    assert(html.includes('/images/projects/duepulse-product.webp'));
+    assert(!html.includes('duepulse-concept.webp'));
+    assert(!html.includes('class="case-external"'));
+    assert(!/href="https?:\/\/[^"]*vercel\.app/i.test(html));
+  }
+});
