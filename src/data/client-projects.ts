@@ -7,7 +7,7 @@ const currentCapture = (slug: string, name: string): ArchiveItem['preview'] => (
 
 const archivedCapture = (slug: string, name: string): ArchiveItem['preview'] => ({
   src: `/images/projects/${slug}.webp`, width: 1000, height: 1200, type: 'archived',
-  alt: { en: `Archived ${name} website capture`, es: `Captura histórica del website de ${name}` }
+  alt: { en: `${name} website`, es: `Website de ${name}` }
 });
 
 const freelanceCredit = {
@@ -17,14 +17,14 @@ const freelanceCredit = {
 
 const ivlCapture = (file: string, screen: { en: string; es: string }): NonNullable<ArchiveItem['preview']> => ({
   src: `/images/projects/${file}.webp`, width: 780, height: 1387, type: 'store',
-  alt: { en: `Studio IVL ${screen.en} promotional screen`, es: `Pantalla promocional de ${screen.es} de Studio IVL` },
-  caption: { en: `${screen.en} · archived public promotional capture`, es: `${screen.es} · captura promocional pública de archivo` }
+  alt: { en: `Studio IVL app · ${screen.en}`, es: `App Studio IVL · ${screen.es}` },
+  caption: screen
 });
 
 const pouchCapture = (file: string, screen: { en: string; es: string }): NonNullable<ArchiveItem['preview']> => ({
   src: `/images/projects/${file}.webp`, width: 1680, height: 1050, type: 'demo',
-  alt: { en: `Original Bahía Nica Portal ${screen.en} with synthetic demonstration records`, es: `${screen.es} del Portal original de Bahía Nica con registros ficticios de demostración` },
-  caption: { en: `${screen.en} · original Portal UI · synthetic demo data`, es: `${screen.es} · interfaz original del Portal · datos ficticios` }
+  alt: { en: `Pouch Portal · ${screen.en} with example data`, es: `Pouch Portal · ${screen.es} con datos de ejemplo` },
+  caption: screen
 });
 
 export const clientProjects: ArchiveItem[] = [
@@ -62,7 +62,7 @@ export const clientProjects: ArchiveItem[] = [
     source: { en: 'Freelance · legal website', es: 'Freelance · website legal' },
     role: { en: 'WordPress website development', es: 'Desarrollo de website WordPress' },
     summary: { en: 'A custom WordPress website developed for Ariel Law Group.', es: 'Website WordPress a medida desarrollado para Ariel Law Group.' },
-    details: { en: ['Implemented the custom Ariel Law Group theme.', 'Built the service and company presentation shown in the archived project capture.'], es: ['Implementación del tema a medida de Ariel Law Group.', 'Desarrollo de la presentación de servicios y del despacho que aparece en la captura histórica.'] },
+    details: { en: ['Implemented the custom Ariel Law Group theme.', 'Built pages for legal services, firm information and consultation requests.'], es: ['Implementación del tema a medida de Ariel Law Group.', 'Desarrollo de páginas de servicios legales, información del despacho y solicitudes de consulta.'] },
     credit: freelanceCredit, stack: ['WordPress', 'PHP', 'HTML', 'CSS'], preview: archivedCapture('ariel-law', 'Ariel Law Group')
   },
   {
@@ -71,7 +71,7 @@ export const clientProjects: ArchiveItem[] = [
     source: { en: 'Freelance · legal website', es: 'Freelance · website legal' },
     role: { en: 'Website development', es: 'Desarrollo web' },
     summary: { en: 'Legal-services website development for Hartunian Law Firm.', es: 'Desarrollo del website de servicios legales de Hartunian Law Firm.' },
-    details: { en: ['Developed the website represented in the archived project capture.', 'The archived design presents the firm, practice areas and consultation calls to action.'], es: ['Desarrollo del website mostrado en la captura histórica del proyecto.', 'La versión histórica presenta el despacho, sus áreas de práctica y las llamadas a consulta.'] },
+    details: { en: ['Developed the legal-services website.', 'Implemented the firm presentation, practice areas and consultation calls to action.'], es: ['Desarrollo del website de servicios legales.', 'Implementación de la presentación del despacho, sus áreas de práctica y las llamadas a consulta.'] },
     credit: freelanceCredit, stack: ['Web development', 'HTML', 'CSS', 'JavaScript'], preview: archivedCapture('hartunian-law', 'Hartunian Law Firm')
   },
   {
@@ -79,7 +79,7 @@ export const clientProjects: ArchiveItem[] = [
     source: { en: 'Freelance · services website', es: 'Freelance · website de servicios' },
     role: { en: 'Custom WordPress development', es: 'Desarrollo WordPress a medida' },
     summary: { en: 'A custom WordPress website for a pool-services business.', es: 'Website WordPress a medida para una empresa de servicios de piscinas.' },
-    details: { en: ['Implemented the custom Caban Pools WordPress theme.', 'Service presentation, project imagery and contact sections are preserved in the archived capture.'], es: ['Implementación del tema WordPress a medida de Caban Pools.', 'La captura histórica conserva la presentación de servicios, imágenes de proyectos y secciones de contacto.'] },
+    details: { en: ['Implemented the custom Caban Pools WordPress theme.', 'Built service pages, project galleries and contact sections.'], es: ['Implementación del tema WordPress a medida de Caban Pools.', 'Desarrollo de páginas de servicios, galerías de proyectos y secciones de contacto.'] },
     credit: freelanceCredit, stack: ['WordPress', 'PHP', 'HTML', 'CSS'], preview: archivedCapture('caban-pools', 'Caban Pools')
   },
   {
@@ -87,7 +87,7 @@ export const clientProjects: ArchiveItem[] = [
     source: { en: 'Freelance · fitness website', es: 'Freelance · website fitness' },
     role: { en: 'Custom WordPress development', es: 'Desarrollo WordPress a medida' },
     summary: { en: 'A custom WordPress website for Fit Factory Studio.', es: 'Website WordPress a medida de Fit Factory Studio.' },
-    details: { en: ['Developed the FitFactory WordPress theme.', 'Implemented the studio presentation and training-program sections shown in the archived capture.'], es: ['Desarrollo del tema WordPress FitFactory.', 'Implementación de la presentación del estudio y los programas de entrenamiento de la captura histórica.'] },
+    details: { en: ['Developed the FitFactory WordPress theme.', 'Implemented studio and training-program pages.'], es: ['Desarrollo del tema WordPress FitFactory.', 'Implementación de páginas del estudio y de sus programas de entrenamiento.'] },
     credit: freelanceCredit, stack: ['WordPress', 'PHP', 'HTML', 'CSS'], preview: archivedCapture('fit-factory', 'Fit Factory Studio')
   },
   {
@@ -95,7 +95,7 @@ export const clientProjects: ArchiveItem[] = [
     source: { en: 'Freelance · legal website', es: 'Freelance · website legal' },
     role: { en: 'Custom WordPress development', es: 'Desarrollo WordPress a medida' },
     summary: { en: 'A custom WordPress website for Sapetto Law.', es: 'Website WordPress a medida para Sapetto Law.' },
-    details: { en: ['Developed the SapettoLaw WordPress theme.', 'The project capture preserves the original service, firm and consultation presentation.'], es: ['Desarrollo del tema WordPress SapettoLaw.', 'La captura del proyecto conserva la presentación original de servicios, despacho y consultas.'] },
+    details: { en: ['Developed the SapettoLaw WordPress theme.', 'Implemented service pages, firm information and consultation sections.'], es: ['Desarrollo del tema WordPress SapettoLaw.', 'Implementación de páginas de servicios, información del despacho y secciones de consulta.'] },
     credit: freelanceCredit, stack: ['WordPress', 'PHP', 'HTML', 'CSS'], preview: archivedCapture('sapetto-law', 'Sapetto Law')
   },
   {
@@ -151,35 +151,24 @@ export const clientProjects: ArchiveItem[] = [
   },
   {
     slug: 'studio-ivl', name: 'Studio IVL · IVL Collective', kind: 'application', category: 'mobile', status: 'private',
-    source: { en: 'Mobile application', es: 'Aplicación móvil' },
-    role: { en: 'Mobile application development', es: 'Desarrollo de aplicación móvil' },
-    summary: { en: 'A React Native fitness application for IVL Collective, with workout classes, video playback and scheduling.', es: 'Aplicación fitness React Native para IVL Collective, con clases, reproducción de video y agenda.' },
-    details: { en: ['Built mobile screens and navigation with React Native and Expo.', 'Class discovery, instructor pages, schedules, favorites and video playback.', 'Profile, membership and notification experiences, with supporting CMS and backend projects.'], es: ['Desarrollo de pantallas y navegación con React Native y Expo.', 'Exploración de clases, instructores, agenda, favoritos y reproducción de video.', 'Experiencias de perfil, membresía y notificaciones, con proyectos de CMS y backend de soporte.'] },
-    credit: { en: 'Archived public promotional screens show the on-demand, class-detail and favorites experiences. Original listing watermarks are preserved; source code remains private.', es: 'Las capturas promocionales públicas de archivo muestran clases on-demand, detalle y favoritos. Se conservan las marcas de agua originales de la ficha; el código sigue siendo privado.' },
+    source: { en: 'Mobile application · built from scratch', es: 'Aplicación móvil · creada desde cero' },
+    role: { en: 'Mobile application development from scratch', es: 'Desarrollo de la aplicación móvil desde cero' },
+    summary: { en: 'Built the IVL Collective fitness app from scratch with React Native, bringing workout discovery, video classes and scheduling into one mobile experience.', es: 'Creé la app fitness de IVL Collective desde cero con React Native, integrando exploración de entrenamientos, clases en video y agenda en una experiencia móvil.' },
+    details: { en: ['Built the mobile application from the ground up with React Native and Expo, including its screen structure and navigation.', 'Class discovery, instructor pages, schedules, favorites and video playback.', 'Profile, membership and notification experiences, with supporting CMS and backend projects.'], es: ['Desarrollo de la aplicación móvil desde cero con React Native y Expo, incluyendo la estructura de pantallas y la navegación.', 'Exploración de clases, instructores, agenda, favoritos y reproducción de video.', 'Experiencias de perfil, membresía y notificaciones, con proyectos de CMS y backend de soporte.'] },
     stack: ['React Native', 'Expo', 'TypeScript', 'Firebase', 'Video'],
     preview: ivlCapture('ivl-classes', { en: 'On-demand classes', es: 'Clases on-demand' }),
     gallery: [ivlCapture('ivl-class-details', { en: 'Class details', es: 'Detalle de clase' }), ivlCapture('ivl-favorites', { en: 'Favorite classes', es: 'Clases favoritas' })]
   },
   {
-    slug: 'pouch', name: 'Pouch · Bahía Nica Portal', kind: 'application', category: 'product-systems', status: 'private',
-    source: { en: 'Shipping platform · full application', es: 'Plataforma de envíos · aplicación completa' },
+    slug: 'pouch', name: 'Pouch · Shipping & tracking', nameEs: 'Pouch · Envíos y seguimiento', kind: 'application', category: 'product-systems', status: 'private',
+    source: { en: 'Freelance · shipping platform', es: 'Freelance · plataforma de envíos' },
     role: { en: 'Full-stack application development', es: 'Desarrollo full-stack de la aplicación' },
-    summary: { en: 'The shipping and tracking application originally known as the Bahía Nica Portal, now Pouch.', es: 'La aplicación de envíos y tracking conocida originalmente como Portal de Bahía Nica, hoy Pouch.' },
-    details: { en: ['Developed the complete shipping/tracking application and supporting API.', 'Package reception, shipping alerts, invoices, manifests and dispatch receipts.', 'Customer and administrative workflows, package identification and location, and operational statistics.'], es: ['Desarrollo de la aplicación completa de envíos y tracking y su API de soporte.', 'Recepción de paquetes, alertas de envío, facturas, manifiestos y recibos de despacho.', 'Flujos para clientes y administración, identificación y localización de paquetes y estadísticas operativas.'] },
-    credit: { en: 'Screens show the original Bahía Nica Portal interface, now called Pouch. Original frontend components are rendered locally with synthetic records, not production data or a claim about the current Pouch interface.', es: 'Las pantallas muestran la interfaz original del Portal de Bahía Nica, hoy Pouch. Los componentes frontend originales se renderizaron localmente con registros ficticios, no datos de producción ni una representación de la interfaz actual de Pouch.' },
+    summary: { en: 'A complete shipping and tracking application built as a freelance engagement. Originally called Portal, the product is now known as Pouch.', es: 'Aplicación completa de envíos y seguimiento desarrollada como proyecto freelance. El producto, antes llamado Portal, hoy se conoce como Pouch.' },
+    details: { en: ['Developed the complete shipping and tracking application, supporting API and webhook services.', 'Package reception, shipping alerts, invoices, manifests and dispatch receipts.', 'Customer and agency management, role-based administration, package identification and location, and operational statistics.', 'Load calculation and import/export declaration workflows.'], es: ['Desarrollo de la aplicación completa de envíos y seguimiento, su API y servicios webhook.', 'Recepción de paquetes, alertas de envío, facturas, manifiestos y recibos de despacho.', 'Gestión de clientes y agencias, administración por roles, identificación y localización de paquetes y estadísticas operativas.', 'Cálculo de carga y flujos de declaraciones de importación y exportación.'] },
+    credit: { en: 'Screens from Portal, the earlier version of Pouch. Example data only.', es: 'Pantallas de Portal, la versión anterior de Pouch. Solo datos de ejemplo.' },
     stack: ['Next.js', 'React', 'TypeScript', 'Firebase', 'Node.js', 'Express'],
     preview: pouchCapture('pouch-receptions', { en: 'Shipment history', es: 'Historial de envíos' }),
     gallery: [pouchCapture('pouch-details', { en: 'Package details', es: 'Detalle de paquete' })]
-  },
-  {
-    slug: 'lighthouse', name: 'Lighthouse F&C', kind: 'application', category: 'product-systems', status: 'private',
-    source: { en: 'Lighthouse · logistics platform', es: 'Lighthouse · plataforma logística' },
-    role: { en: 'Web application and API development', es: 'Desarrollo de aplicación web y API' },
-    summary: { en: 'A logistics application for Lighthouse, covering shipment operations and agency workflows.', es: 'Aplicación logística para Lighthouse, con operaciones de envíos y flujos para agencias.' },
-    details: { en: ['Web application and supporting webhook/API services.', 'Shipment history, dispatch receipts, agency management and manifests.', 'Load calculation and import/export declaration workflows with role-based administrative navigation.'], es: ['Aplicación web y servicios de webhook/API de soporte.', 'Historial de envíos, recibos de despacho, gestión de agencias y manifiestos.', 'Cálculo de carga y declaraciones de importación/exportación con navegación administrativa según el rol.'] },
-    credit: { en: 'Private operational software; this case contains no production records or account links.', es: 'Software operativo privado; este caso no contiene registros de producción ni enlaces a cuentas.' },
-    stack: ['Next.js', 'React', 'TypeScript', 'Firebase', 'Node.js', 'Express'],
-    preview: { src: '/images/projects/lighthouse.webp', width: 441, height: 431, type: 'artwork', alt: { en: 'Lighthouse F&C original brand mark', es: 'Marca original de Lighthouse F&C' } }
   },
   {
     slug: 'myroadmap', name: 'MyRoadmap', category: 'product-systems', kind: 'archive',

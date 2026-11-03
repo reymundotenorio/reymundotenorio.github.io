@@ -82,6 +82,7 @@ export const additionalProjects: ArchiveItem[] = [
   },
   {
     slug: 'nicaragua-tattoos',
+    kind: 'website',
     name: 'Nicaragua Tattoos',
     category: 'web',
     year: '2016 - 2022',
@@ -94,7 +95,12 @@ export const additionalProjects: ArchiveItem[] = [
       en: ['Website development and maintenance with PHP, HTML, Sass, Bootstrap, and jQuery.', 'YouTube and Instagram APIs brought social and video content into the website.'],
       es: ['Desarrollo y mantenimiento con PHP, HTML, Sass, Bootstrap y jQuery.', 'Integración de contenido social y video mediante las APIs de YouTube e Instagram.']
     },
-    stack: ['PHP', 'Sass', 'jQuery', 'YouTube API', 'Instagram API']
+    stack: ['PHP', 'Sass', 'jQuery', 'YouTube API', 'Instagram API'],
+    preview: {
+      src: '/images/projects/nicaragua-tattoos.webp', width: 1440, height: 1150, type: 'restored',
+      alt: { en: 'Nicaragua Tattoos homepage', es: 'Inicio de Nicaragua Tattoos' },
+      caption: { en: 'Homepage', es: 'Inicio' }
+    }
   },
   {
     slug: 'license-key-generator',

@@ -1,5 +1,6 @@
 import { additionalProjects, recentProjects } from './projects.ts';
 import { clientProjects } from './client-projects.ts';
+import { withProjectVisuals } from './project-visuals.ts';
 
 export type Lang = 'en' | 'es';
 export type MissionId = 'leadership' | 'product' | 'web-engineering' | 'automation' | 'frontend' | 'contact';
@@ -26,7 +27,7 @@ export interface ProjectMedia {
   height: number;
   alt: { en: string; es: string };
   caption?: { en: string; es: string };
-  type: 'current' | 'archived' | 'artwork' | 'demo' | 'store';
+  type: 'current' | 'archived' | 'restored' | 'demo' | 'store' | 'concept';
 }
 
 export interface ArchiveItem {
@@ -245,7 +246,7 @@ export const archiveFilters: Record<Lang, ArchiveFilter[]> = {
   ]
 };
 
-export const archiveItems: ArchiveItem[] = [
+export const archiveItems: ArchiveItem[] = withProjectVisuals([
   ...clientProjects,
   ...recentProjects,
   {
@@ -375,10 +376,20 @@ export const archiveItems: ArchiveItem[] = [
       en: ['Developed websites with HTML, Sass, Bootstrap, PencilBlue CMS, Photoshop, and Illustrator.', 'Built custom WordPress themes from Adobe XD UI/UX designs.', 'Recognized as Top Web Designer of the Year 2017 at Accedo Technologies.'],
       es: ['Desarrollo con HTML, Sass, Bootstrap, PencilBlue CMS, Photoshop e Illustrator.', 'Temas WordPress a medida desde diseños UI/UX en Adobe XD.', 'Reconocido como Top Web Designer of the Year 2017 en Accedo Technologies.']
     },
-    stack: ['HTML', 'Sass', 'Bootstrap', 'WordPress', 'PencilBlue']
+    stack: ['HTML', 'Sass', 'Bootstrap', 'WordPress', 'PencilBlue'],
+    preview: {
+      src: '/images/projects/acadia-careers.webp', width: 1440, height: 1150, type: 'restored',
+      alt: { en: 'Acadia Healthcare careers homepage', es: 'Inicio del career site de Acadia Healthcare' },
+      caption: { en: 'Acadia Healthcare · careers homepage', es: 'Acadia Healthcare · inicio de empleos' }
+    },
+    gallery: [{
+      src: '/images/projects/acadia-culture.webp', width: 1440, height: 1150, type: 'restored',
+      alt: { en: 'Acadia Healthcare culture page', es: 'Página de cultura de Acadia Healthcare' },
+      caption: { en: 'Acadia Healthcare · culture page', es: 'Acadia Healthcare · cultura' }
+    }]
   },
   ...additionalProjects
-];
+]);
 
 export const timelineItems: Record<Lang, TimelineItem[]> = {
   en: [

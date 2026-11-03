@@ -37,12 +37,12 @@ const related = archiveItems.filter((other) => other.slug !== item.slug && (othe
         {item.role && <p class="case-role"><span>{english ? 'My contribution' : 'Mi contribución'}</span>{item.role[lang]}</p>}
         {item.url ? <a class="case-external" href={item.url} target="_blank" rel="noopener noreferrer">
           {item.linkKind === 'code' ? (english ? 'View source' : 'Ver código') : (english ? 'Visit current website' : 'Visitar sitio actual')}<span aria-hidden="true">↗</span>
-        </a> : <p class="case-access">{item.status === 'private' ? (english ? 'Private application · public project case' : 'Aplicación privada · caso público') : (english ? 'Project archive' : 'Archivo del proyecto')}</p>}
+        </a> : <p class="case-access">{item.status === 'private' ? (english ? 'Private application' : 'Aplicación privada') : (english ? 'Project archive' : 'Archivo del proyecto')}</p>}
       </div>
     </section>
 
     {captures.length > 0 && <div class:list={['case-captures', item.preview?.type === 'store' && 'case-captures--mobile']}>
-      {captures.map((media, index) => <figure class:list={['case-media', media.type === 'artwork' && 'case-media--artwork']}>
+      {captures.map((media, index) => <figure class="case-media">
         <a href={media.src} target="_blank" rel="noopener noreferrer" aria-label={english ? `Open full image: ${media.alt.en}` : `Abrir imagen completa: ${media.alt.es}`}>
           <img src={media.src} width={media.width} height={media.height} alt={media.alt[lang]} loading={index === 0 ? 'eager' : 'lazy'} fetchpriority={index === 0 ? 'high' : 'auto'} />
         </a>

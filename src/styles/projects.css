@@ -23,8 +23,7 @@
 .project-media { position: relative; display: block; width: 100%; aspect-ratio: 16 / 10; overflow: hidden; background: #151719; }
 .project-media img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; transition: object-position 1.2s ease, transform .6s ease; }
 .project-media:hover img { object-position: center; }
-.project-media--artwork { background: #e8ebed; }
-.project-media--artwork img { object-fit: contain; padding: 28px; }
+.project-media--concept img { object-position: center; }
 .project-media__screens { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; height: 100%; padding: 16px; background: #e4c0bc; }
 .project-media__screens img { object-fit: contain; object-position: center; }
 .project-media > span { position: absolute; right: 12px; bottom: 12px; padding: 6px 9px; color: #fff; background: #111e; font: 10px/1.4 var(--font-mono); }
@@ -55,8 +54,6 @@
 .case-captures--mobile figcaption { flex-wrap: wrap; gap: 8px; }
 .case-media { margin: 0; min-width: 0; }
 .case-media img { display: block; width: 100%; height: auto; max-height: 1000px; object-fit: contain; object-position: top; background: #101214; }
-.case-media--artwork > a { display: flex; justify-content: center; background: #e8ebed; }
-.case-media--artwork img { width: 100%; max-width: 580px; height: 350px; object-fit: contain; padding: 48px; background: none; }
 .case-media figcaption { display: flex; justify-content: space-between; gap: 24px; padding: 14px 0; color: var(--color-dim); font: 11px/1.6 var(--font-mono); }
 .case-media figcaption a { color: var(--color-muted); display: inline-flex; gap: 12px; flex-shrink: 0; }
 .case-scope { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 80px; margin-top: 54px; padding: 44px 0 64px; border-top: 1px solid var(--color-line); }
@@ -87,7 +84,6 @@
   .case-summary { font-size: 16px; }
   .case-context { font-size: 10px; }
   .case-intro__bottom { align-items: start; flex-direction: column; gap: 22px; }
-  .case-media--artwork img { height: 260px; padding: 32px; }
   .case-captures--mobile { grid-template-columns: minmax(0, 1fr); max-width: 390px; margin-inline: auto; }
   .project-media__screens { padding: 10px; gap: 6px; }
   .case-media figcaption { flex-wrap: wrap; gap: 8px; font-size: 10px; }

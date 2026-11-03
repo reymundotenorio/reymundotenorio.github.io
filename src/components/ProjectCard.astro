@@ -11,6 +11,7 @@ interface Props {
 }
 
 const { item, index, lang, viewCase } = Astro.props;
+const name = lang === 'es' ? item.nameEs ?? item.name : item.name;
 const linkLabel = item.linkKind === 'code' ? (lang === 'en' ? 'View code' : 'Ver código') : viewCase;
 const status = item.status === 'private'
   ? (lang === 'en' ? 'Private project' : 'Proyecto privado')
@@ -20,7 +21,7 @@ const mobileScreens = item.preview?.type === 'store' ? [item.preview, ...(item.g
 
 <article class:list={['archive-item', item.preview && 'archive-item--visual']} data-archive-item data-category={item.category} data-project={item.slug}>
   {item.preview && (
-    <a class:list={['project-media', item.preview.type === 'artwork' && 'project-media--artwork', mobileScreens.length > 0 && 'project-media--mobile']} href={projectPath(item, lang)} aria-label={`${lang === 'en' ? 'View project' : 'Ver proyecto'}: ${item.name}`}>
+    <a class:list={['project-media', mobileScreens.length > 0 && 'project-media--mobile', item.preview.type === 'concept' && 'project-media--concept']} href={projectPath(item, lang)} aria-label={`${lang === 'en' ? 'View project' : 'Ver proyecto'}: ${name}`}>
       {mobileScreens.length > 0 ? <div class="project-media__screens">{mobileScreens.map((media) => <img src={media.src} width={media.width} height={media.height} alt={media.alt[lang]} loading="lazy" decoding="async" />)}</div> : <img src={item.preview.src} width={item.preview.width} height={item.preview.height} alt={item.preview.alt[lang]} loading="lazy" decoding="async" />}
       <span>{projectMediaLabel(item.preview, lang)}</span>
     </a>
@@ -31,7 +32,7 @@ const mobileScreens = item.preview?.type === 'store' ? [item.preview, ...(item.g
   <span class="archive-item__source">{item.source[lang]}</span>
   {item.year && <span class="archive-item__year">{item.year}</span>}
   </div>
-  <h3><a href={projectPath(item, lang)}>{lang === 'es' ? item.nameEs ?? item.name : item.name}</a></h3>
+  <h3><a href={projectPath(item, lang)}>{name}</a></h3>
   <p>{item.summary[lang]}</p>
   {item.stack.length > 0 && <div class="archive-item__stack">
     {item.stack.map((stackItem) => <span>{stackItem}</span>)}
@@ -39,7 +40,7 @@ const mobileScreens = item.preview?.type === 'store' ? [item.preview, ...(item.g
   <div class="archive-item__actions">
   <a class="archive-item__cta" href={projectPath(item, lang)}>{lang === 'en' ? 'View project' : 'Ver proyecto'}<span aria-hidden="true">↗</span></a>
   {item.url ? (
-    <a class="archive-item__cta archive-item__cta--external" href={item.url} target="_blank" rel="noopener noreferrer" aria-label={`${linkLabel}: ${item.name}`}>
+    <a class="archive-item__cta archive-item__cta--external" href={item.url} target="_blank" rel="noopener noreferrer" aria-label={`${linkLabel}: ${name}`}>
       {linkLabel}<span aria-hidden="true">↗</span>
     </a>
   ) : <span class="archive-item__archived">{status}</span>}
