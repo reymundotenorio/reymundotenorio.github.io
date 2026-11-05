@@ -53,11 +53,11 @@ for(const lang of ['en','es']){
     await check('Desktop: project controls and keyboard access',async()=>{
       const initial=await state(page);await jump(page,initial.start);await page.locator('[data-next]').click();await expect(page.locator('[data-scene]')).toHaveAttribute('data-active-project','studio-ivl');await page.waitForTimeout(900);
       await page.locator('[data-next]').focus();await page.keyboard.press('ArrowRight');await page.waitForTimeout(900);await expect(page.locator('[data-scene]')).toHaveAttribute('data-active-project','pouch');
-      await page.locator('[data-story-panel]').last().locator('.story-media').focus();await expect(page.locator('[data-scene]')).toHaveAttribute('data-active-project','claris-health');expect((await state(page)).x).toBe(0);
+      await page.locator('[data-story-panel]').last().locator('.story-media').focus();await expect(page.locator('[data-scene]')).toHaveAttribute('data-active-project','depsaber');expect((await state(page)).x).toBe(0);
       await page.keyboard.press('Tab');await expect(page.locator('[data-story-panel]').last().locator('.panel-caption a')).toBeFocused();
     });
     await check('Project details open their own complete page; the archive stays compact',async()=>{
-      await page.locator('[data-story-panel]').last().locator('.panel-caption a').click();await expect(page.locator('[data-project-case="claris-health"] h1')).toBeInViewport();expect(await page.locator('.case-cover img').count()).toBe(1);await page.locator('[data-project-back]').first().click();await expect(page.locator('[data-scene]')).toHaveAttribute('data-active-project','claris-health');
+      await page.locator('[data-story-panel]').last().locator('.panel-caption a').click();await expect(page.locator('[data-project-case="depsaber"] h1')).toBeInViewport();expect(await page.locator('.case-cover img').count()).toBe(1);await page.locator('[data-project-back]').first().click();await expect(page.locator('[data-scene]')).toHaveAttribute('data-active-project','depsaber');
       await page.locator('[data-archive-rest]>summary').click();expect(await page.locator('[data-archive-project]:visible').count()).toBe(30);
       await page.locator('#code>summary').click();expect(await page.locator('[data-public-repository]:visible').count()).toBe(56);
     });
