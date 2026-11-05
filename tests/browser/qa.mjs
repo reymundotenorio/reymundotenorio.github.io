@@ -6,7 +6,7 @@ const root=new URL('../../',import.meta.url),out=QA_OUTPUT;await mkdir(out,{recu
 const browser=await launchBrowser();
 const results=[],errors=[];
 const check=async(name,fn)=>{try{const evidence=await fn();results.push({name,pass:true,evidence});console.log(`PASS ${name}`);}catch(e){results.push({name,pass:false,error:e.message});console.log(`FAIL ${name}: ${e.message.slice(0,400)}`);}};
-const open=async(lang='en',options={})=>{const context=await browser.newContext({viewport:{width:1440,height:1000},...options});const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});await page.goto(`${BASE_URL}/${lang}/`);await page.evaluate(()=>document.fonts.ready);await page.waitForTimeout(150);return {page,context};};
+const open=async(lang='en',options={})=>{const context=await browser.newContext({viewport:{width:1440,height:1000},...options});const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});await page.goto(`${BASE_URL}/${lang}/`);await page.evaluate(()=>document.fonts.ready);await expect(page.locator('html')).not.toHaveAttribute('data-intro-state',/.+/);await page.waitForTimeout(150);return {page,context};};
 const state=page=>page.evaluate(()=>{const scene=document.querySelector('[data-scene]'),frame=document.querySelector('[data-story-frame]');return {y:scrollY,x:scrollX,frameY:frame.getBoundingClientRect().y,trackX:document.querySelector('[data-story-track]').getBoundingClientRect().x,header:document.querySelector('[data-header]').getBoundingClientRect().height,start:Number(scene.dataset.pinStart),end:Number(scene.dataset.pinEnd),active:scene.dataset.activeProject,pinned:scene.dataset.pinned,spacers:document.querySelectorAll('.pin-spacer').length};});
 const jump=async(page,y)=>{await page.evaluate(top=>scrollTo({top,behavior:'instant'}),y);await page.waitForTimeout(120);};
 const screenshot=async(page,name)=>page.screenshot({path:new URL(`${name}.png`,out).pathname});
@@ -32,7 +32,7 @@ for(const lang of ['en','es']){
   await check(`${lang}: theme button, persistence and independent interactions`,async()=>{
     await expect(page.locator('button[data-theme]')).toBeVisible();await page.locator('h1').click();await expect(page.locator('html')).toHaveAttribute('data-theme','dark');
     await page.locator('button[data-theme]').click();await expect(page.locator('html')).toHaveAttribute('data-theme','light');
-    await page.reload();await expect(page.locator('html')).toHaveAttribute('data-theme','light');await screenshot(page,`${lang}-light-hero`);
+    await page.reload();await expect(page.locator('html')).toHaveAttribute('data-theme','light');await expect(page.locator('html')).not.toHaveAttribute('data-intro-state',/.+/);await screenshot(page,`${lang}-light-hero`);
   });
   for(const theme of ['light','dark']){
     if(theme==='dark')await page.locator('button[data-theme]').click();
