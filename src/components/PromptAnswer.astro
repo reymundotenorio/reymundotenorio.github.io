@@ -7,17 +7,18 @@ import{projectHref}from'../lib/project-path';
 interface Props {data:Data}
 const {data}=Astro.props,en=data.lang==='en';
 const byId=(id:string)=>data.projects.find(p=>p.id===id)!;
+const selectedApps=data.projects.filter(project=>['product-systems','mobile'].includes(project.category)).slice(0,2);
 const index=data.projects.map(p=>({id:p.id,name:p.name,stack:p.stack.join(' ')}));
 ---
 <section class="prompt-answer" aria-labelledby="answer-title" data-prompt-output data-topic="apps" data-cycle="0" data-demo-state="idle" hidden>
   <div class="answer-heading"><h2 id="answer-title" data-answer-title>{en?'Products & apps':'Productos y apps'}</h2><div class="answer-transport"><span data-demo-label>{en?'Demo':'Demo'}</span><button class="icon-button" type="button" data-demo-toggle aria-label={en?'Pause demo':'Pausar demo'} data-tooltip={en?'Pause demo':'Pausar demo'}><span data-demo-pause><Icon name="pause" /></span><span data-demo-play hidden><Icon name="play" /></span></button></div></div>
-  <div class="answer-body" data-answer-body><div class="answer-projects"><AnswerProject project={byId('duepulse')} en={en}/><AnswerProject project={byId('studio-ivl')} en={en}/></div></div>
+  <div class="answer-body" data-answer-body><div class="answer-projects">{selectedApps.map(project=><AnswerProject project={project} en={en}/>)}</div></div>
   <a class="answer-more text-link" href="#archive" data-answer-more>{en?'Explore all projects':'Explorar todos los proyectos'}<Icon name="arrow-up-right" /></a>
   <p class="sr-only" role="status" data-answer-announcement></p>
 </section>
 <script type="application/json" data-answer-index set:html={JSON.stringify(index).replace(/</g,'\\u003c')}/>
 {data.projects.map(project=><template data-answer-template={`project-${project.id}`} data-title={project.name} data-href={projectHref(data.lang,project.id,'prompt')}><div class="answer-projects answer-projects--single"><AnswerProject project={project} en={en}/></div></template>)}
-<template data-answer-template="apps" data-title={en?'Products & apps':'Productos y apps'} data-target="archive"><div class="answer-projects"><AnswerProject project={byId('duepulse')} en={en}/><AnswerProject project={byId('studio-ivl')} en={en}/></div></template>
+<template data-answer-template="apps" data-title={en?'Products & apps':'Productos y apps'} data-target="archive"><div class="answer-projects">{selectedApps.map(project=><AnswerProject project={project} en={en}/>)}</div></template>
 <template data-answer-template="websites" data-title={en?'Websites, built around the work':'Websites a medida'} data-target="archive"><div class="answer-projects"><AnswerProject project={byId('nicasource')} en={en}/><AnswerProject project={byId('steps-veterinary')} en={en}/></div></template>
 <template data-answer-template="systems" data-title={en?'Systems & tools':'Sistemas y herramientas'} data-target="archive"><div class="answer-projects"><AnswerProject project={byId('depsaber')} en={en}/><AnswerProject project={byId('dele-peso-tools')} en={en}/></div></template>
 <template data-answer-template="experience" data-title={en?'Engineering experience':'Experiencia en ingeniería'} data-target="experience"><div class="answer-experience"><h3>Nicasource</h3><ul>{roleHistory[data.lang].map(role=><li><span>{role.title}</span><time>{role.dates}</time></li>)}</ul></div></template>

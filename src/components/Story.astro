@@ -1,5 +1,6 @@
 ---
 import corpus from '../data/profile.json';
+import { orderProjects } from '../data/project-curation';
 import type { Data,Lang } from '../types';
 import Layout from './Layout.astro';
 import ProjectScene from './ProjectScene.astro';
@@ -13,7 +14,8 @@ import Icon from './Icon.astro';
 import PromptAnswer from './PromptAnswer.astro';
 import AIPractice from './AIPractice.astro';
 interface Props { lang: Lang }
-const { lang }=Astro.props; const en=lang==='en'; const data=corpus[lang] as Data;
+const { lang }=Astro.props; const en=lang==='en';
+const data={...corpus[lang],projects:orderProjects(corpus[lang].projects)} as Data;
 ---
 <Layout lang={lang}>
   <main id="main-content" tabindex="-1">

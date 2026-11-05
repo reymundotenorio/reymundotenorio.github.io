@@ -3,10 +3,16 @@ import type { Data } from '../types';
 import Icon from './Icon.astro';
 import{projectHref}from'../lib/project-path';
 import ProjectImage from'./ProjectImage.astro';
+import { featuredProjectIds } from '../data/project-curation';
 interface Props { data: Data }
 const { data } = Astro.props; const en=data.lang==='en';
-const featured=['duepulse','studio-ivl','pouch','claris-health'].map(id=>data.projects.find(project=>project.id===id)!);
-const subtitles = en ? ['Personal finance PWA','Mobile application, built from scratch','Shipping platform, from interface to integrations','Healthcare website'] : ['PWA de finanzas personales','Aplicación móvil, creada desde cero','Plataforma de envíos, de interfaz a integraciones','Sitio web de salud'];
+const featured=featuredProjectIds.map(id=>data.projects.find(project=>project.id===id)!);
+const subtitles:Record<string,string>={
+  duepulse:en?'Personal finance PWA':'PWA de finanzas personales',
+  pouch:en?'Full-stack shipping operations and integrations':'Operaciones de envíos e integraciones full-stack',
+  'studio-ivl':en?'Mobile application, built from scratch':'Aplicación móvil, creada desde cero',
+  depsaber:en?'Developer tooling, from Go CLI to CI':'Herramientas de desarrollo, de Go CLI a CI'
+};
 ---
 <section class="work-story" id="work" aria-labelledby="work-title" data-scene>
   <div class="story-frame" data-story-frame>
@@ -15,7 +21,7 @@ const subtitles = en ? ['Personal finance PWA','Mobile application, built from s
       <div class="story-track" data-story-track>
         {featured.map((project,i)=><article class="story-panel" data-story-panel data-project={project.id} aria-labelledby={`story-${project.id}`}>
           <div class="panel-meta"><span><b>{String(i+1).padStart(2,'0')}</b> / 04</span><span>{project.year}</span></div>
-          <h3 id={`story-${project.id}`}>{project.id==='studio-ivl' ? 'IVL Collective' : project.name}</h3><p class="panel-subtitle">{subtitles[i]}</p>
+          <h3 id={`story-${project.id}`}>{project.id==='studio-ivl' ? 'IVL Collective' : project.name}</h3><p class="panel-subtitle">{subtitles[project.id]}</p>
           <a href={projectHref(data.lang,project.id,'work')} class:list={['story-media',project.id==='studio-ivl' && 'story-media--phones']} aria-label={`${en ? 'View project' : 'Ver proyecto'}: ${project.name}`}>
             {project.id==='studio-ivl' ? project.media.slice(0,3).map(media=><ProjectImage media={media} loading="eager" sizes="(min-width:1000px) 24vw, 30vw"/>) : <ProjectImage media={project.media[0]} loading="eager"/>}
           </a>

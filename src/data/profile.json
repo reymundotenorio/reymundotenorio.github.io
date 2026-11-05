@@ -910,8 +910,8 @@
       },
       {
         "id": "pouch",
-        "name": "Pouch · Shipping & tracking",
-        "summary": "A complete shipping and tracking application built as a freelance engagement. Originally called Portal, the product is now known as Pouch.",
+        "name": "Shipping Portal",
+        "summary": "A freelance full-stack shipping operations portal covering package tracking, invoicing, role-based administration and API integrations.",
         "contribution": "Full-stack application development",
         "details": [
           "Developed the complete shipping and tracking application, supporting API and webhook services.",
@@ -931,18 +931,18 @@
         "year": "",
         "media": [
           {
-            "src": "/images/projects/pouch-receptions.webp",
+            "src": "/images/projects/shipping-portal-history-en.webp",
             "width": 1680,
             "height": 1050,
-            "alt": "Pouch Portal · Shipment history with example data",
+            "alt": "Shipping portal · Shipment history demo in English",
             "label": "Shipment history · Demo data",
             "type": "demo"
           },
           {
-            "src": "/images/projects/pouch-details.webp",
+            "src": "/images/projects/shipping-portal-details-en.webp",
             "width": 1680,
             "height": 1050,
-            "alt": "Pouch Portal · Package details with example data",
+            "alt": "Shipping portal · Package details demo in English",
             "label": "Package details · Demo data",
             "type": "demo"
           }
@@ -2492,8 +2492,8 @@
       },
       {
         "id": "pouch",
-        "name": "Pouch · Envíos y seguimiento",
-        "summary": "Aplicación completa de envíos y seguimiento desarrollada como proyecto freelance. El producto, antes llamado Portal, hoy se conoce como Pouch.",
+        "name": "Portal de envíos",
+        "summary": "Portal de operaciones de envíos desarrollado como proyecto freelance: seguimiento de paquetes, facturación, administración por roles e integraciones de APIs.",
         "contribution": "Desarrollo full-stack de la aplicación",
         "details": [
           "Desarrollo de la aplicación completa de envíos y seguimiento, su API y servicios webhook.",
@@ -2513,18 +2513,18 @@
         "year": "",
         "media": [
           {
-            "src": "/images/projects/pouch-receptions.webp",
+            "src": "/images/projects/shipping-portal-history-es.webp",
             "width": 1680,
             "height": 1050,
-            "alt": "Pouch Portal · Historial de envíos con datos de ejemplo",
+            "alt": "Portal de envíos · Demostración del historial de envíos en español",
             "label": "Historial de envíos · Datos de ejemplo",
             "type": "demo"
           },
           {
-            "src": "/images/projects/pouch-details.webp",
+            "src": "/images/projects/shipping-portal-details-es.webp",
             "width": 1680,
             "height": 1050,
-            "alt": "Pouch Portal · Detalle de paquete con datos de ejemplo",
+            "alt": "Portal de envíos · Demostración del detalle de paquete en español",
             "label": "Detalle de paquete · Datos de ejemplo",
             "type": "demo"
           }
