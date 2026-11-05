@@ -27,6 +27,12 @@ jobs:
           node-version: 24
           package-manager: pnpm@11.25.0
 
+      - name: Install browser for release checks
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Verify built portfolio in Chromium
+        run: pnpm test:release
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
