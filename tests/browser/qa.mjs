@@ -36,7 +36,14 @@ for(const lang of ['en','es']){
   });
   for(const theme of ['light','dark']){
     if(theme==='dark')await page.locator('button[data-theme]').click();
-    await check(`${lang}: axe ${theme}`,async()=>{const scan=await new AxeBuilder({page}).analyze();await writeFile(new URL(`axe-${lang}-${theme}.json`,out),JSON.stringify({violations:scan.violations,incomplete:scan.incomplete.map(i=>({id:i.id,nodes:i.nodes.length}))},null,2));expect(scan.violations.map(v=>({id:v.id,impact:v.impact,targets:v.nodes.slice(0,6).map(n=>n.target)}))).toEqual([]);return {rulesPassed:scan.passes.length,incomplete:scan.incomplete.length};});
+    await check(`${lang}: axe ${theme}`,async()=>{
+      // Audit a settled reading state, not a random frame of the answer fade.
+      const output=page.locator('[data-prompt-output]');
+      if(await output.getAttribute('data-demo-state')==='auto')await page.locator('[data-demo-toggle]').click();
+      await page.locator('[data-answer-body]').evaluate(body=>Promise.all(body.getAnimations().map(animation=>animation.finished.catch(()=>{}))));
+      await expect(page.locator('[data-answer-body]')).toHaveCSS('opacity','1');
+      const scan=await new AxeBuilder({page}).analyze();await writeFile(new URL(`axe-${lang}-${theme}.json`,out),JSON.stringify({violations:scan.violations,incomplete:scan.incomplete.map(i=>({id:i.id,nodes:i.nodes.length}))},null,2));expect(scan.violations.map(v=>({id:v.id,impact:v.impact,targets:v.nodes.slice(0,6).map(n=>n.target)}))).toEqual([]);return {rulesPassed:scan.passes.length,incomplete:scan.incomplete.length};
+    });
   }
   if(lang==='en'){
     await screenshot(page,'desktop-hero');
