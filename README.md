@@ -1,79 +1,122 @@
-# Reymundo Tenorio
+<p align="center">
+  <img src="public/brand/r-cursor.svg" width="38" height="46" alt="Reymundo Tenorio terminal mark" />
+</p>
 
-A bilingual Astro portfolio with a progressive Three.js hero and GSAP motion.
+<h1 align="center">Reymundo Tenorio</h1>
+<p align="center">Software Engineer. Web and mobile products, applied AI, and automation.</p>
+<p align="center">
+  <a href="https://reymundotenorio.github.io/"><strong>Explore the portfolio</strong></a>
+  &nbsp; / &nbsp;
+  <a href="https://reymundotenorio.github.io/en/">English</a>
+  &nbsp; / &nbsp;
+  <a href="https://reymundotenorio.github.io/es/">Español</a>
+</p>
+<p align="center">
+  <a href="https://github.com/reymundotenorio/reymundotenorio.github.io/actions/workflows/deploy.yml"><img src="https://github.com/reymundotenorio/reymundotenorio.github.io/actions/workflows/deploy.yml/badge.svg" alt="GitHub Pages deployment" /></a>
+  <img src="https://img.shields.io/badge/Astro-7.3.3-111214?style=flat-square&logo=astro&logoColor=61ffca" alt="Astro 7.3.3" />
+  <img src="https://img.shields.io/badge/GSAP-3.15-111214?style=flat-square&logo=greensock&logoColor=61ffca" alt="GSAP 3.15" />
+  <img src="https://img.shields.io/badge/TypeScript-6-111214?style=flat-square&logo=typescript&logoColor=a277ff" alt="TypeScript 6" />
+</p>
 
-Website: [reymundotenorio.github.io](https://reymundotenorio.github.io/).
+[![The portfolio, captured from the actual site](docs/portfolio-preview.webp)](https://reymundotenorio.github.io/)
 
-## Local Development
+## A Portfolio You Can Explore
 
-Use Node.js 22.12+ and pnpm 11.25.0 (pinned in `package.json`).
+A terminal-inspired introduction leads into selected work, then the full professional story. The interface is bilingual, statically rendered, and designed around real projects rather than decorative demos.
+
+- **Ask or discover.** The prompt types and submits examples until you take control. Enter and prepared options reveal factual, local answers.
+- **Browse selected work.** Desktop scrolling moves naturally into four horizontal project panels and back to vertical content. Mobile uses a native swipe rail.
+- **Open the project.** Each of the 30 projects has its own English and Spanish page with large captures, contribution, implementation details, and technologies. Back restores your place.
+- **Go deeper.** Experience, applied AI, a categorized tech stack, certifications, courses, recognition, education, and public code remain readable in HTML.
+- **Choose your pace.** Dark/light themes, keyboard access, motion controls, and reduced-motion layouts are built in. Core content and links work without JavaScript.
+
+**No AI service, API keys, or chatbot subscription.** Discovery runs locally with reviewed content and predefined matching. It does not generate answers or send questions to a server.
+
+## Run Locally
+
+Use **Node.js 24** and **pnpm 11.25.0**, the versions used by the deployment workflow.
 
 ```sh
 pnpm install --frozen-lockfile
-pnpm dev
-pnpm check
-pnpm test
-pnpm build
-pnpm test:static
-pnpm preview
+pnpm dev --port 4331
 ```
 
-Routes: `/` and `/en/` in English, `/es/` in Spanish. Every project has
-localized static cases at `/en/work/<slug>/` and `/es/work/<slug>/`.
+Open [localhost:4331](http://127.0.0.1:4331/). English is the default; Spanish is available at `/es/`.
 
-Profile and credential content lives in `src/data/site.ts`. Additional project
-records live in `src/data/projects.ts`, client work in `src/data/client-projects.ts`,
-and the complete historical career-site index lives in `src/data/career-sites.ts`.
-Components are in `src/components`,
-motion and interaction in `src/scripts/experience.ts`, and styling in
-`src/styles/global.css` and `src/styles/projects.css`.
+```sh
+pnpm test                   # Content, navigation, and demo logic
+pnpm check                  # Astro and TypeScript diagnostics
+pnpm build                  # Tests, checks, static build, SEO and byte budgets
+pnpm preview --port 4332    # Serve the production build
+```
 
-## Content Maintenance
+### Browser Checks
 
-Last source review: November 2, 2026. LinkedIn project listings, freelance
-experience attachments, certifications, and selected GitHub repositories were
-cross-checked against the original portfolio source archive.
+Install Chromium once:
 
-- 33 curated projects with bilingual cases: websites first, apps/platforms
-  separately, and earlier work in a native disclosure. Six websites are featured.
-- 18 credentials include the October 2026 OpenClaw and Claude Code diplomas.
-- Media in `public/images/projects` is optimized from supplied archived captures,
-  current public website captures (November 2026), or original brand artwork.
-  Captures are labeled by source; current websites can contain later work.
-- Microtec is maintenance, Dele Peso a sus Pesos is financial-tool development,
-  and Claris is website development. Column Five/Super Star are scoped
-  contributions. Blackstone and AISA are excluded due to uncertain scope.
-- Pouch is the former Bahia Nica Portal. Its original frontend components were
-  rendered locally with synthetic DEMO records, without connecting to a backend.
-  IVL uses archived public promotional screens, retaining their original watermarks.
-  Neither case exposes customer records or private source code.
-- Freelance project presentation omits intermediary names at the owner's request.
-  Development scope and supplied-design credit remain explicit. The anonymous
-  headless agency website case has no branded screenshot or external link.
-- The 37 career-site brands identify historical development work through Accedo,
-  not current site implementations or direct employment by those brands.
-- Freelance project date ranges describe the engagement period where a more
-  specific project date is not documented. Institutional and desktop projects
-  show their start year, not a claim of ongoing maintenance.
-- Private products have high-level descriptions only. Do not add private source
-  links, internal documentation, credentials, or customer data.
-- Credential URLs should point to individual diplomas, not generic course pages.
-  The Udemy React Native certificate is documented in LinkedIn experience media.
-- Updates are curated at build time, not automatically synchronized with LinkedIn.
-- The root route always opens in English. Spanish is an explicit language choice.
-- Personal city, coordinates, email, and telephone are not published as contact
-  details. Contact links point to LinkedIn and GitHub.
+```sh
+pnpm exec playwright install chromium
+```
+
+With the preview running in another terminal:
+
+```sh
+PORTFOLIO_BASE_URL=http://127.0.0.1:4332 pnpm test:e2e
+```
+
+The suite exercises both languages and themes, desktop wheel/touch navigation, project pages and return paths, prompt/autoplay, accessibility, responsive layouts, and no-JavaScript content. Screenshots, recordings, and JSON evidence stay outside the repository in `/tmp/portfolio-qa`.
+
+`PORTFOLIO_QA_OUTPUT` changes the output directory. `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` selects an existing Chromium installation.
+
+`pnpm test:release` starts and stops its own static preview, then runs the same browser suite. CI uses this gate before deployment. `PORTFOLIO_PREVIEW_PORT` selects an unused port when running it locally. Refresh the README capture with `PORTFOLIO_BASE_URL=http://127.0.0.1:4332 pnpm docs:preview`.
+
+## Make It Your Own
+
+| Area | Source |
+| --- | --- |
+| Bilingual professional content and 30 project cases | [`src/data/profile.json`](src/data/profile.json) |
+| Categorized stack and applied-AI narrative | [`src/data/editorial.ts`](src/data/editorial.ts) |
+| Curated, rotating demo questions | [`src/data/demo-tour.ts`](src/data/demo-tour.ts) |
+| Homepage and project presentation | [`src/components`](src/components) |
+| Project routes and sitemap | [`src/pages`](src/pages) |
+| Prompt, motion, theme, and return behavior | [`src/scripts`](src/scripts) |
+| Colors, fonts, spacing, and responsive styles | [`src/tokens.css`](src/tokens.css), [`src/style.css`](src/style.css) |
+| Project captures and identity assets | [`public/images/projects`](public/images/projects), [`public/brand`](public/brand) |
+
+Content is curated, not scraped at runtime. Keep stable project IDs aligned across languages. Add real contributions and source material; do not infer expertise from repository filenames or dependencies. Tests guard content coverage, safe links, and visible labels for conceptual or demo imagery.
+
+## How It Works
+
+**Astro builds the document. GSAP enhances the selected-work scene.** There is no SPA framework, database, answer API, or runtime server.
+
+- `/` and `/en/` render the English portfolio; `/es/` renders Spanish.
+- `/en/work/[id]/` and `/es/work/[id]/` are dedicated static project pages.
+- Case pages load a small client entry without the carousel or prompt engine.
+- Images get responsive WebP derivatives at build time. Full original captures remain available from the case pages.
+- Canonical URLs, reciprocal language links, Open Graph, structured data, and the sitemap are generated with the content.
+- Older complete-view URLs and retired minor-edit cases retain localized redirects. GitHub Pages serves static HTML redirects, not server-side HTTP 301 responses.
+
+The demo pauses while scrolling, offscreen, or hidden. Real input takes manual control until Play. Cursor animation is independent of demo pause and respects reduced motion. Theme/motion preferences stay on-device; a browser history entry retains only the local state needed to return to your place, including the selected prompt response. Questions are not sent externally or put in URLs.
+
+## Media & Attribution
+
+Authentic captures take precedence over concepts. Conceptual artwork and demonstration data remain labeled. Public websites may include later work by other contributors.
+
+Private application URLs, customer records, intermediary names, personal contact details, and private repository metadata are not part of the published portfolio. DuePulse uses signed-out product captures; Pouch is one anonymous shipping/tracking case. Workshop and participation records are distinguished from awards.
+
+Geist Sans and Geist Mono are self-hosted with their [SIL Open Font License](public/fonts/GEIST-OFL.txt). Local Lucide assets retain their [license](public/icons/LICENSE). Project brands and imagery are credited to their respective owners; a public repository is not permission to reuse someone else's identity or client material.
 
 ## Publishing
 
-GitHub Actions builds `dist/` and deploys through GitHub Pages after a push to
-`master`. Pages uses GitHub Actions as the build source and publishes only the
-generated `dist/` artifact, not the original portfolio's legacy static assets.
+An authorized push to `master` triggers [GitHub Actions](.github/workflows/deploy.yml):
 
-The repository also keeps a root-level static snapshot for compatibility with
-its original publishing setup. Run `pnpm publish:static` after changing the
-source to regenerate that snapshot and remove outdated hashed bundles.
+```text
+Install pinned dependencies -> tests & type checks -> static build
+-> SEO/content/performance gates -> Pages artifact -> deploy
+```
 
-JetBrains Mono is self-hosted under its SIL Open Font License in
-`public/fonts/OFL.txt`. WebGL is decorative: content and native disclosures work
-without JavaScript, and reduced motion disables continuous animation.
+Feature branches do not publish automatically. The workflow deploys `dist/`; there is no manual upload or secret-bearing client configuration. The older root-level static snapshot is retained as history and is not the deployment source.
+
+---
+
+[Portfolio](https://reymundotenorio.github.io/) · [LinkedIn](https://www.linkedin.com/in/reymundotenorio/) · [GitHub](https://github.com/reymundotenorio)
