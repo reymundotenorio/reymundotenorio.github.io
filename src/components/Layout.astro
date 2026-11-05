@@ -1,6 +1,7 @@
 ---
 import type { Lang } from '../types';
 import Icon from './Icon.astro';
+import SiteIntro from './SiteIntro.astro';
 import brand from '../../public/brand/r-cursor.svg?raw';
 import '../style.css';
 import{projectHref}from'../lib/project-path';
@@ -35,6 +36,7 @@ const ids = ['work','experience','ai-practice','toolkit','learning','recognition
   </head>
   <body data-lang={lang} data-page={projectSlug?'project':staticPage?'static':'home'}>
     <a class="skip-link" href="#main-content">{en ? 'Skip to content' : 'Ir al contenido'}</a>
+    {!homeLinks && <SiteIntro lang={lang} />}
     <header class="site-header" data-header>
       <a class="brand" href={`/${lang}/`} aria-label="Reymundo Tenorio"><span class="brand-mark" set:html={brand} /><span>Reymundo Tenorio<span class="mint">.</span></span></a>
       <nav class="site-nav" aria-label="Portfolio">{nav.map((label,i) => <a href={`${homeLinks?`/${lang}/`:''}#${ids[i]}`}>{label}</a>)}</nav>

@@ -8,7 +8,10 @@ if(document.body.dataset.page!=='home'){
     if(!link)return false;
     const url=new URL(link.href);url.search='';location.replace(url.href);return true;
   };
-  if(!redirectLegacyProject())import('./story');
+  if(!redirectLegacyProject()){
+    import('./intro').catch(()=>document.dispatchEvent(new CustomEvent('portfolio:intro-complete')));
+    import('./story');
+  }
   window.addEventListener('hashchange',redirectLegacyProject);
 }
 export{};

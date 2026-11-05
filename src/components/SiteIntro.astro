@@ -1,0 +1,51 @@
+---
+import type { Lang } from '../types';
+import Icon from './Icon.astro';
+import brand from '../../public/brand/r-cursor.svg?raw';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const introBrand = brand.replaceAll('id="', 'id="intro-');
+---
+<div class="site-intro" data-site-intro hidden>
+  <div class="intro-backdrop" aria-hidden="true"></div>
+  <span class="intro-mark" data-intro-mark aria-hidden="true" set:html={introBrand} />
+  <span class="intro-command" aria-hidden="true"><span>$</span> whoami<span class="intro-terminal-caret"></span></span>
+  <button class="intro-skip" type="button" data-intro-skip>{lang === 'en' ? 'Skip intro' : 'Omitir intro'} <Icon name="arrow-up-right" /></button>
+</div>
+<script is:inline>
+  (() => {
+    const root = document.documentElement;
+    const layer = document.querySelector('[data-site-intro]');
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+    let disabled = false;
+    try { disabled = localStorage.getItem('rt:story-motion') === 'off'; } catch {}
+    const returning = performance.getEntriesByType('navigation').some(entry => entry.type === 'back_forward');
+    if (!layer || location.hash || returning || reduce.matches || disabled || document.hidden) return;
+    const listeners = new AbortController();
+    let watchdog;
+    const finish = reason => {
+      if (!root.hasAttribute('data-intro-state')) return;
+      delete root.dataset.introState;
+      root.dataset.introFinished = reason;
+      layer.hidden = true;
+      clearTimeout(watchdog);
+      listeners.abort();
+      document.dispatchEvent(new CustomEvent('portfolio:intro-finished'));
+    };
+    layer.dataset.introStart = String(performance.now());
+    root.dataset.introState = 'active';
+    layer.hidden = false;
+    const signal = listeners.signal;
+    document.addEventListener('portfolio:intro-complete', () => finish('complete'), { signal });
+    for (const type of ['click', 'pointerdown', 'keydown', 'focusin', 'wheel', 'touchstart']) {
+      document.addEventListener(type, () => finish('interaction'), { signal, capture: true, passive: true });
+    }
+    window.addEventListener('scroll', () => { if (scrollY > 0) finish('interaction'); }, { signal, passive: true });
+    window.addEventListener('resize', () => finish('resize'), { signal });
+    window.addEventListener('hashchange', () => finish('navigation'), { signal });
+    window.addEventListener('pagehide', () => finish('navigation'), { signal });
+    document.addEventListener('visibilitychange', () => { if (document.hidden) finish('hidden'); }, { signal });
+    reduce.addEventListener('change', () => { if (reduce.matches) finish('reduced-motion'); }, { signal });
+    watchdog = setTimeout(() => finish('watchdog'), 2600);
+  })();
+</script>

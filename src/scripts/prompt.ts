@@ -4,6 +4,23 @@ export function initPrompt({signal,motion,reduce,refresh,restore}:Options){
   const en=document.body.dataset.lang==='en';
   const form=document.querySelector<HTMLFormElement>('[data-command]')!;
   const input=form.querySelector<HTMLInputElement>('input')!;
+  const caret=form.querySelector<HTMLElement>('[data-prompt-caret]')!;
+  const textMetrics=document.createElement('canvas').getContext('2d');
+  const updateCaret=()=>{
+    caret.hidden=!input.value||!textMetrics;
+    if(!textMetrics)return;
+    const width=textMetrics.measureText(input.value).width;
+    if(document.activeElement!==input)input.scrollLeft=Math.max(0,width-input.clientWidth+4);
+    const offset=Math.max(0,Math.min(width-input.scrollLeft+1,input.clientWidth-2));
+    caret.style.setProperty('--caret-offset',`${offset}px`);
+  };
+  const measureCaret=()=>{
+    if(textMetrics){const style=getComputedStyle(input);textMetrics.font=`${style.fontStyle} ${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;}
+    updateCaret();
+  };
+  const caretSize=new ResizeObserver(measureCaret);caretSize.observe(input);
+  document.fonts.ready.then(measureCaret);
+  for(const event of ['focus','blur','scroll'])input.addEventListener(event,updateCaret,{signal});
   const output=document.querySelector<HTMLElement>('[data-prompt-output]')!;
   const body=output.querySelector<HTMLElement>('[data-answer-body]')!;
   const title=output.querySelector<HTMLElement>('[data-answer-title]')!;
@@ -59,7 +76,7 @@ export function initPrompt({signal,motion,reduce,refresh,restore}:Options){
   // Passive pauses preserve the pending phase; real input cancels it permanently until Play.
   let timer:ReturnType<typeof setTimeout>|undefined,scrollTimer:ReturnType<typeof setTimeout>|undefined;
   let pending:(()=>void)|undefined,remaining=0,deadline=0;
-  const canRun=()=>!manual&&!userPaused&&!offscreen&&!scrolling&&!document.hidden&&motion.checked&&!reduce.matches;
+  const canRun=()=>!manual&&!userPaused&&!offscreen&&!scrolling&&!document.hidden&&!document.documentElement.hasAttribute('data-intro-state')&&motion.checked&&!reduce.matches;
   const sync=()=>{
     const active=canRun();
     output.dataset.demoState=manual?'manual':(!motion.checked||reduce.matches)?'disabled':active?'auto':'paused';
@@ -72,18 +89,18 @@ export function initPrompt({signal,motion,reduce,refresh,restore}:Options){
   };
   const schedule=(next:()=>void,delay:number)=>{clearTimeout(timer);timer=undefined;pending=next;remaining=delay;sync();};
   const type=()=>{
-    const entry=round[step];input.value=entry.query.slice(0,characters++);
+    const entry=round[step];input.value=entry.query.slice(0,characters++);updateCaret();
     if(characters<=entry.query.length)schedule(type,24);
     else{form.dataset.enter='true';schedule(()=>{form.dataset.enter='false';render(entry.query,true);output.dataset.cycle=String(++cycle);schedule(()=>{step++;if(step===round.length){step=0;round=tour.nextRound();publishRound();}characters=0;type();},3000);},240);}
   };
-  const takeControl=(clear=true)=>{if(!manual){if(clear)input.value='';manual=true;pending=undefined;clearTimeout(timer);timer=undefined;form.dataset.enter='false';sync();}};
+  const takeControl=(clear=true)=>{if(!manual){if(clear)input.value='';manual=true;pending=undefined;clearTimeout(timer);timer=undefined;form.dataset.enter='false';sync();updateCaret();}};
   form.addEventListener('focusin',event=>takeControl(event.target===input),{signal});
-  input.addEventListener('compositionstart',()=>takeControl(false),{signal});input.addEventListener('input',()=>takeControl(false),{signal});
+  input.addEventListener('compositionstart',()=>takeControl(false),{signal});input.addEventListener('input',()=>{takeControl(false);updateCaret();},{signal});
   form.addEventListener('submit',event=>{event.preventDefault();manual=true;pending=undefined;clearTimeout(timer);timer=undefined;sync();if(input.value.trim())render(input.value);},{signal});
   document.addEventListener('click',event=>{
     const link=(event.target as Element).closest<HTMLAnchorElement>('[data-prompt-query]');
     if(!link||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
-    event.preventDefault();takeControl();input.value=link.dataset.promptText||link.dataset.promptQuery!;render(input.value);
+    event.preventDefault();takeControl();input.value=link.dataset.promptText||link.dataset.promptQuery!;updateCaret();render(input.value);
   },{signal,capture:true});
   toggle.addEventListener('click',()=>{
     if(manual){manual=false;userPaused=false;characters=0;cycle=0;step=0;round=tour.nextRound();publishRound();schedule(type,200);}
@@ -91,9 +108,11 @@ export function initPrompt({signal,motion,reduce,refresh,restore}:Options){
   },{signal});
   output.addEventListener('click',event=>{if((event.target as Element).closest('a'))takeControl();},{signal});
   motion.addEventListener('change',sync,{signal});reduce.addEventListener('change',sync,{signal});document.addEventListener('visibilitychange',sync,{signal});
+  document.addEventListener('portfolio:intro-finished',sync,{signal});
   window.addEventListener('scroll',()=>{scrolling=true;sync();clearTimeout(scrollTimer);scrollTimer=setTimeout(()=>{scrolling=false;sync();},160);},{signal,passive:true});
   const observer=new IntersectionObserver(entries=>{offscreen=!entries[0].isIntersecting;sync();},{threshold:.2});observer.observe(form);
   form.hidden=false;output.hidden=false;sync();schedule(type,700);
-  if(restore){takeControl(false);input.value=restore.query;render(restore.query,false,restore.topic);}
-  return()=>{observer.disconnect();clearTimeout(timer);clearTimeout(scrollTimer);cancelAnimationFrame(measureFrame);};
+  if(restore){takeControl(false);input.value=restore.query;updateCaret();render(restore.query,false,restore.topic);}
+  measureCaret();
+  return()=>{observer.disconnect();caretSize.disconnect();clearTimeout(timer);clearTimeout(scrollTimer);cancelAnimationFrame(measureFrame);};
 }
