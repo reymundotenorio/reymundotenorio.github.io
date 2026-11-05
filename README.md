@@ -96,7 +96,7 @@ Content is curated, not scraped at runtime. Keep stable project IDs aligned acro
 - Canonical URLs, reciprocal language links, Open Graph, structured data, and the sitemap are generated with the content.
 - Older complete-view URLs and retired minor-edit cases retain localized redirects. GitHub Pages serves static HTML redirects, not server-side HTTP 301 responses.
 
-The demo pauses while scrolling, offscreen, or hidden. Real input takes manual control until Play. Cursor animation is independent of demo pause and respects reduced motion. Theme/motion preferences stay on-device; a browser history entry retains only the local state needed to return to your place, including the selected prompt response. Questions are not sent externally or put in URLs.
+The demo pauses while scrolling, offscreen, or hidden. Real input takes manual control until Play. On short mobile screens, the automatic experience preview shows the current role; manual questions and the full experience section retain the complete progression. Cursor animation is independent of demo pause and respects reduced motion. Theme/motion preferences stay on-device; a browser history entry retains only the local state needed to return to your place, including the selected prompt response. Questions are not sent externally or put in URLs.
 
 ## Media & Attribution
 
