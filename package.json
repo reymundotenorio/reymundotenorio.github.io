@@ -5,22 +5,25 @@
   "type": "module",
   "packageManager": "pnpm@11.25.0",
   "scripts": {
-    "test": "node --test tests/project-catalog.test.mjs",
-    "test:static": "node --test tests/static-output.test.mjs",
+    "test": "node scripts/test-unit.mjs",
+    "test:static": "node --test tests/*.static.test.mjs",
+    "test:e2e": "node scripts/test-browser.mjs",
+    "test:release": "node scripts/test-release.mjs",
+    "docs:preview": "node scripts/capture-readme.mjs",
     "dev": "astro dev --host 127.0.0.1",
     "check": "astro check",
-    "build": "node --test tests/project-catalog.test.mjs && astro check && astro build && node --test tests/static-output.test.mjs",
-    "preview": "astro preview --host 127.0.0.1",
-    "publish:static": "pnpm build && node scripts/publish-static.mjs"
+    "build": "pnpm test && astro check && astro build && pnpm test:static",
+    "preview": "astro preview --host 127.0.0.1"
   },
   "dependencies": {
     "astro": "7.3.3",
-    "gsap": "3.15.0",
-    "three": "0.185.1"
+    "gsap": "3.15.0"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
-    "@types/three": "0.185.4",
+    "@axe-core/playwright": "4.11.0",
+    "@playwright/test": "1.62.1",
+    "sharp": "0.34.5",
     "typescript": "6.0.3"
   }
 }

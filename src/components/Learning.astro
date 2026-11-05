@@ -1,0 +1,12 @@
+---
+import type { Data } from '../types';
+import Icon from './Icon.astro';
+interface Props { data: Data }
+const { data }=Astro.props; const en=data.lang==='en';
+---
+<section class="band" id="learning" aria-labelledby="learning-title">
+  <div class="section-top"><h2 id="learning-title">{en ? 'Always a student.' : 'Siempre aprendiendo.'}</h2><span class="section-note">18 {en ? 'credentials' : 'certificados'}</span></div>
+  <ol class="credential-list">{data.profile.certifications.map((fact,i)=><li data-certificate><span class="row-number">{String(i+1).padStart(2,'0')}</span><div><h3>{fact.title}</h3><p>{fact.meta}{fact.detail&&` · ${fact.detail}`}</p></div><a class="icon-button" href={fact.url || `${data.links.linkedin}details/certifications/`} target="_blank" rel="noopener noreferrer" aria-label={`${en ? 'View credential' : 'Ver certificado'}: ${fact.title}`} data-tooltip={en ? 'Credential' : 'Certificado'}><Icon name="arrow-up-right" /></a></li>)}</ol>
+  <div class="subsection-top"><h3>{en ? 'Additional training' : 'Formación adicional'}</h3><span class="section-note">04</span></div>
+  <div class="training-list">{data.profile.courses.map(fact=><article data-course><h4>{fact.title}</h4><p>{fact.meta}</p></article>)}</div>
+</section>

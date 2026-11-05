@@ -1,0 +1,11 @@
+---
+import type { Data } from '../types';
+import {stackGroups}from'../data/editorial';
+interface Props { data: Data }
+const { data }=Astro.props; const en=data.lang==='en';
+---
+<section class="band" id="toolkit" aria-labelledby="toolkit-title">
+  <div class="section-top"><h2 id="toolkit-title">{en ? 'Tech stack.' : 'Stack tecnológico.'}</h2><span class="section-note">{en ? 'Current & earlier work' : 'Trabajo actual e histórico'}</span></div>
+  <div class="stack-grid">{stackGroups.map(group=><section class="stack-group" data-stack-group={group.id}><h3>{group.title[data.lang]}</h3><ul>{group.items.map(item=><li data-stack-item data-language={group.id==='languages'?'':undefined} data-framework={group.id==='frameworks'?'':undefined}>{item}</li>)}</ul></section>)}</div>
+  <details class="code-archive"><summary><span>{en?'All skills & practices':'Todas las habilidades y prácticas'}</span><span>{data.profile.skillGroups.flatMap(g=>g.items).length}<b aria-hidden="true">+</b></span></summary><div class="skills-grid">{data.profile.skillGroups.map(group=><section class="skill-group"><h3>{group.title}</h3><ul>{group.items.map(skill=><li data-skill>{skill}</li>)}</ul></section>)}</div></details>
+</section>

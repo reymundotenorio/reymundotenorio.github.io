@@ -1,0 +1,14 @@
+---
+import type { Project } from '../types';
+import Icon from './Icon.astro';
+import{projectHref}from'../lib/project-path';
+import ProjectImage from'./ProjectImage.astro';
+interface Props { project: Project; en: boolean }
+const { project,en }=Astro.props;
+const href=projectHref(en?'en':'es',project.id,'archive');
+---
+<article class="archive-project" id={`project-${project.id}`} data-archive-project data-category={project.category} data-search={[project.name,project.summary,...project.stack].join(' ').toLowerCase()}>
+  <a class="archive-media" href={href} tabindex="-1" aria-hidden="true"><ProjectImage media={project.media[0]} alt="" sizes="(min-width:1000px) 31vw, (min-width:650px) 45vw, 92vw"/><span>{project.media[0].label}</span></a>
+  <h3 class="project-card-title"><a href={href} data-project-link data-project-id={project.id}>{project.name}<Icon name="arrow-up-right"/></a></h3><p class="project-card-role">{project.contribution||project.year}</p>
+  <ul class="stack-list">{project.stack.map(tech=><li>{tech}</li>)}</ul>
+</article>

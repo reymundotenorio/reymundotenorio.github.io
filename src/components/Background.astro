@@ -1,0 +1,12 @@
+---
+import type { Data } from '../types';
+import Icon from './Icon.astro';
+interface Props { data: Data }
+const { data }=Astro.props; const en=data.lang==='en';
+---
+<section class="band background-band" id="background" aria-labelledby="background-title">
+  <div class="section-top"><h2 id="background-title">{en ? 'The foundations.' : 'Los fundamentos.'}</h2></div>
+  <div class="background-grid"><div><h3>{en ? 'Education' : 'Educación'}</h3>{data.profile.education.map(fact=><article data-education><h4>{fact.title}</h4><p>{fact.meta}</p></article>)}</div><div><h3>{en ? 'Languages' : 'Idiomas'}</h3>{data.profile.languages.map(fact=><article data-spoken-language><h4>{fact.title}</h4><p>{fact.meta}</p></article>)}</div></div>
+  <details class="code-archive" id="code"><summary><span>{en ? 'Public code archive' : 'Archivo de código público'}</span><span>{data.publicCode.length} <b aria-hidden="true">+</b></span></summary><ul>{data.publicCode.map(repo=><li data-public-repository><a href={repo.url} target="_blank" rel="noopener noreferrer"><span>{repo.name}</span><small>{repo.language}</small><Icon name="arrow-up-right" /></a></li>)}</ul></details>
+</section>
+<section class="band contact-band" id="contact" aria-labelledby="contact-title"><h2 id="contact-title">{en ? 'Let’s build something.' : 'Construyamos algo.'}</h2><div><a href={data.links.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn<Icon name="arrow-up-right" /></a><a href={data.links.github} target="_blank" rel="noopener noreferrer">GitHub<Icon name="arrow-up-right" /></a></div></section>

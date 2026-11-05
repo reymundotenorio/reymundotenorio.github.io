@@ -1,0 +1,5 @@
+---
+interface Props { name: string; turn?: string }
+const { name, turn } = Astro.props;
+---
+<span class:list={['icon', turn && `icon--${turn}`]} style={`--icon: url('/icons/${name}.svg')`} aria-hidden="true"></span>

@@ -1,0 +1,46 @@
+---
+import type { Lang } from '../types';
+import Icon from './Icon.astro';
+import brand from '../../public/brand/r-cursor.svg?raw';
+import '../style.css';
+import{projectHref}from'../lib/project-path';
+interface Props { lang: Lang;projectSlug?:string;title?:string;description?:string;image?:string;staticPage?:boolean }
+const { lang,projectSlug,title,description,image,staticPage=false } = Astro.props; const en = lang === 'en';
+const pageTitle=title?`${title} · Reymundo Tenorio`:'Reymundo Tenorio · Software Engineer';
+const pageDescription=description||(en?'Software engineer building web and mobile products, AI integrations and automation. Explore selected work and a complete professional archive.':'Ingeniero de software: productos web y móviles, integraciones de IA y automatización. Explora proyectos y trayectoria profesional.');
+const canonical=new URL(Astro.url.pathname==='/'?'/en/':Astro.url.pathname,Astro.site);
+const alternate=(locale:Lang)=>new URL(projectSlug?projectHref(locale,projectSlug):`/${locale}/`,Astro.site);
+const socialImage=new URL(image||'/images/social-card.png',Astro.site);
+const homeLinks=!!projectSlug||staticPage;
+const nav = en ? ['Work','Experience','AI','Stack','Learning','Recognition','Contact'] : ['Proyectos','Experiencia','IA','Stack','Formación','Reconocimientos','Contacto'];
+const ids = ['work','experience','ai-practice','toolkit','learning','recognition','contact'];
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+    {staticPage&&<meta name="robots" content="noindex"/>}
+    <meta name="description" content={pageDescription}/><meta name="author" content="Reymundo Tenorio"/>
+    <meta name="theme-color" content="#111214"/>
+    <meta name="color-scheme" content="dark light" /><link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+    <link rel="canonical" href={canonical}/>
+    {!staticPage&&<><link rel="alternate" hreflang="en" href={alternate('en')}/><link rel="alternate" hreflang="es" href={alternate('es')}/><link rel="alternate" hreflang="x-default" href={projectSlug?alternate('en'):new URL('/',Astro.site)}/></>}
+    <meta property="og:type" content="website"/><meta property="og:title" content={pageTitle}/><meta property="og:description" content={pageDescription}/><meta property="og:url" content={canonical}/><meta property="og:site_name" content="Reymundo Tenorio"/><meta property="og:locale" content={en?'en_US':'es_NI'}/><meta property="og:image" content={socialImage}/><meta property="og:image:alt" content={title||'Reymundo Tenorio · Software Engineer'}/>
+    <meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content={pageTitle}/><meta name="twitter:description" content={pageDescription}/><meta name="twitter:image" content={socialImage}/>
+    {!staticPage&&<script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':projectSlug?'WebPage':'ProfilePage',url:canonical.toString(),inLanguage:lang,...(projectSlug?{name:title,about:{'@type':'Person',name:'Reymundo Tenorio',url:Astro.site?.toString()}}:{mainEntity:{'@type':'Person',name:'Reymundo Tenorio',jobTitle:'Software Engineer',url:Astro.site?.toString(),sameAs:['https://www.linkedin.com/in/reymundotenorio/','https://github.com/reymundotenorio']}})}).replace(/</g,'\\u003c')}/>}
+    <link rel="preload" href="/fonts/geist-mono.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/geist-sans.woff2" as="font" type="font/woff2" crossorigin />
+    <title>{pageTitle}</title>
+    <script is:inline>let theme='dark';try{const value=localStorage.getItem('rt:story-theme')||localStorage.getItem('rt:theme');if(value==='light'||value==='dark')theme=value;}catch{}document.documentElement.dataset.theme=theme;document.querySelector('meta[name="theme-color"]').content=theme==='dark'?'#111214':'#ffffff';</script>
+  </head>
+  <body data-lang={lang} data-page={projectSlug?'project':staticPage?'static':'home'}>
+    <a class="skip-link" href="#main-content">{en ? 'Skip to content' : 'Ir al contenido'}</a>
+    <header class="site-header" data-header>
+      <a class="brand" href={`/${lang}/`} aria-label="Reymundo Tenorio"><span class="brand-mark" set:html={brand} /><span>Reymundo Tenorio<span class="mint">.</span></span></a>
+      <nav class="site-nav" aria-label="Portfolio">{nav.map((label,i) => <a href={`${homeLinks?`/${lang}/`:''}#${ids[i]}`}>{label}</a>)}</nav>
+      <div class="header-tools"><nav class="languages" aria-label={en ? 'Language' : 'Idioma'}><a href={projectSlug?projectHref('en',projectSlug):'/en/'} lang="en" aria-current={en ? 'page' : undefined}>EN</a><span aria-hidden="true">/</span><a href={projectSlug?projectHref('es',projectSlug):'/es/'} lang="es" aria-current={!en ? 'page' : undefined}>ES</a></nav><button type="button" class="icon-button" data-theme aria-label={en ? 'Switch color theme' : 'Cambiar tema'} data-tooltip={en ? 'Theme' : 'Tema'} hidden><Icon name="sun-moon" /></button></div>
+    </header>
+    <slot />
+    <script src="../scripts/bootstrap.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+---
+import type {Data}from'../types';
+import {aiCapabilities}from'../data/editorial';
+import Icon from'./Icon.astro';
+import{projectHref}from'../lib/project-path';
+interface Props{data:Data}
+const{data}=Astro.props,en=data.lang==='en';
+---
+<section class="band ai-practice" id="ai-practice" aria-labelledby="ai-practice-title"><div class="section-top"><h2 id="ai-practice-title">{en?'AI, in practice.':'IA aplicada.'}</h2><span class="section-note">{en?'Development · Integrations · Automation':'Desarrollo · Integraciones · Automatización'}</span></div><div class="ai-capabilities">{aiCapabilities.map(capability=><article data-ai-capability><h3>{capability.title[data.lang]}</h3><p>{capability.description[data.lang]}</p><ul>{capability.tools.map(tool=><li>{data.lang==='es'&&tool==='Structured output'?'Resultados estructurados':data.lang==='es'&&tool==='Validation'?'Validación':tool}</li>)}</ul><a class="text-link" href={capability.target.startsWith('project-')?projectHref(data.lang,capability.target.slice(8),'ai'):`#${capability.target}`}>{capability.link[data.lang]}<Icon name="arrow-up-right"/></a></article>)}</div></section>

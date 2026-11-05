@@ -1,0 +1,3168 @@
+{
+  "en": {
+    "lang": "en",
+    "profile": {
+      "eyebrow": "03 / Continuous learning",
+      "title": "Craft & credentials",
+      "intro": "Engineering, leadership, and the learning behind the work.",
+      "skillsTitle": "Technical range",
+      "certificationsTitle": "Certifications",
+      "awardsTitle": "Honors and awards",
+      "educationTitle": "Education",
+      "coursesTitle": "Courses",
+      "languagesTitle": "Languages",
+      "skillGroups": [
+        {
+          "title": "Leadership / product",
+          "items": [
+            "Engineering Management",
+            "Engineering Leadership",
+            "Technology Leadership",
+            "Leading Development Teams",
+            "Software Design",
+            "Software Industry",
+            "Web Engineering",
+            "Code Review",
+            "Scrum",
+            "Engineering",
+            "Attention to Detail",
+            "Software Development",
+            "Desktop Application Development"
+          ]
+        },
+        {
+          "title": "Frontend / app",
+          "items": [
+            "React.js",
+            "TypeScript",
+            "JavaScript",
+            "React Native",
+            "Next.js",
+            "Tailwind CSS",
+            "Material-UI",
+            "Storybook",
+            "Cypress.io",
+            "Sass",
+            "HTML5",
+            "CSS",
+            "Bootstrap",
+            "jQuery",
+            "Web Development",
+            "Web Applications",
+            "Frontend Development",
+            "Application Development",
+            "HTML",
+            "Haml",
+            "Jade (Pug)"
+          ]
+        },
+        {
+          "title": "Backend / systems",
+          "items": [
+            "Node.js",
+            "Python",
+            "Django",
+            "PHP",
+            "Ruby on Rails",
+            "Go",
+            "Java",
+            "C#",
+            "Kotlin",
+            "Swift",
+            "WordPress",
+            "MySQL",
+            "MongoDB",
+            "Microsoft SQL Server",
+            "AWS",
+            "Docker",
+            "Supabase",
+            "Server-side Development",
+            "Laravel",
+            "Express.js"
+          ]
+        },
+        {
+          "title": "Tools / craft",
+          "items": [
+            "OpenAI API",
+            "Cursor AI",
+            "Claude Code",
+            "OpenClaw",
+            "Anthropic Claude",
+            "n8n",
+            "Playwright",
+            "GitHub Actions",
+            "Git",
+            "Linux",
+            "PSD to HTML",
+            "Adobe Photoshop",
+            "Firebase",
+            "PostgreSQL",
+            "REST APIs",
+            "Redux",
+            "Redux-Thunk",
+            "Computer Repair",
+            "Microsoft Office",
+            "Visual Studio",
+            "JSON",
+            "GitHub"
+          ]
+        }
+      ],
+      "certifications": [
+        {
+          "title": "OpenClaw Course",
+          "meta": "Platzi · Oct 2026",
+          "url": "https://platzi.com/p/reymundot/curso/12851-openclaw-2026/diploma/detalle/",
+          "originalTitle": "Curso de OpenClaw"
+        },
+        {
+          "title": "Claude Code Course",
+          "meta": "Platzi · Oct 2026",
+          "url": "https://platzi.com/p/reymundot/curso/12284-claude-code/diploma/detalle/",
+          "originalTitle": "Curso de Claude Code"
+        },
+        {
+          "title": "Cursor AI Code Editor Course",
+          "meta": "Platzi · Oct 2026",
+          "url": "https://platzi.com/p/reymundot/curso/12166-cursor-2025/diploma/detalle/",
+          "originalTitle": "Curso de Cursor AI Code Editor"
+        },
+        {
+          "title": "Claude AI Course",
+          "meta": "Platzi · Oct 2026",
+          "url": "https://platzi.com/p/reymundot/curso/12651-claude/diploma/detalle/",
+          "originalTitle": "Curso de Claude AI"
+        },
+        {
+          "title": "OpenAI API Course",
+          "meta": "Platzi · Jun 2026",
+          "url": "https://platzi.com/p/reymundot/curso/11458-openai-api/diploma/detalle/",
+          "originalTitle": "Curso de OpenAI API"
+        },
+        {
+          "title": "Dale Carnegie Course: Effective Communications and Human Relations",
+          "meta": "Dale Carnegie Nicaragua · Jun 2024",
+          "originalTitle": "Dale Carnegie Course: Effective Communications and Human Relations",
+          "detail": "Certificate of Achievement"
+        },
+        {
+          "title": "React Native: Native Apps for iOS and Android",
+          "meta": "Udemy · Nov 2021",
+          "originalTitle": "React Native: Aplicaciones nativas para IOS y Android"
+        },
+        {
+          "title": "Make a Website",
+          "meta": "Codecademy",
+          "originalTitle": "Make a Website"
+        },
+        {
+          "title": "Introduction to JavaScript",
+          "meta": "Codecademy",
+          "originalTitle": "Introduction to JavaScript"
+        },
+        {
+          "title": "Learn Sass",
+          "meta": "Codecademy",
+          "originalTitle": "Learn Sass"
+        },
+        {
+          "title": "Rails for Zombies 2",
+          "meta": "Code School",
+          "originalTitle": "Rails for Zombies 2"
+        },
+        {
+          "title": "Deploy a Website",
+          "meta": "Codecademy",
+          "originalTitle": "Deploy a Website"
+        },
+        {
+          "title": "Try Ruby",
+          "meta": "Code School",
+          "originalTitle": "Try Ruby"
+        },
+        {
+          "title": "Learn Git",
+          "meta": "Codecademy",
+          "originalTitle": "Learn Git"
+        },
+        {
+          "title": "Ruby on Rails: Authentication",
+          "meta": "Codecademy",
+          "originalTitle": "Ruby on Rails: Authentication"
+        },
+        {
+          "title": "Learn Ruby on Rails",
+          "meta": "Codecademy",
+          "originalTitle": "Learn Ruby on Rails"
+        },
+        {
+          "title": "Learn Ruby",
+          "meta": "Codecademy",
+          "originalTitle": "Learn Ruby"
+        },
+        {
+          "title": "Rails for Zombies Redux",
+          "meta": "Code School",
+          "originalTitle": "Rails for Zombies Redux"
+        }
+      ],
+      "awards": [
+        {
+          "title": "Introduction to React JS Workshop",
+          "originalTitle": "Taller de Introduccion a React JS",
+          "meta": "Comunidad Drupal Nicaragua · Jun 2019",
+          "detail": "Participant in React JS introductory workshop"
+        },
+        {
+          "title": "Top performance 2017",
+          "meta": "Accedo Technologies · Dec 2017",
+          "detail": "Recognition for top performance as web designer"
+        },
+        {
+          "title": "Designer at the Science and Technology Fair 2016",
+          "meta": "Universidad Nacional de Ingenieria · Sep 2016",
+          "detail": "BiComfort project in manufacturing systems category"
+        },
+        {
+          "title": "Participant of the First Exhibition of Projects and Course Tasks 2016",
+          "meta": "Universidad Nacional de Ingenieria · Jun 2016",
+          "detail": "Aggregate Planning desktop application"
+        },
+        {
+          "title": "Participant of the WordPress Workshop, Design and Development",
+          "meta": "Universidad Nacional de Ingenieria / Mozilla Nicaragua · Apr 2016"
+        },
+        {
+          "title": "Designer at the Science and Technology Fair 2015",
+          "meta": "Universidad Nacional de Ingenieria · Dec 2015",
+          "detail": "Marketing project for furniture advertising improvement"
+        },
+        {
+          "title": "Designer at the Science and Technology Fair 2015",
+          "meta": "Universidad Nacional de Ingenieria · Dec 2015",
+          "detail": "InfoNica website project"
+        },
+        {
+          "title": "Participant of the Web Application Development Workshop with Ruby on Rails",
+          "meta": "Universidad Nacional de Ingenieria · Oct 2015"
+        },
+        {
+          "title": "WordPress Workshop Participant",
+          "meta": "TechCreative · Oct 2015"
+        },
+        {
+          "title": "Designer at XV Expociencia and Technology",
+          "meta": "CNU / CONICYT · Nov 2014",
+          "detail": "Inventory and billing system for Josefina pharmacy"
+        },
+        {
+          "title": "Designer at the Science and Technology Fair 2014",
+          "meta": "Universidad Nacional de Ingenieria · Nov 2014",
+          "detail": "Integrales application in basic sciences category"
+        },
+        {
+          "title": "First place at the 2014 Science and Technology Fair",
+          "meta": "Universidad Nacional de Ingenieria · Nov 2014",
+          "detail": "Pharmaceutical inventory and billing system"
+        },
+        {
+          "title": "First place at the 2014 Science and Technology Fair",
+          "meta": "Universidad Nacional de Ingenieria · Nov 2014",
+          "detail": "Nicaventura website project"
+        },
+        {
+          "title": "Participant in Hack Fest 2014",
+          "meta": "Universidad Nacional de Ingenieria · Nov 2014"
+        },
+        {
+          "title": "Exhibitor at Expociencia and Territorial Technology - Managua 2014",
+          "meta": "CONICYT / CNU / INACTEC / MINED · Sep 2014",
+          "detail": "Inventory and billing system for Josefina pharmacy"
+        },
+        {
+          "title": "First place at the Science and Technology Fair 2013",
+          "meta": "Universidad Nacional de Ingenieria · Nov 2013",
+          "detail": "Inventory and billing system in graphic programming category"
+        },
+        {
+          "title": "Designer at the Science and Technology Fair 2011",
+          "meta": "Universidad Nacional de Ingenieria · Nov 2011",
+          "detail": "Financial status system in console programming category"
+        }
+      ],
+      "education": [
+        {
+          "title": "Universidad Nacional de Ingenieria",
+          "meta": "Degree in Engineering, Systems Engineering · 2011 - 2017"
+        }
+      ],
+      "courses": [
+        {
+          "title": "English language (VI Level)",
+          "meta": "English Language Academy"
+        },
+        {
+          "title": "PC Maintenance and Repair (Technical Training)",
+          "originalTitle": "Technical in maintenance and repair of PC",
+          "meta": "Universidad Nacional de Ingenieria"
+        },
+        {
+          "title": "Computer Maintenance and Repair (Technical Training)",
+          "originalTitle": "Technical in maintenance and repair of computers",
+          "meta": "Computers of Granada"
+        },
+        {
+          "title": "Entrepreneurship and Business Planning",
+          "originalTitle": "Training of entrepreneurs and creation of business plans",
+          "meta": "Emprende Training Center"
+        }
+      ],
+      "languages": [
+        {
+          "title": "Spanish",
+          "meta": "Native or bilingual proficiency"
+        },
+        {
+          "title": "English",
+          "meta": "Limited working proficiency"
+        }
+      ]
+    },
+    "timeline": [
+      {
+        "company": "Nicasource",
+        "role": "Engineering Manager / Engineering Team Lead / Software Engineer",
+        "period": "May 2021 - Present",
+        "summary": "Engineering Manager since Jul 2025, Engineering Team Lead from Jul 2022 to Jul 2025, and Software Engineer since May 2021. Assignments include Scalar (Aug 2022 - Present), Column Five, and Super Star Car Wash. Built web and mobile applications with React, TypeScript, Redux, Firebase, REST APIs, Node.js, MySQL, PostgreSQL, and React Native while leading delivery and mentoring engineers. Scalar product work includes React, Tailwind CSS, TypeScript, Python, Django, Next.js, Storybook and Cypress in data-rich software.",
+        "signal": "Leadership"
+      },
+      {
+        "company": "Editorial",
+        "role": "Senior Web Developer",
+        "period": "May 2020 - May 2021",
+        "summary": "Developed and maintained web applications with custom WordPress themes, plugins, and APIs, using HTML, CSS, Sass, PHP, JavaScript, jQuery, Node.js, Docker, MySQL, MongoDB, Amazon Aurora, and AWS to move traditional sites toward scalable PWAs.",
+        "signal": "PWAs"
+      },
+      {
+        "company": "Freelancer",
+        "role": "Software Developer",
+        "period": "Mar 2016 - Mar 2022",
+        "summary": "Built WordPress sites, financial tools, ecommerce operations systems, C# licensing utilities, Java desktop scheduling/payroll software, API integrations, and business systems for clients in Nicaragua and abroad.",
+        "signal": "Systems"
+      },
+      {
+        "company": "Accedo Technologies",
+        "role": "Senior Development Trainer / Web Designer",
+        "period": "Mar 2017 - May 2020",
+        "summary": "Evaluated and trained development teams, introduced web development technologies, and produced responsive websites with HTML, Sass, Bootstrap, PencilBlue CMS, Photoshop, and Illustrator. Recognized as Top Web Designer of the Year 2017.",
+        "signal": "Mentoring"
+      },
+      {
+        "company": "Accedo Digital Inc.",
+        "role": "Web Developer",
+        "period": "Sep 2018 - May 2020",
+        "summary": "Designed and developed responsive websites, custom WordPress themes from Adobe XD designs, and internal tools with Python, Node.js, and PHP to support operations and workflow efficiency.",
+        "signal": "Web"
+      }
+    ],
+    "recognitionKinds": [
+      "workshop",
+      "award",
+      "exhibition",
+      "exhibition",
+      "workshop",
+      "exhibition",
+      "exhibition",
+      "workshop",
+      "workshop",
+      "exhibition",
+      "exhibition",
+      "award",
+      "award",
+      "participation",
+      "exhibition",
+      "award",
+      "exhibition"
+    ],
+    "projects": [
+      {
+        "id": "duepulse",
+        "name": "DuePulse",
+        "summary": "A household finance PWA that brings bills, statements, due dates, and payment signals into one review workflow.",
+        "contribution": "",
+        "details": [
+          "Gmail ingestion and AI-assisted statement extraction, with suggestions reviewed before they become records.",
+          "Recurring commitments, household access boundaries, reminders, and browser push notifications.",
+          "Bilingual application built with Next.js, TypeScript, Supabase, and OpenAI integrations."
+        ],
+        "category": "product-systems",
+        "stack": [
+          "Next.js",
+          "TypeScript",
+          "Supabase",
+          "OpenAI API",
+          "PWA"
+        ],
+        "year": "2026",
+        "media": [
+          {
+            "src": "/images/projects/duepulse-home-en.webp",
+            "width": 1440,
+            "height": 1000,
+            "alt": "DuePulse product website in dark mode",
+            "label": "Product website",
+            "type": "current"
+          },
+          {
+            "src": "/images/projects/duepulse-product-en.webp",
+            "width": 1380,
+            "height": 644,
+            "alt": "DuePulse public overview of payment review and reminders",
+            "label": "Product overview",
+            "type": "current"
+          }
+        ]
+      },
+      {
+        "id": "studio-ivl",
+        "name": "Studio IVL · IVL Collective",
+        "summary": "Built the IVL Collective fitness app from scratch with React Native, bringing workout discovery, video classes and scheduling into one mobile experience.",
+        "contribution": "Mobile application development from scratch",
+        "details": [
+          "Built the mobile application from the ground up with React Native and Expo, including its screen structure and navigation.",
+          "Class discovery, instructor pages, schedules, favorites and video playback.",
+          "Profile, membership and notification experiences, with supporting CMS and backend projects."
+        ],
+        "category": "mobile",
+        "stack": [
+          "React Native",
+          "Expo",
+          "TypeScript",
+          "Firebase",
+          "Video"
+        ],
+        "year": "",
+        "media": [
+          {
+            "src": "/images/projects/ivl-classes.webp",
+            "width": 780,
+            "height": 1387,
+            "alt": "Studio IVL app · On-demand classes",
+            "label": "On-demand classes",
+            "type": "store"
+          },
+          {
+            "src": "/images/projects/ivl-class-details.webp",
+            "width": 780,
+            "height": 1387,
+            "alt": "Studio IVL app · Class details",
+            "label": "Class details",
+            "type": "store"
+          },
+          {
+            "src": "/images/projects/ivl-favorites.webp",
+            "width": 780,
+            "height": 1387,
+            "alt": "Studio IVL app · Favorite classes",
+            "label": "Favorite classes",
+            "type": "store"
+          }
+        ]
+      },
+      {
+        "id": "nicasource",
+        "name": "Nicasource",
+        "summary": "A company website built with a custom WordPress and React theme, as part of the Nicasource team.",
+        "contribution": "Website development",
+        "details": [
+          "Custom website implementation combining WordPress-managed content and React components.",
+          "Reusable page modules and a frontend workflow using Vite and Tailwind CSS.",
+          "Delivered as part of the Nicasource development team."
+        ],
+        "category": "web",
+        "stack": [
+          "WordPress",
+          "React",
+          "Vite",
+          "Tailwind CSS",
+          "PHP"
+        ],
+        "year": "",
+        "url": "https://nicasource.com/",
+        "media": [
+          {
+            "src": "/images/projects/nicasource.webp",
+            "width": 1440,
+            "height": 1080,
+            "alt": "Nicasource current public website",
+            "label": "Website",
+            "type": "current"
+          }
+        ]
+      },
+      {
+        "id": "claris-health",
+        "name": "Claris Health",
+        "summary": "Website development for Claris Health, supporting its public-facing services and content.",
+        "contribution": "Website development",
+        "details": [
+          "Contributed to the development of the Claris Health website.",
+          "WordPress website work, with services and organization content managed through the CMS."
+        ],
+        "category": "web",
+        "stack": [
+          "WordPress",
+          "PHP",
+          "JavaScript",
+          "CSS"
+        ],
+        "year": "",
+        "url": "https://www.clarishealth.org/",
+        "media": [
+          {
+            "src": "/images/projects/claris-health.webp",
+            "width": 1440,
+            "height": 1080,
+            "alt": "Claris Health current public website",
+            "label": "Website",
+            "type": "current"
+          }
+        ]
+      },
+      {
+        "id": "dele-peso-tools",
+        "name": "Dele Peso a sus Pesos",
+        "summary": "Suite of financial tools for severance pay, debt level, alimony, net salary, and retirement age, integrated into WordPress.",
+        "contribution": "Financial tools development",
+        "details": [
+          "Built with HTML, Sass, and jQuery.",
+          "Turned financial education into calculators users could operate directly.",
+          "Maintained as part of freelance product work."
+        ],
+        "category": "product-systems",
+        "stack": [
+          "WordPress",
+          "HTML",
+          "Sass",
+          "jQuery"
+        ],
+        "year": "2016 - 2022",
+        "url": "https://delepesoasuspesos.com/calcular-salario-neto/",
+        "media": [
+          {
+            "src": "/images/projects/dele-peso-tools.webp",
+            "width": 1440,
+            "height": 1080,
+            "alt": "Current Dele Peso a sus Pesos financial tools page",
+            "label": "Website",
+            "type": "current"
+          }
+        ]
+      },
+      {
+        "id": "steps-veterinary",
+        "name": "Steps Veterinary Clinic",
+        "summary": "The official veterinary clinic website, built around a fully customized WordPress theme rather than a prebuilt template.",
+        "contribution": "Custom WordPress theme development",
+        "details": [
+          "Custom theme development for the clinic website.",
+          "Part of the freelance client portfolio, with project media included on LinkedIn."
+        ],
+        "category": "web",
+        "stack": [
+          "WordPress",
+          "PHP",
+          "HTML",
+          "CSS"
+        ],
+        "year": "2016 - 2022",
+        "media": [
+          {
+            "src": "/images/projects/steps-veterinary.webp",
+            "width": 1440,
+            "height": 1100,
+            "alt": "Steps Clínica Veterinaria homepage",
+            "label": "Homepage",
+            "type": "restored"
+          }
+        ]
+      },
+      {
+        "id": "depsaber",
+        "name": "DepSaber",
+        "summary": "A local-first supply-chain radar for dependency manifests, package-manager configuration, GitHub Actions, and build artifacts.",
+        "contribution": "",
+        "details": [
+          "Baseline and delta scans surface changes between dependency snapshots.",
+          "Signed feed verification and CI guardrails connect local checks with delivery workflows.",
+          "An interactive Go CLI and a Vite report viewer keep analysis local, without uploading project reports."
+        ],
+        "category": "developer-tools",
+        "stack": [
+          "Go",
+          "CLI",
+          "GitHub Actions",
+          "Vite",
+          "Supply-chain security"
+        ],
+        "year": "2026",
+        "url": "https://github.com/reymundotenorio/depsaber",
+        "media": [
+          {
+            "src": "/images/projects/depsaber-console.webp",
+            "width": 1440,
+            "height": 1100,
+            "alt": "DepSaber report console with its public sample report",
+            "label": "Report console · sample report · Demo data",
+            "type": "demo"
+          },
+          {
+            "src": "/images/projects/depsaber-site.webp",
+            "width": 1440,
+            "height": 1100,
+            "alt": "DepSaber public project website",
+            "label": "Project website",
+            "type": "current"
+          }
+        ]
+      },
+      {
+        "id": "super-star-car-wash",
+        "name": "Super Star Car Wash",
+        "summary": "Website maintenance and integration work within the Super Star Car Wash team.",
+        "contribution": "WordPress maintenance and integrations",
+        "details": [
+          "Worked on WordPress functionality and integrations in the existing website.",
+          "Implemented form-event integration between an embedded SMS experience and the parent analytics data layer.",
+          "The contribution is scoped development within the team, not the original design of the whole website."
+        ],
+        "category": "web",
+        "stack": [
+          "WordPress",
+          "PHP",
+          "JavaScript",
+          "Analytics integrations"
+        ],
+        "year": "",
+        "url": "https://www.superstarcarwashaz.com/",
+        "media": [
+          {
+            "src": "/images/projects/super-star-car-wash.webp",
+            "width": 1440,
+            "height": 1080,
+            "alt": "Super Star Car Wash current public website",
+            "label": "Website",
+            "type": "current"
+          }
+        ]
+      },
+      {
+        "id": "enerwize",
+        "name": "Enerwize",
+        "summary": "A custom WordPress website for a branding, web development and SEO agency.",
+        "contribution": "Custom WordPress development",
+        "details": [
+          "Developed the Enerwize WordPress theme.",
+          "Implemented the agency website around its branding, services, process and contact sections."
+        ],
+        "category": "web",
+        "stack": [
+          "WordPress",
+          "PHP",
+          "JavaScript",
+          "CSS"
+        ],
+        "year": "",
+        "url": "https://enerwize.agency/",
+        "media": [
+          {
+            "src": "/images/projects/enerwize.webp",
+            "width": 1440,
+            "height": 1080,
+            "alt": "Enerwize current public website",
+            "label": "Website",
+            "type": "current"
+          }
+        ]
+      },
+      {
+        "id": "ariel-law",
+        "name": "Ariel Law Group",
+        "summary": "A custom WordPress website developed for Ariel Law Group.",
+        "contribution": "WordPress website development",
+        "details": [
+          "Implemented the custom Ariel Law Group theme.",
+          "Built pages for legal services, firm information and consultation requests."
+        ],
+        "category": "web",
+        "stack": [
+          "WordPress",
+          "PHP",
+          "HTML",
+          "CSS"
+        ],
+        "year": "",
+        "url": "https://ariellawgroup.com/",
+        "media": [
+          {
+            "src": "/images/projects/ariel-law.webp",
+            "width": 1000,
+            "height": 1200,
+            "alt": "Ariel Law Group website",
+            "label": "Historical website",
+            "type": "archived"
+          }
+        ]
+      },
+      {
+        "id": "hartunian-law",
+        "name": "Hartunian Law Firm",
+        "summary": "Legal-services website development for Hartunian Law Firm.",
+        "contribution": "Website development",
+        "details": [
+          "Developed the legal-services website.",
+          "Implemented the firm presentation, practice areas and consultation calls to action."
+        ],
+        "category": "web",
+        "stack": [
+          "Web development",
+          "HTML",
+          "CSS",
+          "JavaScript"
+        ],
+        "year": "",
+        "url": "https://hartunianlaw.com/",
+        "media": [
+          {
+            "src": "/images/projects/hartunian-law.webp",
+            "width": 1000,
+            "height": 1200,
+            "alt": "Hartunian Law Firm website",
+            "label": "Historical website",
+            "type": "archived"
+          }
+        ]
+      },
+      {
+        "id": "caban-pools",
+        "name": "Caban Pools",
+        "summary": "A custom WordPress website for a pool-services business.",
+        "contribution": "Custom WordPress development",
+        "details": [
+          "Implemented the custom Caban Pools WordPress theme.",
+          "Built service pages, project galleries and contact sections."
+        ],
+        "category": "web",
+        "stack": [
+          "WordPress",
+          "PHP",
+          "HTML",
+          "CSS"
+        ],
+        "year": "",
+        "media": [
+          {
+            "src": "/images/projects/caban-pools.webp",
+            "width": 1000,
+            "height": 1200,
+            "alt": "Caban Pools website",
+            "label": "Historical website",
+            "type": "archived"
+          }
+        ]
+      },
+      {
+        "id": "fit-factory",
+        "name": "Fit Factory Studio",
+        "summary": "A custom WordPress website for Fit Factory Studio.",
+        "contribution": "Custom WordPress development",
+        "details": [
+          "Developed the FitFactory WordPress theme.",
+          "Implemented studio and training-program pages."
+        ],
+        "category": "web",
+        "stack": [
+          "WordPress",
+          "PHP",
+          "HTML",
+          "CSS"
+        ],
+        "year": "",
+        "media": [
+          {
+            "src": "/images/projects/fit-factory.webp",
+            "width": 1000,
+            "height": 1200,
+            "alt": "Fit Factory Studio website",
+            "label": "Historical website",
+            "type": "archived"
+          }
+        ]
+      },
+      {
+        "id": "sapetto-law",
+        "name": "Sapetto Law",
+        "summary": "A custom WordPress website for Sapetto Law.",
+        "contribution": "Custom WordPress development",
+        "details": [
+          "Developed the SapettoLaw WordPress theme.",
+          "Implemented service pages, firm information and consultation sections."
+        ],
+        "category": "web",
+        "stack": [
+          "WordPress",
+          "PHP",
+          "HTML",
+          "CSS"
+        ],
+        "year": "",
+        "media": [
+          {
+            "src": "/images/projects/sapetto-law.webp",
+            "width": 1000,
+            "height": 1200,
+            "alt": "Sapetto Law website",
+            "label": "Historical website",
+            "type": "archived"
+          }
+        ]
+      },
+      {
+        "id": "agency-platform",
+        "name": "Agency website · Headless WordPress",
+        "summary": "A headless agency website built with React, Frontity and WordPress.",
+        "contribution": "React and headless WordPress development",
+        "details": [
+          "Implemented agency pages and portfolio presentation in a custom Frontity theme.",
+          "Connected the React frontend to WordPress content."
+        ],
+        "category": "web",
+        "stack": [
+          "React",
+          "Frontity",
+          "WordPress",
+          "Sass"
+        ],
+        "year": "",
+        "media": [
+          {
+            "src": "/images/projects/agency-platform-concept.webp",
+            "width": 1586,
+            "height": 992,
+            "alt": "Concept illustration: Headless website architecture and connected content modules",
+            "label": "Concept illustration",
+            "type": "concept"
+          }
+        ]
+      },
+      {
+        "id": "asher-asher",
+        "name": "Asher & Asher Consulting",
+        "summary": "A custom WordPress theme for the Asher & Asher Consulting website.",
+        "contribution": "WordPress theme development",
+        "details": [
+          "Developed the custom Asher WordPress theme."
+        ],
+        "category": "web",
+        "stack": [
+          "WordPress",
+          "PHP",
+          "CSS"
+        ],
+        "year": "",
+        "media": [
+          {
+            "src": "/images/projects/asher-asher.webp",
+            "width": 1440,
+            "height": 1100,
+            "alt": "Asher & Asher Consulting homepage",
+            "label": "Homepage",
+            "type": "restored"
+          }
+        ]
+      },
+      {
+        "id": "willow-creek",
+        "name": "Willow Creek Productions",
+        "summary": "Custom WordPress theme development for Willow Creek Productions.",
+        "contribution": "WordPress theme development",
+        "details": [
+          "Implemented the custom WillowCreekProductions WordPress theme."
+        ],
+        "category": "web",
+        "stack": [
+          "WordPress",
+          "PHP",
+          "CSS"
+        ],
+        "year": "",
+        "media": [
+          {
+            "src": "/images/projects/willow-creek.webp",
+            "width": 1440,
+            "height": 1100,
+            "alt": "Willow Creek Productions homepage",
+            "label": "Homepage",
+            "type": "restored"
+          }
+        ]
+      },
+      {
+        "id": "pouch",
+        "name": "Pouch · Shipping & tracking",
+        "summary": "A complete shipping and tracking application built as a freelance engagement. Originally called Portal, the product is now known as Pouch.",
+        "contribution": "Full-stack application development",
+        "details": [
+          "Developed the complete shipping and tracking application, supporting API and webhook services.",
+          "Package reception, shipping alerts, invoices, manifests and dispatch receipts.",
+          "Customer and agency management, role-based administration, package identification and location, and operational statistics.",
+          "Load calculation and import/export declaration workflows."
+        ],
+        "category": "product-systems",
+        "stack": [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Firebase",
+          "Node.js",
+          "Express"
+        ],
+        "year": "",
+        "media": [
+          {
+            "src": "/images/projects/pouch-receptions.webp",
+            "width": 1680,
+            "height": 1050,
+            "alt": "Pouch Portal · Shipment history with example data",
+            "label": "Shipment history · Demo data",
+            "type": "demo"
+          },
+          {
+            "src": "/images/projects/pouch-details.webp",
+            "width": 1680,
+            "height": 1050,
+            "alt": "Pouch Portal · Package details with example data",
+            "label": "Package details · Demo data",
+            "type": "demo"
+          }
+        ]
+      },
+      {
+        "id": "myroadmap",
+        "name": "MyRoadmap",
+        "summary": "Development contribution to the former MyRoadmap product.",
+        "contribution": "Development contribution",
+        "details": [
+          "A historical product engagement. The original public service is no longer available."
+        ],
+        "category": "product-systems",
+        "stack": [],
+        "year": "",
+        "media": [
+          {
+            "src": "/images/projects/myroadmap-concept.webp",
+            "width": 1586,
+            "height": 992,
+            "alt": "Concept illustration: A product roadmap with connected milestones",
+            "label": "Concept illustration",
+            "type": "concept"
+          }
+        ]
+      },
+      {
+        "id": "time-weaver",
+        "name": "TimeWeaver",
+        "summary": "An automation pipeline that turns GitHub activity and calendar events into structured timesheet drafts, then assists with browser entry.",
+        "contribution": "",
+        "details": [
+          "n8n orchestrates GitHub, Google Calendar, and Google Sheets integrations.",
+          "OpenAI-assisted summaries normalize activity into weekly work entries.",
+          "A TypeScript and Playwright layer handles repetitive browser form entry."
+        ],
+        "category": "automation",
+        "stack": [
+          "n8n",
+          "TypeScript",
+          "Playwright",
+          "OpenAI API",
+          "REST APIs"
+        ],
+        "year": "2025",
+        "media": [
+          {
+            "src": "/images/projects/time-weaver-concept.webp",
+            "width": 1586,
+            "height": 992,
+            "alt": "Concept illustration: Code and calendar activity flowing into timesheet automation",
+            "label": "Concept illustration",
+            "type": "concept"
+          }
+        ]
+      },
+      {
+        "id": "uni-sciences-systems",
+        "name": "UNI · Sciences & Systems",
+        "summary": "Member of the development team for the Faculty of Sciences and Systems website at Universidad Nacional de Ingenieria.",
+        "contribution": "",
+        "details": [
+          "Associated with Universidad Nacional de Ingenieria.",
+          "Built with WordPress as content manager.",
+          "Institutional web presence for an academic faculty."
+        ],
+        "category": "linkedin-projects",
+        "stack": [
+          "WordPress",
+          "PHP",
+          "HTML",
+          "CSS"
+        ],
+        "year": "2016",
+        "media": [
+          {
+            "src": "/images/projects/uni-sciences-systems-concept.webp",
+            "width": 1586,
+            "height": 992,
+            "alt": "Concept illustration: Connected knowledge and engineering systems",
+            "label": "Concept illustration",
+            "type": "concept"
+          }
+        ]
+      },
+      {
+        "id": "tpf-supervisor",
+        "name": "Sistema TPF-Supervisor",
+        "summary": "Desktop system for TPF operations in Granada, covering places, schedules, shifts, staff, overtime, absences, role creation, and payroll calculations.",
+        "contribution": "",
+        "details": [
+          "Built in Java with MySQL as database manager.",
+          "Staff scheduling, absences, role generation, timesheet calculations, and reports.",
+          "Payroll calculations and operational reporting with JasperReports."
+        ],
+        "category": "linkedin-projects",
+        "stack": [
+          "Java",
+          "MySQL",
+          "JasperReports",
+          "Desktop"
+        ],
+        "year": "2016",
+        "media": [
+          {
+            "src": "/images/projects/tpf-supervisor-concept.webp",
+            "width": 1586,
+            "height": 992,
+            "alt": "Concept illustration: Staff shift planning, attendance and hours ledgers",
+            "label": "Concept illustration",
+            "type": "concept"
+          }
+        ]
+      },
+      {
+        "id": "editorial-pwa",
+        "name": "Editorial · Web to PWA",
+        "summary": "Development and maintenance of web applications through custom WordPress themes, plugins, APIs, AWS infrastructure, and PWA transformation.",
+        "contribution": "",
+        "details": [
+          "Custom WordPress themes, plugins, and APIs with PHP, JavaScript, Sass, and Node.js.",
+          "AWS infrastructure with Docker, MySQL, MongoDB, and Amazon Aurora.",
+          "Progressive Web Apps focused on performance, usability, and scalable deployment."
+        ],
+        "category": "editorial",
+        "stack": [
+          "WordPress",
+          "AWS",
+          "Docker",
+          "Amazon Aurora",
+          "PWA"
+        ],
+        "year": "May 2020 - May 2021",
+        "media": [
+          {
+            "src": "/images/projects/editorial-pwa-concept.webp",
+            "width": 1586,
+            "height": 992,
+            "alt": "Concept illustration: Editorial publishing transformed into a mobile PWA",
+            "label": "Concept illustration",
+            "type": "concept"
+          }
+        ]
+      },
+      {
+        "id": "better-nice-produce",
+        "name": "Better & Nice Produce",
+        "summary": "Commercial and ecommerce operations system for a Miami produce business, with real-time features, payments, messaging, and cloud infrastructure.",
+        "contribution": "",
+        "details": [
+          "Built with Ruby on Rails, jQuery, Sass, Haml, Bootstrap, and MySQL.",
+          "Integrated Pusher, AWS S3/RDS, PayPal, Stripe, Twilio, and SendGrid.",
+          "Covered business operations, not only the public site."
+        ],
+        "category": "product-systems",
+        "stack": [
+          "Ruby on Rails",
+          "MySQL",
+          "AWS",
+          "Stripe",
+          "Twilio",
+          "Ruby",
+          "Haml",
+          "ERB"
+        ],
+        "year": "2016 - 2022",
+        "url": "https://github.com/reymundotenorio/BANP",
+        "media": [
+          {
+            "src": "/images/projects/better-nice-produce-concept.webp",
+            "width": 1586,
+            "height": 992,
+            "alt": "Concept illustration: Produce inventory, ecommerce and distribution",
+            "label": "Concept illustration",
+            "type": "concept"
+          }
+        ]
+      },
+      {
+        "id": "career-site-collection",
+        "name": "Career site collection",
+        "summary": "Responsive hiring sites and WordPress/PencilBlue builds produced across Accedo Technologies and Accedo Digital.",
+        "contribution": "",
+        "details": [
+          "Developed websites with HTML, Sass, Bootstrap, PencilBlue CMS, Photoshop, and Illustrator.",
+          "Built custom WordPress themes from Adobe XD UI/UX designs.",
+          "Recognized as Top Web Designer of the Year 2017 at Accedo Technologies."
+        ],
+        "category": "web",
+        "stack": [
+          "HTML",
+          "Sass",
+          "Bootstrap",
+          "WordPress",
+          "PencilBlue"
+        ],
+        "year": "2017 - 2020",
+        "media": [
+          {
+            "src": "/images/projects/acadia-careers.webp",
+            "width": 1440,
+            "height": 1150,
+            "alt": "Acadia Healthcare careers homepage",
+            "label": "Acadia Healthcare · careers homepage",
+            "type": "restored"
+          },
+          {
+            "src": "/images/projects/acadia-culture.webp",
+            "width": 1440,
+            "height": 1150,
+            "alt": "Acadia Healthcare culture page",
+            "label": "Acadia Healthcare · culture page",
+            "type": "restored"
+          }
+        ]
+      },
+      {
+        "id": "nicaragua-tattoos",
+        "name": "Nicaragua Tattoos",
+        "summary": "A custom website combining brand content with YouTube and Instagram integrations.",
+        "contribution": "",
+        "details": [
+          "Website development and maintenance with PHP, HTML, Sass, Bootstrap, and jQuery.",
+          "YouTube and Instagram APIs brought social and video content into the website."
+        ],
+        "category": "web",
+        "stack": [
+          "PHP",
+          "Sass",
+          "jQuery",
+          "YouTube API",
+          "Instagram API"
+        ],
+        "year": "2016 - 2022",
+        "media": [
+          {
+            "src": "/images/projects/nicaragua-tattoos.webp",
+            "width": 1440,
+            "height": 1150,
+            "alt": "Nicaragua Tattoos homepage",
+            "label": "Homepage",
+            "type": "restored"
+          }
+        ]
+      },
+      {
+        "id": "license-key-generator",
+        "name": "License key generator",
+        "summary": "A desktop utility for generating unique subscription license keys tied to a device serial number.",
+        "contribution": "",
+        "details": [
+          "Implemented in C# with a MySQL database.",
+          "Device serial numbers and cryptographic algorithms support the license-generation workflow."
+        ],
+        "category": "linkedin-projects",
+        "stack": [
+          "C#",
+          "MySQL",
+          "Desktop"
+        ],
+        "year": "2016 - 2022",
+        "media": [
+          {
+            "src": "/images/projects/license-key-generator-concept.webp",
+            "width": 1586,
+            "height": 992,
+            "alt": "Concept illustration: Device-bound software licensing and authorization",
+            "label": "Concept illustration",
+            "type": "concept"
+          }
+        ]
+      },
+      {
+        "id": "voces-del-sur",
+        "name": "Reporte Sombra · Voces del Sur",
+        "summary": "Web work for the Voces del Sur shadow report, included in the freelance project portfolio.",
+        "contribution": "",
+        "details": [
+          "A dedicated report website represented in the LinkedIn project media.",
+          "JavaScript web implementation, with the source repository kept private."
+        ],
+        "category": "web",
+        "stack": [
+          "JavaScript",
+          "Web"
+        ],
+        "year": "2021",
+        "media": [
+          {
+            "src": "/images/projects/voces-del-sur-concept.webp",
+            "width": 1586,
+            "height": 992,
+            "alt": "Concept illustration: Regional reporting and press freedom in Latin America",
+            "label": "Concept illustration",
+            "type": "concept"
+          }
+        ]
+      },
+      {
+        "id": "farmacia-josefina",
+        "name": "Farmacia Josefina",
+        "summary": "A pharmacy inventory and billing system, recognized at university science and technology fairs.",
+        "contribution": "",
+        "details": [
+          "Java desktop application for pharmacy inventory and billing.",
+          "First-place recognition in 2013 and 2014, with additional science-fair exhibitions."
+        ],
+        "category": "linkedin-projects",
+        "stack": [
+          "Java",
+          "Desktop"
+        ],
+        "year": "2013 - 2014",
+        "url": "https://github.com/reymundotenorio/FarmaciaJosefina",
+        "media": [
+          {
+            "src": "/images/projects/farmacia-josefina-concept.webp",
+            "width": 1586,
+            "height": 992,
+            "alt": "Concept illustration: Pharmacy inventory and billing operations",
+            "label": "Concept illustration",
+            "type": "concept"
+          }
+        ]
+      },
+      {
+        "id": "nicaventura",
+        "name": "Nicaventura",
+        "summary": "An early web project awarded first place at the 2014 Science and Technology Fair at UNI.",
+        "contribution": "",
+        "details": [
+          "University web project with a public source archive.",
+          "Recognized alongside the pharmacy system at the 2014 fair."
+        ],
+        "category": "web",
+        "stack": [
+          "Web"
+        ],
+        "year": "2014",
+        "url": "https://github.com/reymundotenorio/Nicaventura",
+        "media": [
+          {
+            "src": "/images/projects/nicaventura-concept.webp",
+            "width": 1586,
+            "height": 992,
+            "alt": "Concept illustration: A tourism journey through lakes and volcanic landscapes",
+            "label": "Concept illustration",
+            "type": "concept"
+          }
+        ]
+      }
+    ],
+    "publicCode": [
+      {
+        "name": "reymundotenorio.github.io",
+        "url": "https://github.com/reymundotenorio/reymundotenorio.github.io",
+        "language": "TypeScript"
+      },
+      {
+        "name": "depsaber",
+        "url": "https://github.com/reymundotenorio/depsaber",
+        "language": "Go"
+      },
+      {
+        "name": "recipe-app-api",
+        "url": "https://github.com/reymundotenorio/recipe-app-api",
+        "language": "Python"
+      },
+      {
+        "name": "BANP",
+        "url": "https://github.com/reymundotenorio/BANP",
+        "language": "HTML"
+      },
+      {
+        "name": "WeatherAppReact",
+        "url": "https://github.com/reymundotenorio/WeatherAppReact",
+        "language": "JavaScript"
+      },
+      {
+        "name": "Portfolio",
+        "url": "https://github.com/reymundotenorio/Portfolio",
+        "language": "JavaScript"
+      },
+      {
+        "name": "RockPaperScissors-AlexaSkill",
+        "url": "https://github.com/reymundotenorio/RockPaperScissors-AlexaSkill",
+        "language": "JavaScript"
+      },
+      {
+        "name": "nodeJsStreamingWebcam",
+        "url": "https://github.com/reymundotenorio/nodeJsStreamingWebcam",
+        "language": "HTML"
+      },
+      {
+        "name": "Modulo-Alumnos",
+        "url": "https://github.com/reymundotenorio/Modulo-Alumnos",
+        "language": "JavaScript"
+      },
+      {
+        "name": "EleccionesLatam2020",
+        "url": "https://github.com/reymundotenorio/EleccionesLatam2020",
+        "language": "HTML"
+      },
+      {
+        "name": "Algoritm",
+        "url": "https://github.com/reymundotenorio/Algoritm",
+        "language": "JavaScript"
+      },
+      {
+        "name": "ReactTweets",
+        "url": "https://github.com/reymundotenorio/ReactTweets",
+        "language": "JavaScript"
+      },
+      {
+        "name": "RadioNicaSource-AlexaSkill",
+        "url": "https://github.com/reymundotenorio/RadioNicaSource-AlexaSkill",
+        "language": "TypeScript"
+      },
+      {
+        "name": "ServicioMilitar",
+        "url": "https://github.com/reymundotenorio/ServicioMilitar",
+        "language": "Java"
+      },
+      {
+        "name": "QR-Reader-React-Native",
+        "url": "https://github.com/reymundotenorio/QR-Reader-React-Native",
+        "language": "TypeScript"
+      },
+      {
+        "name": "OpenTimeClockDartTheme",
+        "url": "https://github.com/reymundotenorio/OpenTimeClockDartTheme",
+        "language": "CSS"
+      },
+      {
+        "name": "ISTA",
+        "url": "https://github.com/reymundotenorio/ISTA",
+        "language": "HTML"
+      },
+      {
+        "name": "COVID-19-Map",
+        "url": "https://github.com/reymundotenorio/COVID-19-Map",
+        "language": "JavaScript"
+      },
+      {
+        "name": "ConsultorioMedico",
+        "url": "https://github.com/reymundotenorio/ConsultorioMedico",
+        "language": "Java"
+      },
+      {
+        "name": "ELIM5-ADP",
+        "url": "https://github.com/reymundotenorio/ELIM5-ADP",
+        "language": "CSS"
+      },
+      {
+        "name": "CBPremiumTheme",
+        "url": "https://github.com/reymundotenorio/CBPremiumTheme",
+        "language": "HTML"
+      },
+      {
+        "name": "ReactTallerDrupal",
+        "url": "https://github.com/reymundotenorio/ReactTallerDrupal",
+        "language": "JavaScript"
+      },
+      {
+        "name": "IDS",
+        "url": "https://github.com/reymundotenorio/IDS",
+        "language": "PHP"
+      },
+      {
+        "name": "TasaCambioBCN",
+        "url": "https://github.com/reymundotenorio/TasaCambioBCN",
+        "language": "Ruby"
+      },
+      {
+        "name": "DropboxAPI",
+        "url": "https://github.com/reymundotenorio/DropboxAPI",
+        "language": "Ruby"
+      },
+      {
+        "name": "RailsAjaxModal",
+        "url": "https://github.com/reymundotenorio/RailsAjaxModal",
+        "language": "Ruby"
+      },
+      {
+        "name": "IronFort",
+        "url": "https://github.com/reymundotenorio/IronFort",
+        "language": "CSS"
+      },
+      {
+        "name": "CheckInternetConnection",
+        "url": "https://github.com/reymundotenorio/CheckInternetConnection",
+        "language": "C#"
+      },
+      {
+        "name": "ClinicaArchivosAleatorios",
+        "url": "https://github.com/reymundotenorio/ClinicaArchivosAleatorios",
+        "language": "Java"
+      },
+      {
+        "name": "BinarioDOH",
+        "url": "https://github.com/reymundotenorio/BinarioDOH",
+        "language": "Java"
+      },
+      {
+        "name": "InfoNica",
+        "url": "https://github.com/reymundotenorio/InfoNica",
+        "language": "PHP"
+      },
+      {
+        "name": "RailsBooker",
+        "url": "https://github.com/reymundotenorio/RailsBooker",
+        "language": "Ruby"
+      },
+      {
+        "name": "SeguridadBancaria",
+        "url": "https://github.com/reymundotenorio/SeguridadBancaria",
+        "language": "Java"
+      },
+      {
+        "name": "NominaConstructora",
+        "url": "https://github.com/reymundotenorio/NominaConstructora",
+        "language": "Java"
+      },
+      {
+        "name": "BlocNotas",
+        "url": "https://github.com/reymundotenorio/BlocNotas",
+        "language": "Java"
+      },
+      {
+        "name": "ConversionTemperatura",
+        "url": "https://github.com/reymundotenorio/ConversionTemperatura",
+        "language": "Java"
+      },
+      {
+        "name": "ProductosArrayList",
+        "url": "https://github.com/reymundotenorio/ProductosArrayList",
+        "language": "Java"
+      },
+      {
+        "name": "Integrales",
+        "url": "https://github.com/reymundotenorio/Integrales",
+        "language": "Java"
+      },
+      {
+        "name": "PresupuestoMaestro",
+        "url": "https://github.com/reymundotenorio/PresupuestoMaestro",
+        "language": "Java"
+      },
+      {
+        "name": "ComedorDBE",
+        "url": "https://github.com/reymundotenorio/ComedorDBE",
+        "language": "Java"
+      },
+      {
+        "name": "FarmaciaJosefina",
+        "url": "https://github.com/reymundotenorio/FarmaciaJosefina",
+        "language": "Java"
+      },
+      {
+        "name": "WebCamCapture1.0",
+        "url": "https://github.com/reymundotenorio/WebCamCapture1.0",
+        "language": "Java"
+      },
+      {
+        "name": "SuscripcionRevistas",
+        "url": "https://github.com/reymundotenorio/SuscripcionRevistas",
+        "language": "Java"
+      },
+      {
+        "name": "AnalisisNumerico",
+        "url": "https://github.com/reymundotenorio/AnalisisNumerico",
+        "language": "Java"
+      },
+      {
+        "name": "ApagarPCWindows",
+        "url": "https://github.com/reymundotenorio/ApagarPCWindows",
+        "language": "Java"
+      },
+      {
+        "name": "UserPCNameIP",
+        "url": "https://github.com/reymundotenorio/UserPCNameIP",
+        "language": "Java"
+      },
+      {
+        "name": "CuotaFija",
+        "url": "https://github.com/reymundotenorio/CuotaFija",
+        "language": "Java"
+      },
+      {
+        "name": "ArbolNiveles",
+        "url": "https://github.com/reymundotenorio/ArbolNiveles",
+        "language": "Java"
+      },
+      {
+        "name": "GeneradorVCard",
+        "url": "https://github.com/reymundotenorio/GeneradorVCard",
+        "language": "Java"
+      },
+      {
+        "name": "CombinarImagen",
+        "url": "https://github.com/reymundotenorio/CombinarImagen",
+        "language": "Java"
+      },
+      {
+        "name": "SaldoTUC",
+        "url": "https://github.com/reymundotenorio/SaldoTUC",
+        "language": "Java"
+      },
+      {
+        "name": "YahooWeather",
+        "url": "https://github.com/reymundotenorio/YahooWeather",
+        "language": "Ruby"
+      },
+      {
+        "name": "Nicaventura",
+        "url": "https://github.com/reymundotenorio/Nicaventura",
+        "language": "PHP"
+      },
+      {
+        "name": "MuebleriaElPaisa",
+        "url": "https://github.com/reymundotenorio/MuebleriaElPaisa",
+        "language": "CSS"
+      },
+      {
+        "name": "PlaneacionAgregada",
+        "url": "https://github.com/reymundotenorio/PlaneacionAgregada",
+        "language": "Java"
+      },
+      {
+        "name": "InfoTour",
+        "url": "https://github.com/reymundotenorio/InfoTour",
+        "language": "JavaScript"
+      }
+    ],
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/reymundotenorio/",
+      "github": "https://github.com/reymundotenorio"
+    }
+  },
+  "es": {
+    "lang": "es",
+    "profile": {
+      "eyebrow": "03 / Aprendizaje continuo",
+      "title": "Oficio y credenciales",
+      "intro": "Ingeniería, liderazgo y el aprendizaje detrás del trabajo.",
+      "skillsTitle": "Habilidades técnicas",
+      "certificationsTitle": "Certificaciones",
+      "awardsTitle": "Premios y reconocimientos",
+      "educationTitle": "Educación",
+      "coursesTitle": "Cursos",
+      "languagesTitle": "Idiomas",
+      "skillGroups": [
+        {
+          "title": "Liderazgo y producto",
+          "items": [
+            "Gestión de ingeniería",
+            "Liderazgo de ingeniería",
+            "Liderazgo tecnológico",
+            "Liderazgo de equipos de desarrollo",
+            "Diseño de software",
+            "Industria del software",
+            "Ingeniería web",
+            "Revisión de código",
+            "Scrum",
+            "Ingeniería",
+            "Atención al detalle",
+            "Desarrollo de software",
+            "Desarrollo de aplicaciones de escritorio"
+          ]
+        },
+        {
+          "title": "Frontend y aplicaciones",
+          "items": [
+            "React.js",
+            "TypeScript",
+            "JavaScript",
+            "React Native",
+            "Next.js",
+            "Tailwind CSS",
+            "Material-UI",
+            "Storybook",
+            "Cypress.io",
+            "Sass",
+            "HTML5",
+            "CSS",
+            "Bootstrap",
+            "jQuery",
+            "Desarrollo web",
+            "Aplicaciones web",
+            "Desarrollo frontend",
+            "Desarrollo de aplicaciones",
+            "HTML",
+            "Haml",
+            "Jade (Pug)"
+          ]
+        },
+        {
+          "title": "Backend y sistemas",
+          "items": [
+            "Node.js",
+            "Python",
+            "Django",
+            "PHP",
+            "Ruby on Rails",
+            "Go",
+            "Java",
+            "C#",
+            "Kotlin",
+            "Swift",
+            "WordPress",
+            "MySQL",
+            "MongoDB",
+            "Microsoft SQL Server",
+            "AWS",
+            "Docker",
+            "Supabase",
+            "Desarrollo del lado del servidor",
+            "Laravel",
+            "Express.js"
+          ]
+        },
+        {
+          "title": "Herramientas e integraciones",
+          "items": [
+            "OpenAI API",
+            "Cursor AI",
+            "Claude Code",
+            "OpenClaw",
+            "Anthropic Claude",
+            "n8n",
+            "Playwright",
+            "GitHub Actions",
+            "Git",
+            "Linux",
+            "PSD to HTML",
+            "Adobe Photoshop",
+            "Firebase",
+            "PostgreSQL",
+            "REST APIs",
+            "Redux",
+            "Redux-Thunk",
+            "Reparación de computadoras",
+            "Microsoft Office",
+            "Visual Studio",
+            "JSON",
+            "GitHub"
+          ]
+        }
+      ],
+      "certifications": [
+        {
+          "title": "Curso de OpenClaw",
+          "meta": "Platzi · Oct 2026",
+          "url": "https://platzi.com/p/reymundot/curso/12851-openclaw-2026/diploma/detalle/",
+          "originalTitle": "Curso de OpenClaw"
+        },
+        {
+          "title": "Curso de Claude Code",
+          "meta": "Platzi · Oct 2026",
+          "url": "https://platzi.com/p/reymundot/curso/12284-claude-code/diploma/detalle/",
+          "originalTitle": "Curso de Claude Code"
+        },
+        {
+          "title": "Curso de Cursor AI Code Editor",
+          "meta": "Platzi · Oct 2026",
+          "url": "https://platzi.com/p/reymundot/curso/12166-cursor-2025/diploma/detalle/",
+          "originalTitle": "Curso de Cursor AI Code Editor"
+        },
+        {
+          "title": "Curso de Claude AI",
+          "meta": "Platzi · Oct 2026",
+          "url": "https://platzi.com/p/reymundot/curso/12651-claude/diploma/detalle/",
+          "originalTitle": "Curso de Claude AI"
+        },
+        {
+          "title": "Curso de OpenAI API",
+          "meta": "Platzi · Jun 2026",
+          "url": "https://platzi.com/p/reymundot/curso/11458-openai-api/diploma/detalle/",
+          "originalTitle": "Curso de OpenAI API"
+        },
+        {
+          "title": "Curso Dale Carnegie: Comunicación eficaz y relaciones humanas",
+          "meta": "Dale Carnegie Nicaragua · Jun 2024",
+          "originalTitle": "Dale Carnegie Course: Effective Communications and Human Relations",
+          "detail": "Certificado de reconocimiento"
+        },
+        {
+          "title": "React Native: Aplicaciones nativas para iOS y Android",
+          "meta": "Udemy · Nov 2021",
+          "originalTitle": "React Native: Aplicaciones nativas para IOS y Android"
+        },
+        {
+          "title": "Crea un sitio web",
+          "meta": "Codecademy",
+          "originalTitle": "Make a Website"
+        },
+        {
+          "title": "Introducción a JavaScript",
+          "meta": "Codecademy",
+          "originalTitle": "Introduction to JavaScript"
+        },
+        {
+          "title": "Aprende Sass",
+          "meta": "Codecademy",
+          "originalTitle": "Learn Sass"
+        },
+        {
+          "title": "Rails for Zombies 2",
+          "meta": "Code School",
+          "originalTitle": "Rails for Zombies 2"
+        },
+        {
+          "title": "Publica un sitio web",
+          "meta": "Codecademy",
+          "originalTitle": "Deploy a Website"
+        },
+        {
+          "title": "Prueba Ruby",
+          "meta": "Code School",
+          "originalTitle": "Try Ruby"
+        },
+        {
+          "title": "Aprende Git",
+          "meta": "Codecademy",
+          "originalTitle": "Learn Git"
+        },
+        {
+          "title": "Ruby on Rails: Autenticación",
+          "meta": "Codecademy",
+          "originalTitle": "Ruby on Rails: Authentication"
+        },
+        {
+          "title": "Aprende Ruby on Rails",
+          "meta": "Codecademy",
+          "originalTitle": "Learn Ruby on Rails"
+        },
+        {
+          "title": "Aprende Ruby",
+          "meta": "Codecademy",
+          "originalTitle": "Learn Ruby"
+        },
+        {
+          "title": "Rails for Zombies Redux",
+          "meta": "Code School",
+          "originalTitle": "Rails for Zombies Redux"
+        }
+      ],
+      "awards": [
+        {
+          "title": "Taller de introducción a React JS",
+          "originalTitle": "Taller de Introduccion a React JS",
+          "meta": "Comunidad Drupal Nicaragua · Jun 2019",
+          "detail": "Participante en taller introductorio de React JS"
+        },
+        {
+          "title": "Mejor desempeño 2017",
+          "meta": "Accedo Technologies · Dic 2017",
+          "detail": "Reconocimiento por desempeño como diseñador web",
+          "originalTitle": "Top performance 2017"
+        },
+        {
+          "title": "Diseñador en la Feria de Ciencia y Tecnología 2016",
+          "meta": "Universidad Nacional de Ingeniería · Sep 2016",
+          "detail": "Proyecto BiComfort en sistemas de manufactura"
+        },
+        {
+          "title": "Primera exposición de proyectos y tareas de curso 2016",
+          "meta": "Universidad Nacional de Ingeniería · Jun 2016",
+          "detail": "Aplicación de escritorio para planificación agregada"
+        },
+        {
+          "title": "Taller de diseño y desarrollo con WordPress",
+          "meta": "Universidad Nacional de Ingeniería / Mozilla Nicaragua · Abr 2016"
+        },
+        {
+          "title": "Diseñador en la Feria de Ciencia y Tecnología 2015",
+          "meta": "Universidad Nacional de Ingeniería · Dic 2015",
+          "detail": "Proyecto de marketing para publicidad de muebles"
+        },
+        {
+          "title": "Diseñador en la Feria de Ciencia y Tecnología 2015",
+          "meta": "Universidad Nacional de Ingeniería · Dic 2015",
+          "detail": "Proyecto web InfoNica"
+        },
+        {
+          "title": "Taller de desarrollo web con Ruby on Rails",
+          "meta": "Universidad Nacional de Ingeniería · Oct 2015"
+        },
+        {
+          "title": "Taller de WordPress",
+          "meta": "TechCreative · Oct 2015"
+        },
+        {
+          "title": "Diseñador en XV Expociencia y Tecnología",
+          "meta": "CNU / CONICYT · Nov 2014",
+          "detail": "Inventario y facturación para farmacia Josefina"
+        },
+        {
+          "title": "Diseñador en la Feria de Ciencia y Tecnología 2014",
+          "meta": "Universidad Nacional de Ingeniería · Nov 2014",
+          "detail": "Aplicación Integrales en ciencias básicas"
+        },
+        {
+          "title": "Primer lugar · Feria de Ciencia y Tecnología 2014",
+          "meta": "Universidad Nacional de Ingeniería · Nov 2014",
+          "detail": "Inventario y facturación farmacéutica"
+        },
+        {
+          "title": "Primer lugar · Feria de Ciencia y Tecnología 2014",
+          "meta": "Universidad Nacional de Ingeniería · Nov 2014",
+          "detail": "Proyecto web Nicaventura"
+        },
+        {
+          "title": "Participante en Hack Fest 2014",
+          "meta": "Universidad Nacional de Ingeniería · Nov 2014"
+        },
+        {
+          "title": "Expositor en Expociencia y Tecnología Territorial · Managua 2014",
+          "meta": "CONICYT / CNU / INACTEC / MINED · Sep 2014",
+          "detail": "Inventario y facturación para farmacia Josefina"
+        },
+        {
+          "title": "Primer lugar · Feria de Ciencia y Tecnología 2013",
+          "meta": "Universidad Nacional de Ingeniería · Nov 2013",
+          "detail": "Sistema de inventario y facturación en programación gráfica"
+        },
+        {
+          "title": "Diseñador en la Feria de Ciencia y Tecnología 2011",
+          "meta": "Universidad Nacional de Ingeniería · Nov 2011",
+          "detail": "Sistema financiero en programación de consola"
+        }
+      ],
+      "education": [
+        {
+          "title": "Universidad Nacional de Ingeniería",
+          "meta": "Ingeniería de Sistemas · 2011 - 2017"
+        }
+      ],
+      "courses": [
+        {
+          "title": "Inglés · Nivel VI",
+          "meta": "English Language Academy"
+        },
+        {
+          "title": "Técnico en mantenimiento y reparación de PC",
+          "meta": "Universidad Nacional de Ingeniería"
+        },
+        {
+          "title": "Técnico en mantenimiento y reparación de computadoras",
+          "meta": "Computers of Granada"
+        },
+        {
+          "title": "Emprendimiento y creación de planes de negocio",
+          "meta": "Emprende Training Center"
+        }
+      ],
+      "languages": [
+        {
+          "title": "Español",
+          "meta": "Nativo o bilingüe"
+        },
+        {
+          "title": "Inglés",
+          "meta": "Competencia laboral limitada"
+        }
+      ]
+    },
+    "timeline": [
+      {
+        "company": "Nicasource",
+        "role": "Engineering Manager / Engineering Team Lead / Software Engineer",
+        "period": "May 2021 - Presente",
+        "summary": "Engineering Manager desde julio de 2025, Engineering Team Lead entre 2022 y 2025 y Software Engineer desde 2021. Asignaciones: Scalar (agosto 2022 - presente), Column Five y Super Star Car Wash. Desarrollo web y móvil con React, TypeScript, Redux, Firebase, REST APIs, Node.js, MySQL, PostgreSQL y React Native, junto con liderazgo de entrega y mentoría. En Scalar: React, Tailwind CSS, TypeScript, Python, Django, Next.js, Storybook y Cypress para aplicaciones centradas en datos.",
+        "signal": "Liderazgo"
+      },
+      {
+        "company": "Editorial",
+        "role": "Senior Web Developer",
+        "period": "May 2020 - May 2021",
+        "summary": "Desarrollo y mantenimiento de aplicaciones web con temas, plugins y APIs a medida para WordPress. HTML, CSS, Sass, PHP, JavaScript, jQuery, Node.js, Docker, MySQL, MongoDB, Amazon Aurora y AWS para transformar sitios tradicionales en PWAs escalables.",
+        "signal": "PWAs"
+      },
+      {
+        "company": "Freelancer",
+        "role": "Software Developer",
+        "period": "Mar 2016 - Mar 2022",
+        "summary": "Sitios WordPress, herramientas financieras, sistemas de comercio y operaciones, utilidades de licencias en C# y software de escritorio en Java para horarios y planillas. Integraciones de APIs y sistemas a medida para negocios.",
+        "signal": "Sistemas"
+      },
+      {
+        "company": "Accedo Technologies",
+        "role": "Senior Development Trainer / Web Designer",
+        "period": "Mar 2017 - May 2020",
+        "summary": "Evaluación y formación de equipos, introducción de tecnologías web y desarrollo de sitios responsive con HTML, Sass, Bootstrap, PencilBlue CMS, Photoshop e Illustrator. Reconocido como Top Web Designer of the Year 2017.",
+        "signal": "Mentoring"
+      },
+      {
+        "company": "Accedo Digital Inc.",
+        "role": "Web Developer",
+        "period": "Sep 2018 - May 2020",
+        "summary": "Diseño y desarrollo de sitios responsive, temas WordPress a medida desde Adobe XD y herramientas internas con Python, Node.js y PHP para mejorar los procesos de operaciones.",
+        "signal": "Web"
+      }
+    ],
+    "recognitionKinds": [
+      "workshop",
+      "award",
+      "exhibition",
+      "exhibition",
+      "workshop",
+      "exhibition",
+      "exhibition",
+      "workshop",
+      "workshop",
+      "exhibition",
+      "exhibition",
+      "award",
+      "award",
+      "participation",
+      "exhibition",
+      "award",
+      "exhibition"
+    ],
+    "projects": [
+      {
+        "id": "duepulse",
+        "name": "DuePulse",
+        "summary": "Una PWA de finanzas del hogar que reúne facturas, estados de cuenta, vencimientos y señales de pago en un flujo de revisión.",
+        "contribution": "",
+        "details": [
+          "Ingesta desde Gmail y extracción de estados de cuenta asistida por IA, con sugerencias revisadas antes de crear registros.",
+          "Compromisos recurrentes, separación de acceso por hogar, recordatorios y notificaciones push.",
+          "Aplicación bilingüe con Next.js, TypeScript, Supabase e integraciones de OpenAI."
+        ],
+        "category": "product-systems",
+        "stack": [
+          "Next.js",
+          "TypeScript",
+          "Supabase",
+          "OpenAI API",
+          "PWA"
+        ],
+        "year": "2026",
+        "media": [
+          {
+            "src": "/images/projects/duepulse-home.webp",
+            "width": 1440,
+            "height": 1000,
+            "alt": "Website de DuePulse en modo oscuro",
+            "label": "Website del producto",
+            "type": "current"
+          },
+          {
+            "src": "/images/projects/duepulse-product.webp",
+            "width": 1380,
+            "height": 644,
+            "alt": "Presentación pública de DuePulse sobre revisión de pagos y avisos",
+            "label": "Vista del producto",
+            "type": "current"
+          }
+        ]
+      },
+      {
+        "id": "studio-ivl",
+        "name": "Studio IVL · IVL Collective",
+        "summary": "Creé la app fitness de IVL Collective desde cero con React Native, integrando exploración de entrenamientos, clases en video y agenda en una experiencia móvil.",
+        "contribution": "Desarrollo de la aplicación móvil desde cero",
+        "details": [
+          "Desarrollo de la aplicación móvil desde cero con React Native y Expo, incluyendo la estructura de pantallas y la navegación.",
+          "Exploración de clases, instructores, agenda, favoritos y reproducción de video.",
+          "Experiencias de perfil, membresía y notificaciones, con proyectos de CMS y backend de soporte."
+        ],
+        "category": "mobile",
+        "stack": [
+          "React Native",
+          "Expo",
+          "TypeScript",
+          "Firebase",
+          "Video"
+        ],
+        "year": "",
+        "media": [
+          {
+            "src": "/images/projects/ivl-classes.webp",
+            "width": 780,
+            "height": 1387,
+            "alt": "App Studio IVL · Clases on-demand",
+            "label": "Clases on-demand",
+            "type": "store"
+          },
+          {
+            "src": "/images/projects/ivl-class-details.webp",
+            "width": 780,
+            "height": 1387,
+            "alt": "App Studio IVL · Detalle de clase",
+            "label": "Detalle de clase",
+            "type": "store"
+          },
+          {
+            "src": "/images/projects/ivl-favorites.webp",
+            "width": 780,
+            "height": 1387,
+            "alt": "App Studio IVL · Clases favoritas",
+            "label": "Clases favoritas",
+            "type": "store"
+          }
+        ]
+      },
+      {
+        "id": "nicasource",
+        "name": "Nicasource",
+        "summary": "Website corporativo con un tema WordPress y React a medida, como parte del equipo de Nicasource.",
+        "contribution": "Desarrollo web",
+        "details": [
+          "Implementación a medida que combina contenido administrado en WordPress y componentes React.",
+          "Módulos reutilizables y flujo frontend con Vite y Tailwind CSS.",
+          "Desarrollo como parte del equipo de Nicasource."
+        ],
+        "category": "web",
+        "stack": [
+          "WordPress",
+          "React",
+          "Vite",
+          "Tailwind CSS",
+          "PHP"
+        ],
+        "year": "",
+        "url": "https://nicasource.com/",
+        "media": [
+          {
+            "src": "/images/projects/nicasource.webp",
+            "width": 1440,
+            "height": 1080,
+            "alt": "Sitio público actual de Nicasource",
+            "label": "Sitio web",
+            "type": "current"
+          }
+        ]
+      },
+      {
+        "id": "claris-health",
+        "name": "Claris Health",
+        "summary": "Desarrollo del website de Claris Health, para presentar sus servicios y contenido público.",
+        "contribution": "Desarrollo web",
+        "details": [
+          "Contribución al desarrollo del website de Claris Health.",
+          "Desarrollo en WordPress, con contenido de servicios y de la organización administrado desde el CMS."
+        ],
+        "category": "web",
+        "stack": [
+          "WordPress",
+          "PHP",
+          "JavaScript",
+          "CSS"
+        ],
+        "year": "",
+        "url": "https://www.clarishealth.org/",
+        "media": [
+          {
+            "src": "/images/projects/claris-health.webp",
+            "width": 1440,
+            "height": 1080,
+            "alt": "Sitio público actual de Claris Health",
+            "label": "Sitio web",
+            "type": "current"
+          }
+        ]
+      },
+      {
+        "id": "dele-peso-tools",
+        "name": "Dele Peso a sus Pesos",
+        "summary": "Herramientas financieras para liquidación, deuda, pensión alimenticia, salario neto y edad de retiro, integradas en WordPress.",
+        "contribution": "Desarrollo de herramientas financieras",
+        "details": [
+          "Construido con HTML, Sass y jQuery.",
+          "Educación financiera convertida en calculadoras de uso directo.",
+          "Mantenido como parte del trabajo freelance de producto."
+        ],
+        "category": "product-systems",
+        "stack": [
+          "WordPress",
+          "HTML",
+          "Sass",
+          "jQuery"
+        ],
+        "year": "2016 - 2022",
+        "url": "https://delepesoasuspesos.com/calcular-salario-neto/",
+        "media": [
+          {
+            "src": "/images/projects/dele-peso-tools.webp",
+            "width": 1440,
+            "height": 1080,
+            "alt": "Página actual de herramientas de Dele Peso a sus Pesos",
+            "label": "Sitio web",
+            "type": "current"
+          }
+        ]
+      },
+      {
+        "id": "steps-veterinary",
+        "name": "Clínica Veterinaria Steps",
+        "summary": "Sitio oficial de la clínica veterinaria, desarrollado con un tema de WordPress completamente personalizado.",
+        "contribution": "Desarrollo de tema WordPress a medida",
+        "details": [
+          "Desarrollo de un tema a medida para el sitio de la clínica.",
+          "Parte del trabajo freelance, con material del proyecto en LinkedIn."
+        ],
+        "category": "web",
+        "stack": [
+          "WordPress",
+          "PHP",
+          "HTML",
+          "CSS"
+        ],
+        "year": "2016 - 2022",
+        "media": [
+          {
+            "src": "/images/projects/steps-veterinary.webp",
+            "width": 1440,
+            "height": 1100,
+            "alt": "Inicio de Steps Clínica Veterinaria",
+            "label": "Inicio",
+            "type": "restored"
+          }
+        ]
+      },
+      {
+        "id": "depsaber",
+        "name": "DepSaber",
+        "summary": "Un radar local de cadena de suministro para dependencias, configuración de paquetes, GitHub Actions y artefactos de compilación.",
+        "contribution": "",
+        "details": [
+          "Escaneos base y diferenciales para identificar cambios entre versiones de las dependencias.",
+          "Verificación de feeds firmados y controles de CI conectados con los flujos de entrega.",
+          "CLI interactiva en Go y visor de reportes con Vite para analizar resultados localmente, sin subirlos a un servicio."
+        ],
+        "category": "developer-tools",
+        "stack": [
+          "Go",
+          "CLI",
+          "GitHub Actions",
+          "Vite",
+          "Supply-chain security"
+        ],
+        "year": "2026",
+        "url": "https://github.com/reymundotenorio/depsaber",
+        "media": [
+          {
+            "src": "/images/projects/depsaber-console.webp",
+            "width": 1440,
+            "height": 1100,
+            "alt": "Consola de reportes de DepSaber con su reporte público de ejemplo",
+            "label": "Consola de reportes · ejemplo",
+            "type": "demo"
+          },
+          {
+            "src": "/images/projects/depsaber-site.webp",
+            "width": 1440,
+            "height": 1100,
+            "alt": "Website público del proyecto DepSaber",
+            "label": "Website del proyecto",
+            "type": "current"
+          }
+        ]
+      },
+      {
+        "id": "super-star-car-wash",
+        "name": "Super Star Car Wash",
+        "summary": "Mantenimiento e integraciones web como parte del equipo de Super Star Car Wash.",
+        "contribution": "Mantenimiento e integraciones WordPress",
+        "details": [
+          "Trabajo en funcionalidad WordPress e integraciones del website existente.",
+          "Implementación de eventos de formularios entre una experiencia SMS embebida y el data layer de analítica.",
+          "La contribución es desarrollo dentro del equipo, no el diseño original del sitio completo."
+        ],
+        "category": "web",
+        "stack": [
+          "WordPress",
+          "PHP",
+          "JavaScript",
+          "Analytics integrations"
+        ],
+        "year": "",
+        "url": "https://www.superstarcarwashaz.com/",
+        "media": [
+          {
+            "src": "/images/projects/super-star-car-wash.webp",
+            "width": 1440,
+            "height": 1080,
+            "alt": "Sitio público actual de Super Star Car Wash",
+            "label": "Sitio web",
+            "type": "current"
+          }
+        ]
+      },
+      {
+        "id": "enerwize",
+        "name": "Enerwize",
+        "summary": "Website WordPress a medida para una agencia de branding, desarrollo web y SEO.",
+        "contribution": "Desarrollo WordPress a medida",
+        "details": [
+          "Desarrollo del tema WordPress de Enerwize.",
+          "Implementación del website con secciones de marca, servicios, proceso y contacto."
+        ],
+        "category": "web",
+        "stack": [
+          "WordPress",
+          "PHP",
+          "JavaScript",
+          "CSS"
+        ],
+        "year": "",
+        "url": "https://enerwize.agency/",
+        "media": [
+          {
+            "src": "/images/projects/enerwize.webp",
+            "width": 1440,
+            "height": 1080,
+            "alt": "Sitio público actual de Enerwize",
+            "label": "Sitio web",
+            "type": "current"
+          }
+        ]
+      },
+      {
+        "id": "ariel-law",
+        "name": "Ariel Law Group",
+        "summary": "Website WordPress a medida desarrollado para Ariel Law Group.",
+        "contribution": "Desarrollo de website WordPress",
+        "details": [
+          "Implementación del tema a medida de Ariel Law Group.",
+          "Desarrollo de páginas de servicios legales, información del despacho y solicitudes de consulta."
+        ],
+        "category": "web",
+        "stack": [
+          "WordPress",
+          "PHP",
+          "HTML",
+          "CSS"
+        ],
+        "year": "",
+        "url": "https://ariellawgroup.com/",
+        "media": [
+          {
+            "src": "/images/projects/ariel-law.webp",
+            "width": 1000,
+            "height": 1200,
+            "alt": "Website de Ariel Law Group",
+            "label": "Website histórico",
+            "type": "archived"
+          }
+        ]
+      },
+      {
+        "id": "hartunian-law",
+        "name": "Hartunian Law Firm",
+        "summary": "Desarrollo del website de servicios legales de Hartunian Law Firm.",
+        "contribution": "Desarrollo web",
+        "details": [
+          "Desarrollo del website de servicios legales.",
+          "Implementación de la presentación del despacho, sus áreas de práctica y las llamadas a consulta."
+        ],
+        "category": "web",
+        "stack": [
+          "Web development",
+          "HTML",
+          "CSS",
+          "JavaScript"
+        ],
+        "year": "",
+        "url": "https://hartunianlaw.com/",
+        "media": [
+          {
+            "src": "/images/projects/hartunian-law.webp",
+            "width": 1000,
+            "height": 1200,
+            "alt": "Website de Hartunian Law Firm",
+            "label": "Website histórico",
+            "type": "archived"
+          }
+        ]
+      },
+      {
+        "id": "caban-pools",
+        "name": "Caban Pools",
+        "summary": "Website WordPress a medida para una empresa de servicios de piscinas.",
+        "contribution": "Desarrollo WordPress a medida",
+        "details": [
+          "Implementación del tema WordPress a medida de Caban Pools.",
+          "Desarrollo de páginas de servicios, galerías de proyectos y secciones de contacto."
+        ],
+        "category": "web",
+        "stack": [
+          "WordPress",
+          "PHP",
+          "HTML",
+          "CSS"
+        ],
+        "year": "",
+        "media": [
+          {
+            "src": "/images/projects/caban-pools.webp",
+            "width": 1000,
+            "height": 1200,
+            "alt": "Website de Caban Pools",
+            "label": "Website histórico",
+            "type": "archived"
+          }
+        ]
+      },
+      {
+        "id": "fit-factory",
+        "name": "Fit Factory Studio",
+        "summary": "Website WordPress a medida de Fit Factory Studio.",
+        "contribution": "Desarrollo WordPress a medida",
+        "details": [
+          "Desarrollo del tema WordPress FitFactory.",
+          "Implementación de páginas del estudio y de sus programas de entrenamiento."
+        ],
+        "category": "web",
+        "stack": [
+          "WordPress",
+          "PHP",
+          "HTML",
+          "CSS"
+        ],
+        "year": "",
+        "media": [
+          {
+            "src": "/images/projects/fit-factory.webp",
+            "width": 1000,
+            "height": 1200,
+            "alt": "Website de Fit Factory Studio",
+            "label": "Website histórico",
+            "type": "archived"
+          }
+        ]
+      },
+      {
+        "id": "sapetto-law",
+        "name": "Sapetto Law",
+        "summary": "Website WordPress a medida para Sapetto Law.",
+        "contribution": "Desarrollo WordPress a medida",
+        "details": [
+          "Desarrollo del tema WordPress SapettoLaw.",
+          "Implementación de páginas de servicios, información del despacho y secciones de consulta."
+        ],
+        "category": "web",
+        "stack": [
+          "WordPress",
+          "PHP",
+          "HTML",
+          "CSS"
+        ],
+        "year": "",
+        "media": [
+          {
+            "src": "/images/projects/sapetto-law.webp",
+            "width": 1000,
+            "height": 1200,
+            "alt": "Website de Sapetto Law",
+            "label": "Website histórico",
+            "type": "archived"
+          }
+        ]
+      },
+      {
+        "id": "agency-platform",
+        "name": "Website de agencia · WordPress headless",
+        "summary": "Website headless de agencia desarrollado con React, Frontity y WordPress.",
+        "contribution": "Desarrollo React y WordPress headless",
+        "details": [
+          "Implementación de páginas y portafolio de la agencia en un tema Frontity a medida.",
+          "Conexión del frontend React con el contenido de WordPress."
+        ],
+        "category": "web",
+        "stack": [
+          "React",
+          "Frontity",
+          "WordPress",
+          "Sass"
+        ],
+        "year": "",
+        "media": [
+          {
+            "src": "/images/projects/agency-platform-concept.webp",
+            "width": 1586,
+            "height": 992,
+            "alt": "Ilustración conceptual: Arquitectura web headless y módulos de contenido conectados",
+            "label": "Ilustración conceptual",
+            "type": "concept"
+          }
+        ]
+      },
+      {
+        "id": "asher-asher",
+        "name": "Asher & Asher Consulting",
+        "summary": "Tema WordPress a medida para el website de Asher & Asher Consulting.",
+        "contribution": "Desarrollo de tema WordPress",
+        "details": [
+          "Desarrollo del tema WordPress Asher a medida."
+        ],
+        "category": "web",
+        "stack": [
+          "WordPress",
+          "PHP",
+          "CSS"
+        ],
+        "year": "",
+        "media": [
+          {
+            "src": "/images/projects/asher-asher.webp",
+            "width": 1440,
+            "height": 1100,
+            "alt": "Inicio de Asher & Asher Consulting",
+            "label": "Inicio",
+            "type": "restored"
+          }
+        ]
+      },
+      {
+        "id": "willow-creek",
+        "name": "Willow Creek Productions",
+        "summary": "Desarrollo de un tema WordPress a medida para Willow Creek Productions.",
+        "contribution": "Desarrollo de tema WordPress",
+        "details": [
+          "Implementación del tema WordPress WillowCreekProductions a medida."
+        ],
+        "category": "web",
+        "stack": [
+          "WordPress",
+          "PHP",
+          "CSS"
+        ],
+        "year": "",
+        "media": [
+          {
+            "src": "/images/projects/willow-creek.webp",
+            "width": 1440,
+            "height": 1100,
+            "alt": "Inicio de Willow Creek Productions",
+            "label": "Inicio",
+            "type": "restored"
+          }
+        ]
+      },
+      {
+        "id": "pouch",
+        "name": "Pouch · Envíos y seguimiento",
+        "summary": "Aplicación completa de envíos y seguimiento desarrollada como proyecto freelance. El producto, antes llamado Portal, hoy se conoce como Pouch.",
+        "contribution": "Desarrollo full-stack de la aplicación",
+        "details": [
+          "Desarrollo de la aplicación completa de envíos y seguimiento, su API y servicios webhook.",
+          "Recepción de paquetes, alertas de envío, facturas, manifiestos y recibos de despacho.",
+          "Gestión de clientes y agencias, administración por roles, identificación y localización de paquetes y estadísticas operativas.",
+          "Cálculo de carga y flujos de declaraciones de importación y exportación."
+        ],
+        "category": "product-systems",
+        "stack": [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Firebase",
+          "Node.js",
+          "Express"
+        ],
+        "year": "",
+        "media": [
+          {
+            "src": "/images/projects/pouch-receptions.webp",
+            "width": 1680,
+            "height": 1050,
+            "alt": "Pouch Portal · Historial de envíos con datos de ejemplo",
+            "label": "Historial de envíos · Datos de ejemplo",
+            "type": "demo"
+          },
+          {
+            "src": "/images/projects/pouch-details.webp",
+            "width": 1680,
+            "height": 1050,
+            "alt": "Pouch Portal · Detalle de paquete con datos de ejemplo",
+            "label": "Detalle de paquete · Datos de ejemplo",
+            "type": "demo"
+          }
+        ]
+      },
+      {
+        "id": "myroadmap",
+        "name": "MyRoadmap",
+        "summary": "Contribución de desarrollo al producto MyRoadmap.",
+        "contribution": "Contribución de desarrollo",
+        "details": [
+          "Proyecto histórico de producto. El servicio público original ya no está disponible."
+        ],
+        "category": "product-systems",
+        "stack": [],
+        "year": "",
+        "media": [
+          {
+            "src": "/images/projects/myroadmap-concept.webp",
+            "width": 1586,
+            "height": 992,
+            "alt": "Ilustración conceptual: Una ruta de producto con hitos conectados",
+            "label": "Ilustración conceptual",
+            "type": "concept"
+          }
+        ]
+      },
+      {
+        "id": "time-weaver",
+        "name": "TimeWeaver",
+        "summary": "Un flujo que convierte actividad de GitHub y eventos del calendario en borradores de horas de trabajo y asiste con su ingreso en el navegador.",
+        "contribution": "",
+        "details": [
+          "n8n orquesta integraciones con GitHub, Google Calendar y Google Sheets.",
+          "Resúmenes asistidos por OpenAI normalizan la actividad en registros semanales.",
+          "Una capa de TypeScript y Playwright automatiza el ingreso repetitivo en formularios web."
+        ],
+        "category": "automation",
+        "stack": [
+          "n8n",
+          "TypeScript",
+          "Playwright",
+          "OpenAI API",
+          "REST APIs"
+        ],
+        "year": "2025",
+        "media": [
+          {
+            "src": "/images/projects/time-weaver-concept.webp",
+            "width": 1586,
+            "height": 992,
+            "alt": "Ilustración conceptual: Actividad de código y calendario conectada con la automatización de horas",
+            "label": "Ilustración conceptual",
+            "type": "concept"
+          }
+        ]
+      },
+      {
+        "id": "uni-sciences-systems",
+        "name": "UNI · Ciencias y Sistemas",
+        "summary": "Miembro del equipo de desarrollo del sitio web de la Facultad de Ciencias y Sistemas de la Universidad Nacional de Ingeniería.",
+        "contribution": "",
+        "details": [
+          "Proyecto de la Universidad Nacional de Ingeniería.",
+          "Desarrollado con WordPress como gestor de contenido.",
+          "Presencia web institucional para una facultad académica."
+        ],
+        "category": "linkedin-projects",
+        "stack": [
+          "WordPress",
+          "PHP",
+          "HTML",
+          "CSS"
+        ],
+        "year": "2016",
+        "media": [
+          {
+            "src": "/images/projects/uni-sciences-systems-concept.webp",
+            "width": 1586,
+            "height": 992,
+            "alt": "Ilustración conceptual: Conocimiento conectado y sistemas de ingeniería",
+            "label": "Ilustración conceptual",
+            "type": "concept"
+          }
+        ]
+      },
+      {
+        "id": "tpf-supervisor",
+        "name": "Sistema TPF-Supervisor",
+        "summary": "Sistema de escritorio para operaciones TPF en Granada: lugares, horarios, turnos, personal, horas extras, ausencias, roles y cálculo de planillas.",
+        "contribution": "",
+        "details": [
+          "Desarrollado en Java con MySQL como gestor de base de datos.",
+          "Horarios, ausencias, generación de roles, cálculos de planilla y reportes.",
+          "Cálculos de nómina y reportes operativos con JasperReports."
+        ],
+        "category": "linkedin-projects",
+        "stack": [
+          "Java",
+          "MySQL",
+          "JasperReports",
+          "Desktop"
+        ],
+        "year": "2016",
+        "media": [
+          {
+            "src": "/images/projects/tpf-supervisor-concept.webp",
+            "width": 1586,
+            "height": 992,
+            "alt": "Ilustración conceptual: Planificación de turnos, asistencia y registro de horas",
+            "label": "Ilustración conceptual",
+            "type": "concept"
+          }
+        ]
+      },
+      {
+        "id": "editorial-pwa",
+        "name": "Editorial · De web a PWA",
+        "summary": "Desarrollo y mantenimiento de aplicaciones web con temas WordPress a medida, plugins, APIs, infraestructura AWS y transformación a PWAs.",
+        "contribution": "",
+        "details": [
+          "Temas, plugins y APIs a medida para WordPress con PHP, JavaScript, Sass y Node.js.",
+          "Infraestructura AWS con Docker, MySQL, MongoDB y Amazon Aurora.",
+          "PWAs enfocadas en rendimiento, experiencia de usuario y despliegues escalables."
+        ],
+        "category": "editorial",
+        "stack": [
+          "WordPress",
+          "AWS",
+          "Docker",
+          "Amazon Aurora",
+          "PWA"
+        ],
+        "year": "May 2020 - May 2021",
+        "media": [
+          {
+            "src": "/images/projects/editorial-pwa-concept.webp",
+            "width": 1586,
+            "height": 992,
+            "alt": "Ilustración conceptual: Publicación editorial transformada en una PWA móvil",
+            "label": "Ilustración conceptual",
+            "type": "concept"
+          }
+        ]
+      },
+      {
+        "id": "better-nice-produce",
+        "name": "Better & Nice Produce",
+        "summary": "Sistema comercial y ecommerce para una empresa de productos agrícolas en Miami, con actualizaciones en tiempo real, pagos, mensajería e infraestructura cloud.",
+        "contribution": "",
+        "details": [
+          "Construido con Ruby on Rails, jQuery, Sass, Haml, Bootstrap y MySQL.",
+          "Integración con Pusher, AWS S3/RDS, PayPal, Stripe, Twilio y SendGrid.",
+          "Operaciones comerciales y ecommerce integrados en un mismo sistema."
+        ],
+        "category": "product-systems",
+        "stack": [
+          "Ruby on Rails",
+          "MySQL",
+          "AWS",
+          "Stripe",
+          "Twilio",
+          "Ruby",
+          "Haml",
+          "ERB"
+        ],
+        "year": "2016 - 2022",
+        "url": "https://github.com/reymundotenorio/BANP",
+        "media": [
+          {
+            "src": "/images/projects/better-nice-produce-concept.webp",
+            "width": 1586,
+            "height": 992,
+            "alt": "Ilustración conceptual: Inventario, ecommerce y distribución de productos agrícolas",
+            "label": "Ilustración conceptual",
+            "type": "concept"
+          }
+        ]
+      },
+      {
+        "id": "career-site-collection",
+        "name": "Colección de career sites",
+        "summary": "Sitios de reclutamiento responsive y proyectos WordPress/PencilBlue desarrollados en Accedo Technologies y Accedo Digital.",
+        "contribution": "",
+        "details": [
+          "Desarrollo con HTML, Sass, Bootstrap, PencilBlue CMS, Photoshop e Illustrator.",
+          "Temas WordPress a medida desde diseños UI/UX en Adobe XD.",
+          "Reconocido como Top Web Designer of the Year 2017 en Accedo Technologies."
+        ],
+        "category": "web",
+        "stack": [
+          "HTML",
+          "Sass",
+          "Bootstrap",
+          "WordPress",
+          "PencilBlue"
+        ],
+        "year": "2017 - 2020",
+        "media": [
+          {
+            "src": "/images/projects/acadia-careers.webp",
+            "width": 1440,
+            "height": 1150,
+            "alt": "Inicio del career site de Acadia Healthcare",
+            "label": "Acadia Healthcare · inicio de empleos",
+            "type": "restored"
+          },
+          {
+            "src": "/images/projects/acadia-culture.webp",
+            "width": 1440,
+            "height": 1150,
+            "alt": "Página de cultura de Acadia Healthcare",
+            "label": "Acadia Healthcare · cultura",
+            "type": "restored"
+          }
+        ]
+      },
+      {
+        "id": "nicaragua-tattoos",
+        "name": "Nicaragua Tattoos",
+        "summary": "Un sitio a medida que combina contenido de marca con integraciones de YouTube e Instagram.",
+        "contribution": "",
+        "details": [
+          "Desarrollo y mantenimiento con PHP, HTML, Sass, Bootstrap y jQuery.",
+          "Integración de contenido social y video mediante las APIs de YouTube e Instagram."
+        ],
+        "category": "web",
+        "stack": [
+          "PHP",
+          "Sass",
+          "jQuery",
+          "YouTube API",
+          "Instagram API"
+        ],
+        "year": "2016 - 2022",
+        "media": [
+          {
+            "src": "/images/projects/nicaragua-tattoos.webp",
+            "width": 1440,
+            "height": 1150,
+            "alt": "Inicio de Nicaragua Tattoos",
+            "label": "Inicio",
+            "type": "restored"
+          }
+        ]
+      },
+      {
+        "id": "license-key-generator",
+        "name": "Generador de claves de licencia",
+        "summary": "Una utilidad de escritorio que genera claves únicas de suscripción vinculadas al número de serie del dispositivo.",
+        "contribution": "",
+        "details": [
+          "Implementación en C# con una base de datos MySQL.",
+          "Números de serie y algoritmos criptográficos como base del flujo de generación de licencias."
+        ],
+        "category": "linkedin-projects",
+        "stack": [
+          "C#",
+          "MySQL",
+          "Desktop"
+        ],
+        "year": "2016 - 2022",
+        "media": [
+          {
+            "src": "/images/projects/license-key-generator-concept.webp",
+            "width": 1586,
+            "height": 992,
+            "alt": "Ilustración conceptual: Licencias de software y autorización vinculadas a dispositivos",
+            "label": "Ilustración conceptual",
+            "type": "concept"
+          }
+        ]
+      },
+      {
+        "id": "voces-del-sur",
+        "name": "Reporte Sombra · Voces del Sur",
+        "summary": "Trabajo web para el Reporte Sombra de Voces del Sur, parte del portafolio de proyectos freelance.",
+        "contribution": "",
+        "details": [
+          "Un sitio dedicado al reporte, incluido en los proyectos adjuntos de LinkedIn.",
+          "Implementación web con JavaScript y repositorio de código privado."
+        ],
+        "category": "web",
+        "stack": [
+          "JavaScript",
+          "Web"
+        ],
+        "year": "2021",
+        "media": [
+          {
+            "src": "/images/projects/voces-del-sur-concept.webp",
+            "width": 1586,
+            "height": 992,
+            "alt": "Ilustración conceptual: Reportes regionales y libertad de prensa en América Latina",
+            "label": "Ilustración conceptual",
+            "type": "concept"
+          }
+        ]
+      },
+      {
+        "id": "farmacia-josefina",
+        "name": "Farmacia Josefina",
+        "summary": "Sistema de inventario y facturación farmacéutica, reconocido en ferias universitarias de ciencia y tecnología.",
+        "contribution": "",
+        "details": [
+          "Aplicación de escritorio en Java para inventario y facturación de farmacia.",
+          "Reconocimientos de primer lugar en 2013 y 2014, además de exposiciones científicas."
+        ],
+        "category": "linkedin-projects",
+        "stack": [
+          "Java",
+          "Desktop"
+        ],
+        "year": "2013 - 2014",
+        "url": "https://github.com/reymundotenorio/FarmaciaJosefina",
+        "media": [
+          {
+            "src": "/images/projects/farmacia-josefina-concept.webp",
+            "width": 1586,
+            "height": 992,
+            "alt": "Ilustración conceptual: Inventario y facturación de farmacia",
+            "label": "Ilustración conceptual",
+            "type": "concept"
+          }
+        ]
+      },
+      {
+        "id": "nicaventura",
+        "name": "Nicaventura",
+        "summary": "Uno de mis primeros proyectos web, ganador del primer lugar en la Feria de Ciencia y Tecnología 2014 de la UNI.",
+        "contribution": "",
+        "details": [
+          "Proyecto web universitario con un archivo público del código.",
+          "Reconocido junto al sistema farmacéutico en la feria de 2014."
+        ],
+        "category": "web",
+        "stack": [
+          "Web"
+        ],
+        "year": "2014",
+        "url": "https://github.com/reymundotenorio/Nicaventura",
+        "media": [
+          {
+            "src": "/images/projects/nicaventura-concept.webp",
+            "width": 1586,
+            "height": 992,
+            "alt": "Ilustración conceptual: Un recorrido turístico por lagos y paisajes volcánicos",
+            "label": "Ilustración conceptual",
+            "type": "concept"
+          }
+        ]
+      }
+    ],
+    "publicCode": [
+      {
+        "name": "reymundotenorio.github.io",
+        "url": "https://github.com/reymundotenorio/reymundotenorio.github.io",
+        "language": "TypeScript"
+      },
+      {
+        "name": "depsaber",
+        "url": "https://github.com/reymundotenorio/depsaber",
+        "language": "Go"
+      },
+      {
+        "name": "recipe-app-api",
+        "url": "https://github.com/reymundotenorio/recipe-app-api",
+        "language": "Python"
+      },
+      {
+        "name": "BANP",
+        "url": "https://github.com/reymundotenorio/BANP",
+        "language": "HTML"
+      },
+      {
+        "name": "WeatherAppReact",
+        "url": "https://github.com/reymundotenorio/WeatherAppReact",
+        "language": "JavaScript"
+      },
+      {
+        "name": "Portfolio",
+        "url": "https://github.com/reymundotenorio/Portfolio",
+        "language": "JavaScript"
+      },
+      {
+        "name": "RockPaperScissors-AlexaSkill",
+        "url": "https://github.com/reymundotenorio/RockPaperScissors-AlexaSkill",
+        "language": "JavaScript"
+      },
+      {
+        "name": "nodeJsStreamingWebcam",
+        "url": "https://github.com/reymundotenorio/nodeJsStreamingWebcam",
+        "language": "HTML"
+      },
+      {
+        "name": "Modulo-Alumnos",
+        "url": "https://github.com/reymundotenorio/Modulo-Alumnos",
+        "language": "JavaScript"
+      },
+      {
+        "name": "EleccionesLatam2020",
+        "url": "https://github.com/reymundotenorio/EleccionesLatam2020",
+        "language": "HTML"
+      },
+      {
+        "name": "Algoritm",
+        "url": "https://github.com/reymundotenorio/Algoritm",
+        "language": "JavaScript"
+      },
+      {
+        "name": "ReactTweets",
+        "url": "https://github.com/reymundotenorio/ReactTweets",
+        "language": "JavaScript"
+      },
+      {
+        "name": "RadioNicaSource-AlexaSkill",
+        "url": "https://github.com/reymundotenorio/RadioNicaSource-AlexaSkill",
+        "language": "TypeScript"
+      },
+      {
+        "name": "ServicioMilitar",
+        "url": "https://github.com/reymundotenorio/ServicioMilitar",
+        "language": "Java"
+      },
+      {
+        "name": "QR-Reader-React-Native",
+        "url": "https://github.com/reymundotenorio/QR-Reader-React-Native",
+        "language": "TypeScript"
+      },
+      {
+        "name": "OpenTimeClockDartTheme",
+        "url": "https://github.com/reymundotenorio/OpenTimeClockDartTheme",
+        "language": "CSS"
+      },
+      {
+        "name": "ISTA",
+        "url": "https://github.com/reymundotenorio/ISTA",
+        "language": "HTML"
+      },
+      {
+        "name": "COVID-19-Map",
+        "url": "https://github.com/reymundotenorio/COVID-19-Map",
+        "language": "JavaScript"
+      },
+      {
+        "name": "ConsultorioMedico",
+        "url": "https://github.com/reymundotenorio/ConsultorioMedico",
+        "language": "Java"
+      },
+      {
+        "name": "ELIM5-ADP",
+        "url": "https://github.com/reymundotenorio/ELIM5-ADP",
+        "language": "CSS"
+      },
+      {
+        "name": "CBPremiumTheme",
+        "url": "https://github.com/reymundotenorio/CBPremiumTheme",
+        "language": "HTML"
+      },
+      {
+        "name": "ReactTallerDrupal",
+        "url": "https://github.com/reymundotenorio/ReactTallerDrupal",
+        "language": "JavaScript"
+      },
+      {
+        "name": "IDS",
+        "url": "https://github.com/reymundotenorio/IDS",
+        "language": "PHP"
+      },
+      {
+        "name": "TasaCambioBCN",
+        "url": "https://github.com/reymundotenorio/TasaCambioBCN",
+        "language": "Ruby"
+      },
+      {
+        "name": "DropboxAPI",
+        "url": "https://github.com/reymundotenorio/DropboxAPI",
+        "language": "Ruby"
+      },
+      {
+        "name": "RailsAjaxModal",
+        "url": "https://github.com/reymundotenorio/RailsAjaxModal",
+        "language": "Ruby"
+      },
+      {
+        "name": "IronFort",
+        "url": "https://github.com/reymundotenorio/IronFort",
+        "language": "CSS"
+      },
+      {
+        "name": "CheckInternetConnection",
+        "url": "https://github.com/reymundotenorio/CheckInternetConnection",
+        "language": "C#"
+      },
+      {
+        "name": "ClinicaArchivosAleatorios",
+        "url": "https://github.com/reymundotenorio/ClinicaArchivosAleatorios",
+        "language": "Java"
+      },
+      {
+        "name": "BinarioDOH",
+        "url": "https://github.com/reymundotenorio/BinarioDOH",
+        "language": "Java"
+      },
+      {
+        "name": "InfoNica",
+        "url": "https://github.com/reymundotenorio/InfoNica",
+        "language": "PHP"
+      },
+      {
+        "name": "RailsBooker",
+        "url": "https://github.com/reymundotenorio/RailsBooker",
+        "language": "Ruby"
+      },
+      {
+        "name": "SeguridadBancaria",
+        "url": "https://github.com/reymundotenorio/SeguridadBancaria",
+        "language": "Java"
+      },
+      {
+        "name": "NominaConstructora",
+        "url": "https://github.com/reymundotenorio/NominaConstructora",
+        "language": "Java"
+      },
+      {
+        "name": "BlocNotas",
+        "url": "https://github.com/reymundotenorio/BlocNotas",
+        "language": "Java"
+      },
+      {
+        "name": "ConversionTemperatura",
+        "url": "https://github.com/reymundotenorio/ConversionTemperatura",
+        "language": "Java"
+      },
+      {
+        "name": "ProductosArrayList",
+        "url": "https://github.com/reymundotenorio/ProductosArrayList",
+        "language": "Java"
+      },
+      {
+        "name": "Integrales",
+        "url": "https://github.com/reymundotenorio/Integrales",
+        "language": "Java"
+      },
+      {
+        "name": "PresupuestoMaestro",
+        "url": "https://github.com/reymundotenorio/PresupuestoMaestro",
+        "language": "Java"
+      },
+      {
+        "name": "ComedorDBE",
+        "url": "https://github.com/reymundotenorio/ComedorDBE",
+        "language": "Java"
+      },
+      {
+        "name": "FarmaciaJosefina",
+        "url": "https://github.com/reymundotenorio/FarmaciaJosefina",
+        "language": "Java"
+      },
+      {
+        "name": "WebCamCapture1.0",
+        "url": "https://github.com/reymundotenorio/WebCamCapture1.0",
+        "language": "Java"
+      },
+      {
+        "name": "SuscripcionRevistas",
+        "url": "https://github.com/reymundotenorio/SuscripcionRevistas",
+        "language": "Java"
+      },
+      {
+        "name": "AnalisisNumerico",
+        "url": "https://github.com/reymundotenorio/AnalisisNumerico",
+        "language": "Java"
+      },
+      {
+        "name": "ApagarPCWindows",
+        "url": "https://github.com/reymundotenorio/ApagarPCWindows",
+        "language": "Java"
+      },
+      {
+        "name": "UserPCNameIP",
+        "url": "https://github.com/reymundotenorio/UserPCNameIP",
+        "language": "Java"
+      },
+      {
+        "name": "CuotaFija",
+        "url": "https://github.com/reymundotenorio/CuotaFija",
+        "language": "Java"
+      },
+      {
+        "name": "ArbolNiveles",
+        "url": "https://github.com/reymundotenorio/ArbolNiveles",
+        "language": "Java"
+      },
+      {
+        "name": "GeneradorVCard",
+        "url": "https://github.com/reymundotenorio/GeneradorVCard",
+        "language": "Java"
+      },
+      {
+        "name": "CombinarImagen",
+        "url": "https://github.com/reymundotenorio/CombinarImagen",
+        "language": "Java"
+      },
+      {
+        "name": "SaldoTUC",
+        "url": "https://github.com/reymundotenorio/SaldoTUC",
+        "language": "Java"
+      },
+      {
+        "name": "YahooWeather",
+        "url": "https://github.com/reymundotenorio/YahooWeather",
+        "language": "Ruby"
+      },
+      {
+        "name": "Nicaventura",
+        "url": "https://github.com/reymundotenorio/Nicaventura",
+        "language": "PHP"
+      },
+      {
+        "name": "MuebleriaElPaisa",
+        "url": "https://github.com/reymundotenorio/MuebleriaElPaisa",
+        "language": "CSS"
+      },
+      {
+        "name": "PlaneacionAgregada",
+        "url": "https://github.com/reymundotenorio/PlaneacionAgregada",
+        "language": "Java"
+      },
+      {
+        "name": "InfoTour",
+        "url": "https://github.com/reymundotenorio/InfoTour",
+        "language": "JavaScript"
+      }
+    ],
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/reymundotenorio/",
+      "github": "https://github.com/reymundotenorio"
+    }
+  }
+}

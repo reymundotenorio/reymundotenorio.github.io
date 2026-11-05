@@ -1,0 +1,6 @@
+import assert from'node:assert/strict';
+import{test}from'node:test';
+import{projectHref}from'../src/lib/project-path.ts';
+import{createDemoTour}from'../src/data/demo-tour.ts';
+test('project paths use real localized pages and safe finite origins',()=>{for(const lang of['en','es']){assert.equal(projectHref(lang,'studio-ivl'),`/${lang}/work/studio-ivl/`);for(const from of['work','archive','prompt','ai'])assert.equal(projectHref(lang,'enerwize',from),`/${lang}/work/enerwize/?from=${from}`);assert(!projectHref(lang,'duepulse').includes('#'));}});
+test('six-step demos use curated projects and rotate both pools without repetition',()=>{for(const lang of['en','es']){const tour=createDemoTour(lang,()=>0.42),rounds=Array.from({length:12},()=>tour.nextRound());for(const round of rounds){assert.equal(round.length,6);assert.equal(round[0].key,'project-duepulse');assert.deepEqual([round[2].key,round[3].key,round[5].key],['toolkit','ai','experience']);assert(round.every(entry=>entry.query.length>8));}for(const index of[1,4]){for(let offset=0;offset<12;offset+=4)assert.equal(new Set(rounds.slice(offset,offset+4).map(round=>round[index].key)).size,4);for(let i=1;i<12;i++)assert.notEqual(rounds[i][index].key,rounds[i-1][index].key);}}});

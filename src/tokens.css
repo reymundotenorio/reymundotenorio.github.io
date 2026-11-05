@@ -1,0 +1,30 @@
+@font-face { font-family: Geist Mono; src: url('/fonts/geist-mono.woff2') format('woff2'); font-style: normal; font-weight: 400 500; font-display: swap; }
+@font-face { font-family: Geist; src: url('/fonts/geist-sans.woff2') format('woff2'); font-style: normal; font-weight: 400 600; font-display: swap; }
+:root {
+  color-scheme: light;
+  --color-bg: #fff; --color-bg-soft: #f4f6f8; --color-surface: #f4f6f8; --color-surface-strong: #e7ebef;
+  --color-text: #202126; --color-muted: #555965; --color-dim: #555965;
+  --color-cyan: #087456; --color-green: #087456; --color-violet: #6940b3; --color-red: #a53545; --color-amber: #886300;
+  --color-line: #dce0e6; --color-line-strong: #818793; --color-prompt-border: #818793;
+  --button-bg: #d5f9e8; --button-text: #183428;
+  --font-body: Geist, system-ui, -apple-system, sans-serif;
+  --font-mono: 'Geist Mono', 'SFMono-Regular', Consolas, monospace;
+  --font-display: var(--font-mono); --space-page: 56px;
+  --radius-sm: 4px; --radius-md: 6px;
+}
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --color-bg: #111214; --color-bg-soft: #16171b; --color-surface: #191a1f; --color-surface-strong: #24262c;
+  --color-text: #eeeef2; --color-muted: #aaaab5; --color-dim: #aaaab5;
+  --color-cyan: #61ffca; --color-green: #61ffca; --color-violet: #a277ff; --color-red: #ff6767; --color-amber: #ffd24a;
+  --color-line: #33353e; --color-line-strong: #666976; --color-prompt-border: #666976;
+  --button-bg: #61ffca; --button-text: #102219;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark; --color-bg: #111214; --color-bg-soft: #16171b; --color-surface: #191a1f; --color-surface-strong: #24262c;
+    --color-text: #eeeef2; --color-muted: #aaaab5; --color-dim: #aaaab5; --color-cyan: #61ffca; --color-green: #61ffca; --color-violet: #a277ff;
+    --color-red: #ff6767; --color-amber: #ffd24a; --color-line: #33353e; --color-line-strong: #666976; --color-prompt-border: #666976;
+    --button-bg: #61ffca; --button-text: #102219;
+  }
+}

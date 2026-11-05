@@ -1,0 +1,12 @@
+---
+import type { Data } from '../types';
+import { recognitionDetails } from '../data/editorial';
+interface Props { data: Data }
+const { data }=Astro.props; const en=data.lang==='en';
+const indexed=data.profile.awards.map((fact,index)=>({ ...fact,index,kind:data.recognitionKinds[index] }));
+const groups=[{title:en?'Awards & recognition':'Premios y reconocimientos',kind:'award',items:indexed.filter(fact=>fact.kind==='award')},{title:en?'Exhibitions, workshops & participation':'Exposiciones, talleres y participación',kind:'other',items:indexed.filter(fact=>fact.kind!=='award')}];
+---
+<section class="band recognition-band" id="recognition" aria-labelledby="recognition-title">
+  <div class="section-top"><h2 id="recognition-title">{en ? 'Recognition.' : 'Reconocimientos.'}</h2><span class="section-note">2011 — 2019</span></div>
+  {groups.map(group=><div class="recognition-group"><div class="subsection-top"><h3>{group.title}</h3><span class="section-note">{String(group.items.length).padStart(2,'0')}</span></div><ol class:list={['recognition-list',group.kind==='award'&&'recognition-list--awards']}>{group.items.map(fact=><li data-recognition data-kind={fact.kind}><span class="recognition-mark" aria-hidden="true">{fact.meta.match(/\d{4}/)?.[0]}</span><div><h4>{fact.title}</h4><p class="recognition-meta">{fact.meta}</p><p>{recognitionDetails[data.lang][fact.index]}</p></div></li>)}</ol></div>)}
+</section>

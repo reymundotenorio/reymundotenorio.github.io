@@ -1,0 +1,13 @@
+---
+import type { Data } from '../types';
+import ProjectEntry from './ProjectEntry.astro';
+interface Props { data: Data }
+const { data }=Astro.props; const en=data.lang==='en';
+---
+<section class="band" id="archive" aria-labelledby="archive-title">
+  <div class="section-top"><h2 id="archive-title">{en ? 'The complete work.' : 'El trabajo completo.'}</h2><span class="section-note">{data.projects.length} {en ? 'projects' : 'proyectos'}</span></div>
+  <form class="archive-search" role="search" data-archive-search hidden><label for="project-search">{en ? 'Find a project' : 'Buscar un proyecto'}</label><input id="project-search" type="search" autocomplete="off" placeholder={en ? 'Name, technology or domain' : 'Nombre, tecnología o sector'} /><p role="status" data-project-count></p></form>
+  <div class="archive-grid">{data.projects.slice(0,6).map(project=><ProjectEntry project={project} en={en} />)}</div>
+  <details class="archive-rest" data-archive-rest><summary><span>{en ? 'All projects' : 'Todos los proyectos'}</span><span>{data.projects.length-6} <b aria-hidden="true">+</b></span></summary><div class="archive-grid">{data.projects.slice(6).map(project=><ProjectEntry project={project} en={en} />)}</div></details>
+  <p class="archive-empty" data-archive-empty hidden>{en ? 'No projects match this search.' : 'No hay proyectos que coincidan.'}</p>
+</section>

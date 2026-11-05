@@ -1,0 +1,27 @@
+---
+import corpus from '../data/profile.json';
+import type { Data,Lang } from '../types';
+import Layout from './Layout.astro';
+import ProjectScene from './ProjectScene.astro';
+import Experience from './Experience.astro';
+import Toolkit from './Toolkit.astro';
+import Archive from './Archive.astro';
+import Learning from './Learning.astro';
+import Recognition from './Recognition.astro';
+import Background from './Background.astro';
+import Icon from './Icon.astro';
+import PromptAnswer from './PromptAnswer.astro';
+import AIPractice from './AIPractice.astro';
+interface Props { lang: Lang }
+const { lang }=Astro.props; const en=lang==='en'; const data=corpus[lang] as Data;
+---
+<Layout lang={lang}>
+  <main id="main-content" tabindex="-1">
+    <section class="hero" aria-labelledby="name"><p class="terminal-path"><span>~/reymundo</span><span aria-hidden="true">/</span><span>portfolio</span><span aria-hidden="true">/</span><span>{en?'story':'trayectoria'}</span></p><p class="terminal-command" aria-hidden="true"><span>$</span> whoami</p><h1 id="name">Reymundo <span>Tenorio<span class="name-caret" aria-hidden="true"></span></span></h1><div class="hero-role"><p>Software Engineer</p><span>{en?'Web & mobile products, AI integrations and automation.':'Productos web y móviles, integraciones de IA y automatización.'}</span></div>
+      <form class="command-form" data-command role="search" hidden><label class="sr-only" for="command-input">{en?'Explore projects, experience and skills':'Explorar proyectos, experiencia y habilidades'}</label><span class="command-symbol" aria-hidden="true">&gt;</span><input id="command-input" type="text" autocomplete="off" maxlength="200" placeholder={en?'Show me your projects':'Muéstrame tus proyectos'} /><button type="submit" class="send-button" aria-label={en?'Explore':'Explorar'} data-tooltip={en?'Explore':'Explorar'}><Icon name="arrow-up" /></button></form>
+      <nav class="hero-options" aria-label={en?'Explore':'Explorar'}><a href="#work" data-prompt-query="apps" data-prompt-text={en?'Show me your products and apps':'Muéstrame tus productos y apps'}>{en?'Products & apps':'Productos y apps'}<Icon name="arrow-up-right" /></a><a href="#ai-practice" data-prompt-query="ai" data-prompt-text={en?'How do you use AI?':'¿Cómo aplicas IA?'}>{en?'AI in practice':'IA aplicada'}<Icon name="arrow-up-right" /></a><a href="#toolkit" data-prompt-query="stack" data-prompt-text={en?'Your full tech stack':'Tu stack tecnológico completo'}>{en?'Tech stack':'Stack tecnológico'}<Icon name="arrow-up-right" /></a><a href="#experience" data-prompt-query="experience" data-prompt-text={en?'Your engineering experience':'Tu experiencia en ingeniería'}>{en?'Experience':'Experiencia'}<Icon name="arrow-up-right" /></a><a href="#archive" data-prompt-query="surprise" data-prompt-text={en?'Discover a project':'Descubrir un proyecto'}>{en?'Discover a project':'Descubrir un proyecto'}<Icon name="arrow-up-right" /></a></nav><p class="command-status" data-command-status role="status"></p><PromptAnswer data={data}/>
+    </section>
+    <ProjectScene data={data} /><Experience data={data} /><AIPractice data={data}/><Toolkit data={data} /><Archive data={data} /><Learning data={data} /><Recognition data={data} /><Background data={data} />
+  </main>
+  <footer class="site-footer"><span>© {new Date().getFullYear()} Reymundo Tenorio</span><a href="#name">{en?'Back to top':'Volver al inicio'}<Icon name="arrow-up" /></a></footer>
+</Layout>

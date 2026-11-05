@@ -1,0 +1,14 @@
+---
+import type {Project}from'../types';
+import Icon from './Icon.astro';
+import{projectHref}from'../lib/project-path';
+import ProjectImage from'./ProjectImage.astro';
+interface Props {project:Project;en:boolean;detail?:string}
+const {project,en,detail}=Astro.props;
+const name=project.id==='studio-ivl'?'IVL Collective':project.name;
+const descriptions:Record<string,string>={duepulse:en?'Personal finance PWA':'PWA de finanzas personales','studio-ivl':en?'Mobile app, built from scratch':'App móvil, creada desde cero'};
+const description=detail||descriptions[project.id]||project.contribution;
+const kind=project.media[0].type;
+const caption=kind==='concept'?(en?'Concept':'Concepto'):kind==='demo'?(en?'Demo data':'Datos de ejemplo'):['archived','restored'].includes(kind)?(en?'Historical website':'Sitio histórico'):project.stack[0];
+---
+<a class="answer-project" href={projectHref(en?'en':'es',project.id,'prompt')}><ProjectImage media={project.media[0]} alt="" sizes="72px"/><span><h3>{name}</h3>{description&&<p>{description}</p>}<small>{caption}</small></span><Icon name="arrow-up-right" /></a>

@@ -1,0 +1,7 @@
+---
+import type{Media}from'../types';
+import{projectSrcSet}from'../lib/project-images';
+interface Props{media:Media;alt?:string;loading?:'eager'|'lazy';sizes?:string;priority?:boolean}
+const{media,alt=media.alt,loading='lazy',sizes='(min-width:1376px) 1264px, 92vw',priority=false}=Astro.props;
+---
+<img src={media.src} srcset={await projectSrcSet(media.src)} sizes={sizes} width={media.width} height={media.height} alt={alt} loading={loading} decoding="async" fetchpriority={priority?'high':'auto'}/>

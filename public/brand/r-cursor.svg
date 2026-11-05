@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 48" fill="none">
+  <rect id="stem" x="3" y="3" width="8" height="42" rx="2" fill="var(--color-cyan, #61ffca)"/>
+  <path id="chevron" d="M17 7 34 15 17 23" stroke="var(--color-violet, #a277ff)" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/>
+  <path id="leg" d="m18 31 10 10" stroke="var(--color-amber, #ffd24a)" stroke-width="8" stroke-linecap="round"/>
+</svg>

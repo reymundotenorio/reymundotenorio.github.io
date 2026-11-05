@@ -1,0 +1,13 @@
+---
+import type { Data } from '../types';
+import { roleHistory, about } from '../data/editorial';
+interface Props { data: Data }
+const { data }=Astro.props; const en=data.lang==='en';
+---
+<section class="band" id="experience" aria-labelledby="experience-title">
+  <div class="section-top"><h2 id="experience-title">{en ? 'Experience' : 'Experiencia'}</h2><span class="section-note">2016 — {en ? 'Present' : 'Actualidad'}</span></div>
+  <div class="career-list">{data.timeline.map((job,i)=><article class="career-row" data-employment>
+    <p class="career-date">{job.period}</p><div><h3>{job.company}</h3><p class="career-role">{job.role}</p></div><div class="career-copy"><p>{job.summary}</p>{i===0&&<ul class="role-history">{roleHistory[data.lang].map(role=><li><span>{role.title}</span><time>{role.dates}</time></li>)}</ul>}</div>
+  </article>)}</div>
+  <div class="about-row" id="about"><h3>{en ? 'Engineer at heart.' : 'Ingeniero de vocación.'}</h3><div>{about[data.lang].map(paragraph=><p>{paragraph}</p>)}<p class="causes">{en ? 'Education · Science & technology' : 'Educación · Ciencia y tecnología'}</p></div></div>
+</section>
