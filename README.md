@@ -75,6 +75,7 @@ The suite exercises both languages and themes, desktop wheel/touch navigation, p
 | Area | Source |
 | --- | --- |
 | Bilingual professional content and 30 project cases | [`src/data/profile.json`](src/data/profile.json) |
+| Featured work and shared project priority | [`src/data/project-curation.ts`](src/data/project-curation.ts) |
 | Categorized stack and applied-AI narrative | [`src/data/editorial.ts`](src/data/editorial.ts) |
 | Curated, rotating demo questions | [`src/data/demo-tour.ts`](src/data/demo-tour.ts) |
 | Homepage and project presentation | [`src/components`](src/components) |
@@ -104,7 +105,9 @@ The demo waits for the intro, then pauses while scrolling, offscreen, or hidden.
 
 Authentic captures take precedence over concepts. Conceptual artwork and demonstration data remain labeled. Public websites may include later work by other contributors.
 
-Private application URLs, customer records, intermediary names, personal contact details, and private repository metadata are not part of the published portfolio. DuePulse uses signed-out product captures; Pouch is one anonymous shipping/tracking case. Workshop and participation records are distinguished from awards.
+Private application URLs, customer records, intermediary names, personal contact details, and private repository metadata are not part of the published portfolio. DuePulse uses signed-out product captures; Shipping Portal is one anonymous shipping/tracking case. Workshop and participation records are distinguished from awards.
+
+Shipping Portal previews are localized English/Spanish renders of the original frontend with synthetic records. Only optimized images are included here, not private application source, authentication sessions, or backend access.
 
 Geist Sans and Geist Mono are self-hosted with their [SIL Open Font License](public/fonts/GEIST-OFL.txt). Local Lucide assets retain their [license](public/icons/LICENSE). Project brands and imagery are credited to their respective owners; a public repository is not permission to reuse someone else's identity or client material.
 
