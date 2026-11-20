@@ -1,11 +1,11 @@
 export const about = {
   en: [
-    'Engineer at heart, with a strong focus on building high-impact digital products and leading technical teams with clarity and empathy. I combine hands-on experience across the full stack with a constant drive for learning, mentoring, and improving systems, both human and technical.',
+    'Engineer at heart, with a strong focus on building high-impact digital products and leading technical teams with clarity and empathy. I bring more than 10 years of software development experience across the full stack, with a focus on learning, mentoring, and improving systems, both human and technical.',
     'My background includes web, mobile, and desktop applications using React, TypeScript, Node.js, Firebase, and other technologies. I value simplicity, performance, and clean architecture, aiming to deliver solutions that are robust and user-friendly.',
     'I believe in creating environments where engineers can grow, ideas can scale, and code can empower.'
   ],
   es: [
-    'Ingeniero de vocación, enfocado en construir productos digitales de impacto y liderar equipos técnicos con claridad y empatía. Combino experiencia práctica en todo el stack con el aprendizaje constante, la mentoría y la mejora de sistemas, tanto humanos como técnicos.',
+    'Ingeniero de vocación, enfocado en construir productos digitales de impacto y liderar equipos técnicos con claridad y empatía. Aporto más de 10 años de experiencia en desarrollo de software en todo el stack, junto con el aprendizaje constante, la mentoría y la mejora de sistemas, tanto humanos como técnicos.',
     'Mi trayectoria incluye aplicaciones web, móviles y de escritorio con React, TypeScript, Node.js, Firebase y otras tecnologías. Valoro la simplicidad, el rendimiento y una arquitectura clara para crear soluciones robustas y fáciles de usar.',
     'Creo en crear entornos donde los ingenieros puedan crecer, las ideas puedan escalar y el código pueda abrir posibilidades.'
   ]
