@@ -1294,6 +1294,47 @@
             "type": "concept"
           }
         ]
+      },
+      {
+        "id": "mombacho",
+        "name": "Mombacho",
+        "category": "product-systems",
+        "stack": [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Supabase Storage",
+          "PostgreSQL",
+          "Material UI",
+          "Google Maps"
+        ],
+        "year": "2025",
+        "summary": "A residential mapping application with location-based records, guided data entry and image handling through Supabase Storage.",
+        "contribution": "Full-stack application development",
+        "details": [
+          "Built a Next.js and TypeScript application with Google Maps and Material UI for locating homes and reviewing related resident records.",
+          "Implemented a guided home/resident/confirmation workflow and relational persistence with Supabase.",
+          "Compressed images in the browser before upload to Supabase Storage, then retrieved images through one-hour signed URLs with expiry-aware caching.",
+          "Private application. The captures render original components with synthetic records, without access to the residential system."
+        ],
+        "media": [
+          {
+            "src": "/images/projects/mombacho-vivienda.webp",
+            "width": 1920,
+            "height": 873,
+            "alt": "Mombacho original home-entry component with example data",
+            "label": "Original components · Demo data · Spanish UI",
+            "type": "demo"
+          },
+          {
+            "src": "/images/projects/mombacho-confirmacion.webp",
+            "width": 1920,
+            "height": 873,
+            "alt": "Mombacho original confirmation component with synthetic resident and coordinates",
+            "label": "Original components · Demo data · Spanish UI",
+            "type": "demo"
+          }
+        ]
       }
     ],
     "publicCode": [
@@ -2874,6 +2915,47 @@
             "alt": "Ilustración conceptual: Un recorrido turístico por lagos y paisajes volcánicos",
             "label": "Ilustración conceptual",
             "type": "concept"
+          }
+        ]
+      },
+      {
+        "id": "mombacho",
+        "name": "Mombacho",
+        "category": "product-systems",
+        "stack": [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Supabase Storage",
+          "PostgreSQL",
+          "Material UI",
+          "Google Maps"
+        ],
+        "year": "2025",
+        "summary": "Una aplicación de mapas residenciales con registros por ubicación, captura guiada de datos y manejo de imágenes con Supabase Storage.",
+        "contribution": "Desarrollo de la aplicación full-stack",
+        "details": [
+          "Desarrollo con Next.js y TypeScript, Google Maps y Material UI para ubicar viviendas y consultar registros relacionados de residentes.",
+          "Flujo guiado de vivienda, residentes y confirmación, con persistencia relacional en Supabase.",
+          "Compresión de imágenes en el navegador antes de subirlas a Supabase Storage; consulta mediante enlaces firmados de una hora y caché con vencimiento.",
+          "Aplicación privada. Las capturas muestran componentes originales con datos ficticios, sin acceso al sistema residencial."
+        ],
+        "media": [
+          {
+            "src": "/images/projects/mombacho-vivienda.webp",
+            "width": 1920,
+            "height": 873,
+            "alt": "Componente original de registro de vivienda con datos de ejemplo",
+            "label": "Componentes originales · Datos de ejemplo",
+            "type": "demo"
+          },
+          {
+            "src": "/images/projects/mombacho-confirmacion.webp",
+            "width": 1920,
+            "height": 873,
+            "alt": "Componente original de confirmación con residente y coordenadas ficticias",
+            "label": "Componentes originales · Datos de ejemplo",
+            "type": "demo"
           }
         ]
       }

@@ -9,7 +9,7 @@ test('featured work and the first archive projects share the approved engineerin
     assert.deepEqual([...html.matchAll(/data-story-panel[^>]*data-project="([^"]+)"/g)].map(match => match[1]), featured);
     const archive = [...html.matchAll(/id="project-([^"]+)" data-archive-project/g)].map(match => match[1]);
     assert.deepEqual(archive.slice(0, 6), [...featured, 'nicasource', 'dele-peso-tools']);
-    assert.equal(archive.length, 30);
+    assert.equal(archive.length, 31);
     assert(archive.includes('steps-veterinary'));
   }
 });

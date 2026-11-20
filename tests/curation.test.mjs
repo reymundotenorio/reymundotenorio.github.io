@@ -10,8 +10,8 @@ test('shared curation keeps all projects and source order intact while prioritiz
     const sorted = orderProjects(original);
     assert.deepEqual(sorted.slice(0, 4).map(project => project.id), [...featuredProjectIds]);
     assert.deepEqual(sorted.slice(4, 8).map(project => project.id), ['nicasource', 'dele-peso-tools', 'claris-health', 'time-weaver']);
-    assert.equal(sorted.length, 30);
-    assert.equal(new Set(sorted.map(project => project.id)).size, 30);
+    assert.equal(sorted.length, 31);
+    assert.equal(new Set(sorted.map(project => project.id)).size, 31);
     assert.deepEqual(original, data[lang].projects);
     const featured = new Set(sorted.slice(0, 8).map(project => project.id));
     assert.deepEqual(sorted.slice(8), original.filter(project => !featured.has(project.id)));

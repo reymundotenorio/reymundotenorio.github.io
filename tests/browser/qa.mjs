@@ -10,7 +10,7 @@ const open=async(lang='en',options={})=>{const context=await browser.newContext(
 const state=page=>page.evaluate(()=>{const scene=document.querySelector('[data-scene]'),frame=document.querySelector('[data-story-frame]');return {y:scrollY,x:scrollX,frameY:frame.getBoundingClientRect().y,trackX:document.querySelector('[data-story-track]').getBoundingClientRect().x,header:document.querySelector('[data-header]').getBoundingClientRect().height,start:Number(scene.dataset.pinStart),end:Number(scene.dataset.pinEnd),active:scene.dataset.activeProject,pinned:scene.dataset.pinned,spacers:document.querySelectorAll('.pin-spacer').length};});
 const jump=async(page,y)=>{await page.evaluate(top=>scrollTo({top,behavior:'instant'}),y);await page.waitForTimeout(120);};
 const screenshot=async(page,name)=>page.screenshot({path:new URL(`${name}.png`,out).pathname});
-const expected={'[data-archive-project]':30,'[data-certificate]':18,'[data-recognition]':17,'[data-recognition][data-kind="award"]':4,'[data-course]':4,'[data-employment]':5,'[data-skill]':76,'[data-language]':12,'[data-framework]':13,'[data-stack-group]':7,'[data-ai-capability]':3,'[data-education]':1,'[data-spoken-language]':2,'[data-public-repository]':56};
+const expected={'[data-archive-project]':31,'[data-certificate]':18,'[data-recognition]':17,'[data-recognition][data-kind="award"]':4,'[data-course]':4,'[data-employment]':5,'[data-skill]':76,'[data-language]':12,'[data-framework]':13,'[data-stack-group]':7,'[data-ai-capability]':3,'[data-education]':1,'[data-spoken-language]':2,'[data-public-repository]':56};
 for(const lang of ['en','es']){
   const {page,context}=await open(lang);
   await check(`${lang}: identity, complete corpus and valid anchors`,async()=>{
@@ -65,7 +65,7 @@ for(const lang of ['en','es']){
     });
     await check('Project details open their own complete page; the archive stays compact',async()=>{
       await page.locator('[data-story-panel]').last().locator('.panel-caption a').click();await expect(page.locator('[data-project-case="depsaber"] h1')).toBeInViewport();expect(await page.locator('.case-cover img').count()).toBe(1);await page.locator('[data-project-back]').first().click();await expect(page.locator('[data-scene]')).toHaveAttribute('data-active-project','depsaber');
-      await page.locator('[data-archive-rest]>summary').click();expect(await page.locator('[data-archive-project]:visible').count()).toBe(30);
+      await page.locator('[data-archive-rest]>summary').click();expect(await page.locator('[data-archive-project]:visible').count()).toBe(31);
       await page.locator('#code>summary').click();expect(await page.locator('[data-public-repository]:visible').count()).toBe(56);
     });
     await check('Archive filtering, empty state and restoration',async()=>{
@@ -125,7 +125,7 @@ await check('Reduced motion: complete static layout without pin or blinking',asy
   expect(await reduced.locator('.name-caret').evaluate(el=>getComputedStyle(el).animationName)).toBe('none');
 });await reducedContext.close();
 const {page:nojs,context:nojsContext}=await open('es',{javaScriptEnabled:false});
-await check('No JavaScript: all content, projects and native disclosures remain usable',async()=>{for(const [selector,count] of Object.entries(expected))expect(await nojs.locator(selector).count(),selector).toBe(count);await nojs.locator('[data-archive-rest]>summary').click();expect(await nojs.locator('[data-archive-project]:visible').count()).toBe(30);await expect(nojs.locator('[data-command]')).toBeHidden();});await nojsContext.close();
+await check('No JavaScript: all content, projects and native disclosures remain usable',async()=>{for(const [selector,count] of Object.entries(expected))expect(await nojs.locator(selector).count(),selector).toBe(count);await nojs.locator('[data-archive-rest]>summary').click();expect(await nojs.locator('[data-archive-project]:visible').count()).toBe(31);await expect(nojs.locator('[data-command]')).toBeHidden();});await nojsContext.close();
 await check('Runtime and console health',async()=>expect(errors).toEqual([]));
 const failed=results.filter(r=>!r.pass);await writeFile(new URL('results.json',out),JSON.stringify({browser:browser.version(),browserPlugin:'Browser plugin not available',target:'Vertical document -> pinned horizontal projects -> vertical experience; native mobile rail',results,errors},null,2));
 console.log(JSON.stringify({passed:results.length-failed.length,failed:failed.length,failures:failed.map(f=>({name:f.name,error:f.error.slice(0,2000)}))},null,2));await browser.close();process.exitCode=failed.length?1:0;

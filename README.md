@@ -26,7 +26,7 @@ A terminal-inspired introduction leads into selected work, then the full profess
 
 - **Ask or discover.** The prompt types and submits examples until you take control. Enter and prepared options reveal factual, local answers.
 - **Browse selected work.** Desktop scrolling moves naturally into four horizontal project panels and back to vertical content. Mobile uses a native swipe rail.
-- **Open the project.** Each of the 30 projects has its own English and Spanish page with large captures, contribution, implementation details, and technologies. Back restores your place.
+- **Open the project.** Each of the 31 projects has its own English and Spanish page with large captures, contribution, implementation details, and technologies. Back restores your place.
 - **Go deeper.** Experience, applied AI, a categorized tech stack, certifications, courses, recognition, education, and public code remain readable in HTML.
 - **Choose your pace.** Dark/light themes, keyboard access, motion controls, and reduced-motion layouts are built in. Core content and links work without JavaScript.
 
@@ -74,7 +74,7 @@ The suite exercises both languages and themes, desktop wheel/touch navigation, p
 
 | Area | Source |
 | --- | --- |
-| Bilingual professional content and 30 project cases | [`src/data/profile.json`](src/data/profile.json) |
+| Bilingual professional content and 31 project cases | [`src/data/profile.json`](src/data/profile.json) |
 | Featured work and shared project priority | [`src/data/project-curation.ts`](src/data/project-curation.ts) |
 | Categorized stack and applied-AI narrative | [`src/data/editorial.ts`](src/data/editorial.ts) |
 | Curated, rotating demo questions | [`src/data/demo-tour.ts`](src/data/demo-tour.ts) |
