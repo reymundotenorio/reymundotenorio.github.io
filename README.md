@@ -107,6 +107,8 @@ Authentic captures take precedence over concepts. Conceptual artwork and demonst
 
 Private application URLs, customer records, intermediary names, personal contact details, and private repository metadata are not part of the published portfolio. DuePulse uses signed-out product captures; Shipping Portal is one anonymous shipping/tracking case. Workshop and participation records are distinguished from awards.
 
+Mombacho previews retain the application’s map markers and house-detail component with a different example location and fictional residents/contact numbers. The illustrative house photograph is [Exselsen House Exterior](https://commons.wikimedia.org/wiki/File:Exselsen_House_Exterior.jpg) by Josiah.r.white, released under CC0. Google map and imagery attribution remain visible. No residential records or credentials are included.
+
 Shipping Portal previews are localized English/Spanish renders of the original frontend with synthetic records. Only optimized images are included here, not private application source, authentication sessions, or backend access.
 
 Geist Sans and Geist Mono are self-hosted with their [SIL Open Font License](public/fonts/GEIST-OFL.txt). Local Lucide assets retain their [license](public/icons/LICENSE). Project brands and imagery are credited to their respective owners; a public repository is not permission to reuse someone else's identity or client material.

@@ -1315,23 +1315,23 @@
           "Built a Next.js and TypeScript application with Google Maps and Material UI for locating homes and reviewing related resident records.",
           "Implemented a guided home/resident/confirmation workflow and relational persistence with Supabase.",
           "Compressed images in the browser before upload to Supabase Storage, then retrieved images through one-hour signed URLs with expiry-aware caching.",
-          "Private application. The captures render original components with synthetic records, without access to the residential system."
+          "Private application. Captures use an example map location, fictional resident records and an illustrative house photo, without access to the residential system."
         ],
         "media": [
           {
             "src": "/images/projects/mombacho-vivienda.webp",
             "width": 1920,
-            "height": 873,
-            "alt": "Mombacho original home-entry component with example data",
-            "label": "Original components · Demo data · Spanish UI",
+            "height": 929,
+            "alt": "Mombacho residential map with house markers at an example location",
+            "label": "Residential map · Example location",
             "type": "demo"
           },
           {
             "src": "/images/projects/mombacho-confirmacion.webp",
             "width": 1920,
-            "height": 873,
-            "alt": "Mombacho original confirmation component with synthetic resident and coordinates",
-            "label": "Original components · Demo data · Spanish UI",
+            "height": 929,
+            "alt": "Mombacho house detail with an illustrative photo and fictional residents and phone numbers",
+            "label": "House details · Demo data",
             "type": "demo"
           }
         ]
@@ -2938,23 +2938,23 @@
           "Desarrollo con Next.js y TypeScript, Google Maps y Material UI para ubicar viviendas y consultar registros relacionados de residentes.",
           "Flujo guiado de vivienda, residentes y confirmación, con persistencia relacional en Supabase.",
           "Compresión de imágenes en el navegador antes de subirlas a Supabase Storage; consulta mediante enlaces firmados de una hora y caché con vencimiento.",
-          "Aplicación privada. Las capturas muestran componentes originales con datos ficticios, sin acceso al sistema residencial."
+          "Aplicación privada. Las capturas utilizan otra ubicación de ejemplo, registros ficticios de residentes y una foto ilustrativa, sin acceso al sistema residencial."
         ],
         "media": [
           {
             "src": "/images/projects/mombacho-vivienda.webp",
             "width": 1920,
-            "height": 873,
-            "alt": "Componente original de registro de vivienda con datos de ejemplo",
-            "label": "Componentes originales · Datos de ejemplo",
+            "height": 929,
+            "alt": "Mapa residencial de Mombacho con viviendas en una ubicación de ejemplo",
+            "label": "Mapa residencial · Datos de ejemplo",
             "type": "demo"
           },
           {
             "src": "/images/projects/mombacho-confirmacion.webp",
             "width": 1920,
-            "height": 873,
-            "alt": "Componente original de confirmación con residente y coordenadas ficticias",
-            "label": "Componentes originales · Datos de ejemplo",
+            "height": 929,
+            "alt": "Detalle de vivienda con foto ilustrativa, residentes y teléfonos ficticios",
+            "label": "Detalle de vivienda · Datos de ejemplo",
             "type": "demo"
           }
         ]
